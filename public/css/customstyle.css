@@ -1,0 +1,621 @@
+.cp .cp-account ul li input:disabled {
+	height: 23px !important;
+}
+
+.cp .billPlans .billPlans-lines > li ul.billPlans-details li dl  .billPlans-name {
+	margin-bottom: 10px;
+
+}
+
+.cp .cp-account ul li input:disabled {
+    margin-top: 5px !important;
+}
+
+#paymentModal select{
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	width: 100%;
+	padding: 8px;
+}
+
+#paymentModal .effect-1{
+    border: 0;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: 0px;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/*#paymentModal .faux-select li .options.open{
+	background: #fff;
+	max-height: 1000%;
+	box-shadow: 0px 20px 45px rgba(0,0,0,0.14);
+	padding: 10px 15px 15px;
+}
+
+#paymentModal .faux-select li .options {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    position: absolute;
+    width: 200%;
+    max-height: 0px;
+    overflow: hidden;
+    top: 36px;
+    left: -10px;
+    transition: all ease 0.25s;
+    z-index: 99;
+}
+
+#paymentModal  .faux-select li .options li {
+    padding: 8px 15px;
+    opacity: 0.5;
+    text-indent: 22px;
+    color: #535353;
+}
+#paymentModal  .faux-select li {
+    padding: 6px 0 7px 0 !important;
+    position: relative;
+}
+
+#paymentModal .card-options {
+    z-index: 999 !important;
+}*/
+
+#paymentModal label{
+	display: block;
+	font-size: 14px;
+	color: #aab8bd;
+}
+
+#paymentModal .finalsendbtn .btn.btn1.sendbtn2 {
+    font-size: 12px;
+    right: 0px;
+    border: 1px solid #8c8c8c;
+    border-radius: 50px;
+    padding: 6px 20px;
+    color: #535353;
+    background: #fff;
+    bottom: 0px;
+    z-index: 99;
+}
+
+ #paymentModal .editpopcontent .top-custom-bx {
+    text-align: center;
+    padding: 30px 25px 0px 0px !important;
+    border-radius: 5px 5px 0 0;
+}
+
+.portPopup #paymentModal .close span {
+    color: #555454 !important;
+}
+
+.cp aside.bill .add-line {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 5px;
+    border: 2px dashed #aab8bd;
+    color: #4c606b;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.cp aside.bill .add-line i {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #33cccc;
+    text-align: center;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    margin: 13px 0 0 10px;
+    border-radius: 5px;
+    font-size: 28px;
+    vertical-align: top;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.checkout-section .right-con .checkout-item-con .cart-list li .info table td{
+    min-width: 100px !important;
+}
+
+.padding-left-right-10{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.padding-none{
+    padding:0px !important;
+}
+
+.cp-account ul li select, .cp-account ul li input, .legend{
+    line-height: 20px;
+}
+
+.categories-nav{
+    height: 100% !important;
+}
+
+.supportWrapper .support form input[type="submit"] {
+    height: 50px !important;
+}
+
+p strong{
+    font-weight: bold !important;
+}
+
+.addon-description p{
+    margin-top:10px;
+    color: #829196 !important;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.addon-label{
+    font-size: 14px;
+    font-weight: 700;
+    color: #829196;
+    line-height: 1.3;
+}
+
+@media (max-width: 959px) {
+    .fonts-phones {
+        font-size: 15px;
+    }
+    .text-account-page-left {
+        margin-right: 50px !important;
+    }
+    .text-account-page-right {
+        margin-top: 10px !important;
+    }
+    .amount-container {
+        display:inline-flex;
+        height: 100px;
+    }
+    .pricing-for-desktop {
+        display: none;
+    }
+    .pricing-for-phone {
+        display: block;
+    }
+}
+
+@media (min-width: 959px) {
+    .fonts-phones {
+        font-size: 15px;
+    }
+    .pricing-for-desktop {
+        display: block;
+    }
+    .pricing-for-phone {
+        display: none;
+    }
+}
+
+.no-input-spinners::-webkit-inner-spin-button,
+.no-input-spinners::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.tooltips {
+    font-size: 15px;
+    text-align: justify;
+}
+
+.prorated-tooltip {
+    text-align: justify;
+    font-size: 15px;
+}
+
+#choosePlan .right-con ul p{
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.table-bordered  tbody  tr  td, .table-bordered {
+    border: none !important;
+}
+
+.table-bordered  tbody  tr{
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid #dbddde !important;
+}
+
+#clear-order {
+    width: 100% !important;
+}
+
+.mobile-cart-close-btn{
+    padding-right: 25px !important;
+}
+
+.content-title-modified {
+    color: #000000;
+    font-weight: 700;
+}
+
+
+/* The sidebar menu */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #1ba4d6;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+
+  /* The sidebar links */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #e2e2e2;
+    display: block;
+    transition: 0.3s;
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 50px;
+    width: 70%;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+    color: #2c2c2c;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar span {
+    color: #e2e2e2;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+.remove-line::before{
+    height: 0px !important;
+}
+
+#customerForm em{
+    white-space: pre;
+}
+
+#customerForm .legend{
+    font-size: 24px;
+    color: #aab8bd;
+}
+
+@media screen and (max-width: 719px) {
+    .billPlans-details dd{
+        font-size: 15px;
+    }
+
+    .billPlans-details dl{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .billPlans-line{
+        border-bottom: 2px solid #d7dee0 !important;
+    }
+
+    #make-payment-form .form-group {
+        margin-bottom: 15px !important;
+    }
+}
+
+.device-description, .device-description-detail{
+    line-height: normal;
+}
+
+.label-edit-btn{
+    background: rgba(51, 204, 204, 0.1);
+    color: #33cccc;
+    cursor: pointer;
+}
+
+.label-edit-btn:hover{
+    color: #33cccc;
+}
+
+.sub-details{
+    width: 60%;
+}
+
+.edit-label dd{
+    margin-bottom: 10px !important;
+}
+
+.label-cancel-btn{
+    padding: 6px;
+    border-radius: 5px;
+    float: right;
+    background:white;
+    color:red;
+    border: 1px solid red;
+}
+
+.label-save-btn{
+    margin-left: 10px;
+    padding: 6px;
+    border-radius: 5px;
+    float: right;
+    background:#33cccc;
+    color:white;
+    border: 1px solid#33cccc;
+}
+
+#port-info .text-danger{
+    padding: 10px;
+    font-style: italic;
+}
+
+.padding-b-5{
+    padding-bottom: 5px;
+}
+
+/*Usage CSS*/
+
+.usages tr th{
+    color:#aab8bd;
+    font-size: 12px;
+    font-weight: 700;
+    display: table-cell;
+    vertical-align: top;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.voice-usage{
+    border-right: 1px solid#d7dee0;
+    border-left: 1px solid#d7dee0;
+}
+
+.sub-details{
+    margin-bottom: 20px;
+}
+
+.billPlans-details .firstli{
+    padding: 0px !important;
+}
+
+.usages{
+    margin-bottom: 15px;
+}
+
+.data-table{
+    width: 100% !important;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.data-table .odd{
+    background-color: whitesmoke;
+}
+.data-table th{
+    color: #aab8bd;
+    font-weight: 700;
+    text-align: center;
+}
+
+.data-table td{
+    text-align: center;
+}
+
+.data-table tbody{
+    font-size: 14px;
+}
+
+#usageModal #cycle{
+    border: 1px solid #d7dee0;
+    border-radius: 5px;
+    padding: 7px 10px;
+    padding-right: 10px;
+    color:#4c606b;
+    outline: none;
+}
+.tab-info{
+    margin: 20px 0px;
+}
+
+.usages-details .subsctblehdr h1{
+    color: #31a5d2;
+}
+
+.usages-details .subsctblehdr{
+    margin-bottom: 10px;
+}
+
+#usageModal label{
+    color:#aab8bd;
+    font-weight: 550;
+    text-align: center;
+
+}
+
+.usage-table-data .input-sm{
+    border-radius: 10px;
+}
+
+.usage-table-data .dataTables_length select.input-sm{
+    line-height: 15px;
+    width: 100%;
+    font-weight: 200px;
+}
+
+.table.dataTable thead .sorting_asc::after{
+    content: '\25B2' !important;
+}
+
+.table.dataTable thead .sorting_desc::after{
+    content: '\25BC' !important;
+}
+
+.table.dataTable thead .sorting::after{
+    display:none;
+}
+
+.dataTables_scrollHeadInner{
+    width: 100% !important;
+}
+
+@media (max-width: 959px) {
+    .tabstable .tab-info .row{
+        display: inline-flex;
+        width:100%;
+    }
+
+    .data-table tbody{
+        font-size: 9px;
+    }
+
+    .width-70{
+        width: 70%;
+    }
+
+    .width-30{
+        width: 30%;
+    }
+
+    .table-responsive{
+        border: 0px !important;
+    }
+
+    .dataTables_length, .dataTables_filter{
+        margin-top: 10px !important;
+        text-align: left !important;
+    }
+
+
+    .dataTables_wrapper .row div{
+        padding: 0px;
+    }
+
+    .dataTables_length select{
+        margin-left: 8%;
+    }
+
+    .pagination > li > a{
+        padding: 5px 8px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .show-usages-btn{
+        margin-bottom:10px;
+    }
+}
+
+.note-italic{
+    color: #829196;
+    font-style: italic;
+}
+
+.change_sim_sub_btn{
+    float: right;
+}
+
+
+/**
+* @internal Added by Prajwal
+*/
+.mt-20 {
+    margin-top: 20px;
+}
+
+
+.fs-15 {
+    font-size: 15px;
+}
+
+.align-left {
+    text-align:left
+}
+
+.font-italic {
+    font-style: italic
+}
+
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.transparent-border {
+    border:transparent;
+    color:black;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+.white-color {
+    color:white;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.coupon-modal-close-btn {
+    width: 30%;
+    border-radius: 0;
+}
+
+.footer-mobile-coupon-code-tooltip {
+    background:transparent;
+    border:transparent;
+    color:#1ba4d6;
+}
+
+.mb-5 {
+    margin-bottom: 5px;
+}

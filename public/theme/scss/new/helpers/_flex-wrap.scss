@@ -1,0 +1,4 @@
+@mixin flexWrap($flexwrap){
+   -webkit-flex-wrap: $flexwrap;
+           flex-wrap: $flexwrap;
+}

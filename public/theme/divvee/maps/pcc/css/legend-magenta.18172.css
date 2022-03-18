@@ -1,0 +1,27 @@
+/**** Magenta Color Set ****/
+.legend-color-type-LTE        {color:#E20074;}
+.legend-color-type-4G       {color:#E20074;}
+.legend-color-type-3G       {color:#E20074;}
+.legend-color-type-2G       {color:#E20074;}
+.legend-color-type-roam       {color:#D4D4D4;}
+.legend-color-type-none       {color:#000000;}
+
+.legend-swatch-type-LTE       {background-color:#E20074;}
+.legend-swatch-type-4G        {background-color:#E20074;}
+.legend-swatch-type-3G        {background-color:#E20074;}
+.legend-swatch-type-2G        {background-color:#E20074;}
+.legend-swatch-type-roam      {background-color:#D4D4D4;}
+.legend-swatch-type-coverage    {background-color:#E20074;}
+.legend-swatch-type-onnetwork   {background-color:#E20074;}
+.legend-swatch-type-offnetwork    {background-color:#D4D4D4;}
+.legend-swatch-type-none      {background-color:#ffffff;border: solid #cecece 1px;}
+
+/**** New Legend Swatches ****/
+.legend-swatch-type-LTE-excellent {background-color: #E20074;}
+.legend-swatch-type-LTE-good    {background-color: #FF3B9E;}
+.legend-swatch-type-LTE-fair    {background-color: #FF65B0;}
+.legend-swatch-type-2G-3G-4G-dark {background-image:url('../images/2g3g4g-dark-tmo.png');background-repeat:no-repeat;}
+.legend-swatch-type-2G-3G-4G-light  {background-image:url('../images/2g3g4g-light-tmo.png');background-repeat:no-repeat;}
+.legend-swatch-type-LTE-partner   {background-color: #cda172;}
+.legend-swatch-type-roamCAMX    {background-color: #904363;}
+.legend-swatch-type-partner     {background-color: #fc7da8;}

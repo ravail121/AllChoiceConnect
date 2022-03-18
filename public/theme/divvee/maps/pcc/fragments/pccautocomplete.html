@@ -1,0 +1,20 @@
+
+<div class="autocomplete-holder" >
+	<input id="{{id}}Box" autocomplete="off" autocorrect="off" ng-model="searchStr" type="text" placeholder="{{placeholder}}" class="{{inputClass}}" ng-blur="onBlur($event)"/>
+	<div id="{{id}}_dropdown" class="autocomplete-dropdown" ng-if="showDropdown">
+		<div class="autocomplete-row" ng-repeat="result in results" ng-click="selectResult($event, result)" ng-mouseover="hoverRow()" 
+			ng-class="{'autocomplete-selected-row': $index == currentIndex}" ng-if="result.rowContent && result.rowContent != ''" >
+				<span class="autocomplete-row-image"> </span>
+				<span ng-bind-html="result.rowContent | unsafe"></span>			
+		</div>
+		<div class="autocomplete-row" ng-show="history.length > 0"><span style="font-style: italic;font-weight: bold;">{{labels['title-recentSearches']}}</span></div>
+		<div class="autocomplete-row" ng-repeat="result in history" ng-click="selectHistory($event, result)" ng-mouseover="hoverRow()" 
+			ng-class="{'autocomplete-selected-row': ($index + results.length) == currentIndex}"  ng-if="result.description && result.description != ''" >
+				<span class="autocomplete-row-history-image"> </span>
+				<span ng-bind-html="result.description | unsafe"></span>			
+		</div>
+	</div>
+	<div id="pServiceDiv"></div>
+</div>
+
+

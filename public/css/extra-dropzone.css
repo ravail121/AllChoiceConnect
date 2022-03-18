@@ -1,0 +1,179 @@
+#dropzoneFile{
+  min-height: 237px;
+}
+
+.dropzone:hover{
+  border-color: #c29bec;
+  color: #8246e8;
+}
+.drop-zone.error {
+  background: #faa;
+  border-color: #f00;
+}
+.right-con > .dz-started {
+  border-color: #c29bec;
+  /*color: #8246e8;*/
+}
+.dz-remove
+{
+  display:inline-block !important;
+  width:1.2em;
+  height:1.2em;
+  
+  position:absolute;
+  top:5px;
+  right:5px;
+  z-index:1000;
+  
+  font-size:1.2em !important;
+  line-height:1em;
+ 
+  text-align:center;
+  font-weight:bold;
+  /*border:1px solid red !important;*/
+  border-radius:0.6em;
+  color: red;
+  background-color:white;
+  opacity: .9;
+  cursor: pointer !important;
+    
+}
+
+.dz-remove > i {
+  font-size: 14px;
+}
+
+.dz-remove:hover
+{
+  /*text-decoration:none !important;*/
+  opacity: 1;
+  color: white;
+  background-color: red;
+
+}
+
+/*.verify-business-form .right-con .dropzone.drop .zone-wrap > .title {
+  display: none;
+}
+.verify-business-form .right-con .dropzone.drop .zone-wrap > label {
+  display: none;
+}*/
+/*.preview-container canvas {
+  width: 150px;
+}*/
+/*.file-uploader-progress-bar {
+  margin: 0 20px;
+}
+.file-uploader-progress-bar > * {
+  background-color: #71a5f3;
+  width: 0;
+  height: 5px;
+  border-radius: 5px;
+}
+.wrapper.uploading .progress {
+  background-color: #8c8c8c;
+}*/
+
+
+.item-title {
+  position: relative;
+  /*display: inline-block;*/
+}
+
+/* Tooltip text */
+.item-title .tooltiptext {
+  visibility: hidden;
+  width: 75px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  /*margin-left: -60px;*/
+  margin-left: -33px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.item-title .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.item-title:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#cart-popup .modal-content {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; }
+#cart-popup h5 {
+  color: #000;
+  font-weight: 600; }
+#cart-popup ul li {
+  position: relative; }
+  #cart-popup ul li a {
+    width: 200px; }
+  #cart-popup ul li:not(:first-child) a {
+    border: 1px solid #aaa;
+    color: #000; }
+  #cart-popup ul li:first-child:before {
+    content: 'or';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    font-size: 13px;
+    color: #000; }
+
+    #cart-popup ul li.special:before {
+    content: '';
+ }
+
+
+
+
+#modal-edit-cart .modal-content {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; 
+}
+#modal-edit-cart h5 {
+  color: #000;
+  font-weight: 600; 
+}
+#modal-edit-cart ul li {
+  position: relative; 
+}
+#modal-edit-cart ul li a {
+  width: 200px; 
+}
+
+
+@media screen and (max-width: 767px) {
+  #modal-edit-cart .modal-content, #cart-popup .modal-content {
+    margin: 30px auto 0 auto; 
+  }
+}
+@media screen and (max-width: 320px) {
+  #modal-edit-cart .modal-content {
+    margin: 25px auto 0 auto; 
+  }
+}

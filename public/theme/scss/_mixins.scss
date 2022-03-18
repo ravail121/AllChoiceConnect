@@ -1,0 +1,31 @@
+@mixin clearfix() {
+  zoom: 1;
+  &:before { content: ''; display: block; }
+  &:after { content: ''; display: table; clear: both; }
+}
+
+@mixin borderbox() {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+@mixin centerX($position: -50%) {
+	-webkit-transform:translateX($position);
+	-moz-transform:translateX($position);
+	-o-transform:translateX($position);
+	transform:translateX($position);
+}
+
+@mixin centerY($position: -50%) {
+	-webkit-transform:translateY($position);
+	-moz-transform:translateY($position);
+	-o-transform:translateY($position);
+	transform:translateY($position);
+}
+
+@mixin center() {
+	-webkit-transform:translate(-50%, -50%);
+	-moz-transform:translate(-50%, -50%);
+	-o-transform:translate(-50%, -50%);
+	transform:translate(-50%, -50%);
+}

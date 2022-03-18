@@ -1,0 +1,6430 @@
+@import 'reset';
+@import 'colors';
+@import 'mixins';
+@import 'queries';
+@import 'fonts';
+@import 'animations';
+
+$max-width: 1240px;
+
+* {
+	box-sizing: border-box;
+}
+
+input[type="submit"] {
+	-webkit-appearance: none;
+}
+
+
+body {
+	background: $lightGreyBG;
+	font-family: $sans;
+	width: 100%;
+
+	&.noScroll {
+		overflow: hidden;
+
+		#intercom-container {
+			display: none;
+		}
+	}
+	
+	@media #{$tablet}, #{$phablet}, #{$phone} {
+		&.move-intercom-container {
+			#intercom-container {
+				transform: translate(12px, -33px);
+			}
+		}
+
+		&.intercom-mobile-messenger-active {
+			#intercom-container {
+				transform: none;
+			}
+		}
+	}
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.wrapper {
+	width: calc(100% - 60px);
+	max-width: $max-width;
+	margin: auto;
+
+	@media #{$phone} {
+		width: calc(100% - 10px);
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba($darkerGreyBG, .6);
+	display: none;
+	z-index: 100;
+}
+
+.marquee-wrapper {
+	background: $blackBG;
+	color: $whiteText;
+	height: 58px;
+	position: relative;
+
+	@media #{$tablet}, #{$phablet}, #{$phone} {
+		height: 38px;
+	}
+
+	.wrapper {
+		position: relative;
+	}
+
+	.left-shadow,
+	.right-shadow {
+		position: absolute;
+		height: 100%;
+		width: 70px;
+		top: 0;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			width: 40px;
+		}
+	}
+
+	.left-shadow {
+		left: 0;
+		background: linear-gradient(to right, rgba($blackBG,1) 0%,rgba($blackBG,0) 100%); 
+	}
+	.right-shadow {
+		right: 0;
+		background: linear-gradient(to right, rgba($blackBG,0) 0%,rgba($blackBG,1) 100%);
+	}
+
+	.close-marquee {
+		position: absolute;
+		width: 58px;
+		height: 58px;
+		line-height: 58px;
+		text-align: center;
+		color: $tealBlue;
+		font-family: $icon;
+		text-decoration: none;
+		top: 0;
+		right: 0;
+		z-index: 2;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			display: none;
+		}
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	.marquee {
+		text-align: center;
+		line-height: 58px;
+		white-space: nowrap;
+		width: 100%;
+		overflow: hidden;
+		padding: 0 0 0 20px;
+		font-size: 15px;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			line-height: 38px;
+			font-size: 12px;
+		}
+	}
+}
+
+.black-friday-header {
+	background: black;
+	background: $lightGreyBG;
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20px;
+	
+	.wrapper {
+		display: flex;
+		position: relative;
+
+		@media #{$phablet}, #{$phone} {
+			width: 100%;
+		}
+	}
+
+	figure {
+		position: absolute;
+		left: 50%;
+		width: 100px;
+		height: 100%;
+		top: 0;
+		z-index: 4;
+		transform: translate(-50%, 0);
+		pointer-events: none;
+
+		@media #{$phone} {
+			width: 60px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	.title {
+		width: 50%;
+		background: black;
+		text-align: center;
+		padding: 20px;
+		font-size: 28px;
+		font-weight: 700;
+		color: white;
+		text-transform: uppercase;
+		position: relative;
+
+		.bg-flow {
+			position: absolute;
+			top: 0;
+			right: 100%;
+			height: 100%;
+			width: 100vw;
+			background: black;
+
+			@media #{$phablet}, #{$phone} {
+				display: none;
+			}
+		}
+	}
+
+	.description {
+		background: $purple;
+		width: 50%;
+		position: relative;
+
+		text-align: center;
+		padding: 20px;
+		font-size: 28px;
+		font-weight: 700;
+		color: white;
+
+		.bg-flow {
+			position: absolute;
+			top: 0;
+			left: 100%;
+			height: 100%;
+			width: 100vw;
+			background: $purple;
+
+			@media #{$phablet}, #{$phone} {
+				display: none;
+			}
+		}
+	}
+}
+
+
+.hero {
+	background: url('../images/hero-bg.jpg') center top scroll;
+	background-size: cover;
+	text-align: center;
+	position: relative;
+
+	@media #{$tablet}, #{$phablet}, #{$phone} {
+		height: calc(100vh - 83px);
+		display: flex;
+	}
+
+	.wrapper {
+		padding: 140px 0;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			padding: 80px 0;
+			padding: 0;
+		}
+	}
+
+	p.fineprint {
+		position: absolute;
+		right: 10px;
+		bottom: 5px;
+		color: white;
+		font-size: 14px;
+		font-style: italic;
+
+		@media #{$phone} {
+			font-size: 11px;
+		}
+	}
+
+	h1 {
+		font-style: italic;
+		font-weight: 800;
+		font-size: 85px;
+		color: white;
+		margin-bottom: 40px;
+		text-transform: uppercase;
+
+		@media #{$phone} {
+			margin-bottom: 40px;
+		}
+
+		span {
+			text-transform: none;
+			display: block;
+			font-weight: normal;
+			font-size: 30px;
+			font-style: normal;
+			padding-top: 15px;
+		}
+		@media #{$tablet} {
+			font-size: 50px;
+			span {
+				font-size: 18px;
+				padding-top: 10px;
+			}
+		}
+
+		@media #{$phablet} {
+			font-size: 40px;
+			span {
+				font-size: 18px;
+				padding-top: 10px;
+			}
+		}
+
+		@media #{$phone} {
+			font-size: 64px;
+			line-height: 1.2;
+			span {
+				font-size: 18px;
+				padding: 15px 30px;
+			}
+		}
+	}
+
+	a {
+		color: white;
+		background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+		border-radius: 50px;
+		padding: 0 40px;
+		text-decoration: none;
+		height: 60px;
+		line-height: 60px;
+		display: inline-block;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 18px;
+		cursor: pointer;
+
+		@media #{$phone} {
+			height: 50px;
+			line-height: 50px;
+			padding: 0 30px;
+		}
+
+		i {
+			font-family: $icon;
+			text-transform: none;
+			padding-left:5px;
+		}
+
+		&:hover {
+			background: $darkPurple;
+		}
+	}
+}
+
+.save {
+	background: white;
+	padding: 20px 0;
+	@extend .clearfix;
+	text-align: center;
+
+	@media #{$phablet}, #{$phone} {
+		padding: 0;
+	}
+
+
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		@media #{$phablet}, #{$phone} {
+			width: 100%;
+		}
+	}
+
+	article {
+		background: white;
+		border-radius: 5px;
+		border: 1px solid $greyBorder;
+		// margin-bottom: 30px;
+		margin-right: 30px;
+		float: left;
+		padding: 30px;
+		color: $darkGreyText;
+		// height: 230px;
+		position: relative;
+
+		@media #{$phablet}, #{$phone} {
+			height: auto;
+			text-align: center;
+			background: white !important;
+			margin-bottom: 0;
+			border: none;
+			border-top: 1px solid $greyBorder;
+			border-radius: 0;
+		}
+
+		h3 {
+			color: $tealBlue;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 36px;
+
+			@media #{$phablet} {
+				font-size: 24px;
+			}
+
+			@media #{$phone} {
+				font-size: 20px;
+			}
+		}
+
+		p {
+			color: $darkGreyText;
+			font-size: 18px;
+			padding-top: 5px;
+
+			@media #{$phablet}, #{$phone} {
+				font-size: 14px;
+			}
+		}
+
+		a {
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+			color: $purple;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 16px;
+
+			&:hover {
+				color: $tealBlue;
+			}
+			i {
+				font-family: $icon;
+			}
+
+			@media #{$phablet}, #{$phone} {
+				position: static;
+			}
+		}
+
+		&.long {
+			width: calc(70% - 30px);
+		}
+
+		&.short {
+			width: 30%;
+		}
+
+		&.no-right {
+			margin-right: 0;
+		}
+
+		&.even {
+			width: calc(50% - 15px);
+		}
+
+	}
+
+}
+
+.home-features-glance {
+	position: relative;
+	margin-top: 30px;
+
+	@media  #{$phablet}, #{$phone} {
+		margin-bottom: 30px;
+
+		.wrapper {
+			width: calc(100% - 60px);
+		}
+	}
+	
+	&.cover-over {
+		margin-top: -70px;
+	}
+
+	.features {
+		background: url('../images/features-bg.jpg') center center no-repeat;
+		background-size: cover;
+		border-radius: 5px;
+		padding: 40px 80px 20px;
+
+		@media  #{$phablet} {
+			padding: 40px 40px 20px;
+		}
+
+		@media #{$phone} {
+			padding: 20px;
+		}
+
+		text-align: center;
+
+		h2 {
+			color: white;
+			font-size: 36px;
+			margin-bottom: 40px;
+			font-weight: 700;
+
+			@media  #{$phablet}, #{$phone} {
+				font-size: 18px;
+			}
+		}
+
+		ul {
+			margin-bottom: 20px;
+			text-align: left;
+			display: flex;
+			flex-wrap: wrap;
+
+			li {
+				width: calc(100% / 3);
+				color: white;
+				font-size: 18px;
+				position: relative;
+				margin-bottom: 10px;
+
+				@media  #{$tablet} {
+					width: calc(100% / 2);
+				}
+
+				@media  #{$phablet}, #{$phone} {
+					width: 100%;
+				}
+
+				&:before {
+					content: 'V';
+					font-family: $icon;
+					padding-right: 40px;
+
+					@media #{$phone} {
+						padding-right: 20px;
+					}
+				}
+			}
+		}
+
+		a.more {
+			text-transform: uppercase;
+			color: $tealBlue;
+			font-weight: 700;
+			text-decoration: none;
+			cursor: pointer;
+
+			&:nth-of-type(1) {
+				margin-right: 10px;
+				@media  #{$phablet}, #{$phone} {
+					margin-right: 0;
+				}
+			}
+
+			span {
+				white-space: nowrap;
+			}
+
+			@media  #{$phablet}, #{$phone} {
+				line-height: 1.3;
+			}
+
+			&:hover {
+				color: white;
+			}
+		}
+	}
+}
+
+.homeFeatures {
+	padding: 30px 0;
+	@extend .clearfix;
+
+	@media #{$phablet}, #{$phone} {
+		padding: 0;
+	}
+
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		@media #{$phablet}, #{$phone} {
+			width: 100%;
+		}
+	}
+
+	article {
+		background: white;
+		border-radius: 5px;
+		border: 1px solid $greyBorder;
+		margin-bottom: 30px;
+		margin-right: 30px;
+		float: left;
+		padding: 30px;
+		color: $darkGreyText;
+		height: 230px;
+		position: relative;
+
+		@media #{$phablet}, #{$phone} {
+			height: auto;
+			text-align: center;
+			background: white !important;
+			margin-bottom: 0;
+			border: none;
+			border-top: 1px solid $greyBorder;
+			border-radius: 0;
+		}
+
+		h2 {
+			font-size: 30px;
+			font-weight: 700;
+			padding-bottom: 5px;
+			line-height: 1.2;
+			color: black;
+
+			@media #{$smlDesktop}, #{$tablet}, #{$phablet}, #{$phone} {
+				font-size: 24px;
+			}
+
+			@media #{$phablet}, #{$phone} {
+				text-align: center;
+			}
+		}
+
+		p {
+			font-size: 20px;
+			line-height: 1.8;
+
+			@media #{$smlDesktop} {
+				line-height: 1.4;
+			}
+
+			@media #{$smlDesktop}, #{$tablet}, #{$phablet}, #{$phone} {
+				font-size: 16px;
+				line-height: 1.4;
+			}
+
+			@media #{$phablet}, #{$phone} {
+				margin-bottom: 20px;
+			}
+		}
+
+		a {
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+			color: $purple;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 16px;
+
+			&:hover {
+				color: $tealBlue;
+			}
+			i {
+				font-family: $icon;
+			}
+
+			@media #{$phablet}, #{$phone} {
+				position: static;
+			}
+		}
+
+		&.tall {
+			height: 450px;
+		}
+
+		&.long {
+			width: calc(70% - 30px);
+		}
+
+		&.short {
+			width: 30%;
+		}
+
+		&.no-right {
+			margin-right: 0;
+		}
+
+		&.bringPhone {
+			background: white url('../images/target-teltik.png') no-repeat;
+			background-position: 111% 23%;
+
+			@media #{$tablet}, #{$phablet}, #{$phone} {
+				width: 100%;
+				margin-right: 0;
+			}
+
+
+			img {
+				position: absolute;
+				bottom: 0;
+				right: 55px;
+				@media #{$phablet}, #{$phone} {
+					display: none;
+				}
+			}
+		}
+
+		&.wifi-calling {
+			@media #{$tablet} {
+				width: calc(50% - 15px);
+				margin-right: 30px;
+			}
+
+			@media  #{$phablet}, #{$phone}{
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+
+		&.bringFreinds {
+			@media #{$tablet} {
+				width: calc(50% - 15px);
+				margin-right: 0px;
+			}
+
+			@media  #{$phablet}, #{$phone}{
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+
+		&.music {
+			@media #{$tablet}, #{$phablet}, #{$phone}{
+				width: 100%;
+				margin-right: 0;
+			}
+			img {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+
+				@media #{$phablet}, #{$phone} {
+					position: static;
+					margin-bottom: 10px;
+					max-width: 100%;
+					display: block;
+					margin: 0 auto 20px;
+				}
+			}
+		}
+
+		&.etf {
+			background: white url('../images/paper.jpg') no-repeat;
+			background-position: right;
+		}
+
+		&.wifi {
+			@media  #{$smlDesktop}, #{$tablet} {
+				width: 100%;
+			}
+		}
+
+		&.support {
+			background: white url('../images/support.jpg') no-repeat;
+			background-position: bottom right;
+
+			@media #{$tablet}, #{$phablet}, #{$phone} {
+				background: white;
+				height: auto;
+
+				a {
+					position: static;
+				}
+			}
+
+			h2 {
+				width: 70%;
+
+				@media #{$tablet}, #{$phablet}, #{$phone} {
+					width: 100%;
+					margin-bottom: 20px;
+				}
+			}
+
+			p {
+				width: 60%;
+
+				@media #{$tablet}, #{$phablet}, #{$phone} {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		&.borders {
+			background: white url('../images/map.jpg') no-repeat;
+			background-position: bottom right;
+
+			@media #{$tablet} {
+				width: calc(50% - 15px);
+				margin-right: 30px;
+			}
+
+			@media  #{$phablet}, #{$phone}{
+				width: 100%;
+				margin-right: 0;
+			}
+
+			@media #{$tablet}, #{$phablet}, #{$phone} {
+				background: white;
+				height: auto;
+			}
+
+			h2 {
+				width: 70%;
+
+				@media #{$tablet}, #{$phablet}, #{$phone} {
+					width: 100%;
+					margin-bottom: 20px;
+				}
+			}
+
+			p {
+				width: 60%;
+
+				@media #{$tablet}, #{$phablet}, #{$phone} {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		&.simple-setup {
+			@media #{$tablet} {
+				width: calc(50% - 15px);
+				margin-right: 0px;
+			}
+
+			@media  #{$phablet}, #{$phone}{
+				width: 100%;
+				margin-right: 0;
+			}
+
+			ul {
+				@media  #{$phablet}, #{$phone} {
+					text-align: left;
+					display: inline-block;
+					margin-top: 10px;
+				}
+
+				li {
+					position: relative;
+					height: 22px;
+					line-height: 22px;
+					margin-bottom: 20px;
+
+					&:last-child {
+						span:after {
+							display: none;
+						}
+					}
+
+					span {
+						display: inline-block;
+						position: relative;
+						width: 22px;
+						height: 22px;
+						background: $tealBlue;
+						border-radius: 22px;
+						text-align: center;
+						color: white;
+						font-size: 14px;
+						font-weight: 600;
+						margin-right: 10px;
+
+						&:after {
+							position: absolute;
+							content: '';
+							width: 2px;
+							height: 22px;
+							background: $lightGreyBorder;
+							right: 10px;
+							top: 100%;
+						}
+
+						&.complete {
+							background: $purple;
+						}
+
+						i {
+							font-family: $icon;
+							font-size: .8em;
+						}
+					}
+
+					p {
+						display: inline-block;
+
+						em {
+							color: $purple;
+							font-style: italic;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+
+		&.slider {
+			text-align: center;
+			overflow: hidden;
+			padding: 0;
+
+			@media  #{$smlDesktop}, #{$tablet} {
+				width: 100%;
+			}
+
+			h3 {
+				color: $blueText;
+				font-weight: 700;
+				font-size: 20px;
+				text-transform: uppercase;
+				padding: 30px;
+				span {
+					display: block;
+					font-size: 14px;
+					font-weight: 600;
+					text-transform: none;
+					color: $lightGreyText;
+				}
+			}
+
+			.sliderWrapper {
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+
+				a {
+					position: static;
+
+					h5 {
+						padding-top: 10px;
+						line-height: 1.2;
+						color: $darkGreyText;
+						font-weight: 400;
+					}
+
+					p {
+						color: $greenText;
+						font-weight: 700;
+						font-size: 20px;
+
+						sup {
+							vertical-align: super;
+							font-size: 13px;
+						}
+					}
+				}
+
+				ul {
+					font-size: 0;
+					white-space: nowrap;
+					transform: translatex(-25%);
+					position: relative;
+					left: 0%;
+					transition: all .3s ease-in-out;
+
+					li {
+						display: inline-block;
+						width: 50%;
+						vertical-align: top;
+
+						figure {
+							text-align: center;
+
+							img {
+								max-width: 100%;
+								transform: scale(.7);
+								transition: all .3s ease-in-out;
+							}
+						}
+
+						h5, p {
+							display: none;
+						}
+
+						&.active {
+							figure {
+								img {
+									transform: scale(1);
+								}
+							}
+
+
+							h5, p {
+								display: block;
+								white-space: normal;
+							}
+						}
+					}
+				}
+			}
+
+			/*ul {
+				position: relative;
+				width: 100%;
+				li {
+					position: absolute;
+					text-align: center;
+
+					&.prev {
+						top: 30px;
+						left: -30px;
+						transform: translatex(-50%);
+						filter: grayscale(100%);
+					}
+
+					&.active {
+						left: 50%;
+						transform: translateX(-50%);
+
+						h5 {
+							padding-top: 10px;
+							line-height: 1.2;
+							color: $darkGreyText;
+						}
+
+						p {
+							color: $greenText;
+							font-weight: 700;
+							font-size: 20px;
+
+							sup {
+								vertical-align: super;
+								font-size: 13px;
+							}
+						}
+					}
+
+					&.next {
+						top: 30px;
+						right: -30px;
+						transform: translatex(50%);
+						filter: grayscale(100%);
+					}
+				}
+			}*/
+
+			nav {
+				position: absolute;
+				bottom: 30px;
+				/*width: calc(100% - 60px);*/
+				width: 100%;
+				text-align: center;
+
+				a {
+					position: static;
+					display: inline-block;
+					margin: 0 10px;
+					font-size: 0;
+					width: 10px;
+					height: 10px;
+					background: $mediumGreyBG;
+					border-radius: 50%;
+					&.active {
+						background: $darkGreyBG;
+					}
+				}
+			}
+		}
+	}
+
+	.fineprint {
+		clear: both;
+		text-align: center;
+		font-size: 11px;
+		line-height: 1.4;
+
+		padding: 0 40px;
+
+		@media #{$phablet}, #{$phone} {
+			padding: 40px;
+		}
+
+		a {
+			color: $blueText;
+			text-decoration: none;
+		}
+
+		strong {
+			font-weight: 700;
+		}
+	}
+}
+
+
+.supportWrapper {
+	padding: 50px 0;
+	@extend .clearfix;
+	.faqs {
+		float: right;
+		width: calc(100% - 430px);
+
+		@media #{$smlDesktop} {
+			width: calc(100% - 330px);
+		}
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			float: none;
+			width: 100%;
+		}
+
+		nav {
+			height: 80px;
+			line-height: 80px;
+			width: 101%;
+
+			@media #{$tablet}, #{$phablet}, #{$phone} {
+				height: auto;
+				line-height: normal;
+			}
+
+			ul {
+				text-align: center;
+				li {
+					margin: 0 8px;
+					display: inline-block;
+
+					@media #{$tablet}, #{$phablet}, #{$phone} {
+						margin: 10px 8px;
+					}
+
+					a {
+						color: $lightGreyText;
+						font-size: 15px;
+						font-weight: 600;
+						text-transform: uppercase;
+						text-decoration: none;
+						padding: 0 2px;
+
+						&:hover {
+							color: $darkGreyText;
+						}
+
+						&.active {
+							color: $tealBlue;
+							padding-bottom: 5px;
+							border-bottom: 2px solid $tealBlue;
+						}
+					}
+				}
+			}
+		}
+
+		ul.questions {
+			background: white;
+			border-radius: 5px;
+			color: $darkGreyText;
+
+			li {
+				border: 1px solid white;
+				border-bottom: 1px solid $greyBorder;
+
+				&:first-child {
+					border-radius: 5px 5px 0 0;
+				}
+
+				&:last-child {
+					border-radius: 0 0 5px 5px;
+					border-bottom: none;
+				}
+
+				&.active {
+					border: 1px solid $tealBlue;
+
+					h2 {
+						i {
+							transform: rotate(180deg);
+						}
+					}
+				}
+				h2 {
+					padding: 20px 60px 20px 30px;
+					font-size: 18px;
+					position: relative;
+					cursor: pointer;
+
+					i {
+						transition: all .3s ease;
+						font-family: $icon;
+						position: absolute;
+						right: 0;
+						width: 60px;
+						text-align: center;
+						color: $tealBlue;
+					}
+				}
+
+				.answer {
+					padding: 30px 30px 30px 60px;
+					font-size: 14px;
+					display: none;
+
+					p {
+						margin-bottom: 20px;
+						line-height: 1.2;
+
+						&:nth-last-of-type(1) {
+							margin-bottom:0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.support {
+		float: left;
+		width: 400px;
+		margin-top: 80px;
+
+		@media #{$smlDesktop} {
+			width: 300px;
+		}
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			float: none;
+			width: 100%;
+			margin-top: 40px;
+		}
+
+		.info {
+			background: white url('../images/dog.jpg') bottom right -10px no-repeat;
+			background-size: 50%;
+			border-radius: 5px 5px 0 0;
+			padding: 40px;
+
+			h3 {
+				color: $tealBlue;
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 30px;
+				font-style: italic;
+				margin-bottom: 40px;
+				line-height: 1.2;
+				span {
+					display: block;
+					color: $purple;
+					font-size: 20px;
+					font-weight: normal;
+					text-transform: none;
+					font-style: normal;
+				}
+
+				@media #{$smlDesktop}, #{$tablet}, #{$phablet}, #{$phone} {
+					font-size: 24px;
+					span {
+						font-size: 18px;
+					}
+				}
+			}
+
+			p {
+				color: $darkGreyText;
+				font-size: 16px;
+				line-height: 1.4;
+
+				&:nth-last-of-type(1) {
+					padding-top:40px;
+				}
+				span {
+					color: $lightGreyText;
+				}
+			}
+		}
+
+		form {
+			background: $tealBlue;
+			border-radius: 0 0 5px 5px;
+			padding: 40px;
+
+			h6 {
+				color: white;
+				font-size: 20px;
+				margin-bottom: 20px;
+			}
+
+			input[type="text"],
+			input[type="email"],
+			textarea {
+				width: 100%;
+				margin-bottom: 20px;
+				height: 40px;
+				padding: 0 20px;
+				border-radius: 5px;
+				border:none;
+				font-family: $sans;
+				font-size: 16px;
+				color: $darkGreyText;
+				outline: none;
+
+				&::-webkit-input-placeholder {
+				  color: $lightGreyText;
+				}
+				
+				&:-moz-placeholder {
+				  color: $lightGreyText;  
+				}
+				
+				&::-moz-placeholder {
+				  color: $lightGreyText;  
+				}
+				
+				&:-ms-input-placeholder {  
+				  color: $lightGreyText;  
+				}
+			}
+
+			textarea {
+				padding: 10px 20px;
+				height: 100px;
+				max-width: 100%;
+			}
+
+			input[type="submit"] {
+				display: block;
+				margin: auto;
+				padding: 0 30px;
+				height: 40px;
+				background: $purple;
+				background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+				border-radius: 50px;
+				color: white;
+				text-transform: uppercase;
+				border: none;
+				font-family: $sans;
+				font-weight: 700;
+				font-size: 18px;
+				cursor: pointer;
+
+				&:hover {
+					background: $purple;
+				}
+			}
+		}
+	}
+}
+
+.privacy {
+	border-top: 2px solid $lightGreyBG;
+	background: white;
+
+	.wrapper {
+		padding: 100px;
+
+		@media #{$smlDesktop}, #{$tablet} {
+			padding: 50px;
+		}
+
+		@media #{$phablet}, #{$phone} {
+			padding: 20px;
+		}
+	}
+
+	h1 {
+		color: $blueText;
+		font-size: 30px;
+		margin-bottom: 50px;
+
+		@media #{$phablet}, #{$phone} {
+			font-size: 18px;
+			margin-bottom: 30px;
+		}
+	}
+
+	p {
+		color: $darkGreyText;
+		font-size: 14px;
+		margin-bottom: 30px;
+		line-height: 1.2;
+
+		@media #{$phablet}, #{$phone} {
+			margin-bottom: 15px;
+			font-size: 12px;
+		}
+	}
+}
+
+.purchasePlans {
+	padding-top: 60px;
+	padding-bottom: 30px;
+	@extend .clearfix;
+	@media #{$phone} {
+		padding-top: 30px;
+	}
+
+	.steps {
+		@extend .clearfix;
+		display: table;
+		width: 100%;
+		margin-bottom: 30px;
+		li {
+			display: table-cell;
+			a {
+				display: block;
+				font-size: 15px;
+				text-decoration: none;
+				position:relative;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				font-weight: 400;
+				background: $darkGreyText;
+				color: $lightGreyText;
+				margin-right: 23px;
+
+				&.current {
+					background: $lightGreyText;
+					color: white;
+					font-weight: 600;
+				}
+
+				&.complete {
+					background: $purple;
+					color: white;
+					font-weight: 600;
+				}
+
+				.short {
+					display: none;
+				}
+
+				@media #{$phablet}, #{$phone} {
+					.short {
+						display: block;
+					}
+
+					.long {
+						display: none;
+					}
+				}
+
+				@media #{$phone} {
+					font-size: 13px;
+					height: 35px;
+					line-height: 35px;
+				}
+			}
+
+			&:first-child{
+		      a{
+				padding-left:15px;
+				border-radius: 4px 0 0 4px;
+					&:before{
+						border:none;
+					}
+				}
+		    }
+
+		    &:last-child{
+		      a{
+				padding-right:15px;
+				border-radius: 0 4px 4px 0;
+				margin-right: 0;
+					&:after{
+						border:none;
+					}
+				}
+		    }
+
+		    a{   
+				&:before,
+				&:after{
+					content: "";
+					position:absolute;
+					top: 0;
+					border:0 solid $darkGreyText;
+					border-width:25px 10px;
+					width: 0;
+					height: 0;
+
+					@media #{$phone} {
+						border-width: 18px 10px 17px 10px;
+					}
+				}
+				&:before{
+					left:-20px;
+					border-left-color:transparent;
+				}
+				&:after{
+					left:100%;
+					border-color:transparent;
+					border-left-color:$darkGreyText;
+				}
+				&:hover{
+					background-color: darken($darkGreyText, 5%);
+
+					&:before{
+						border-color:darken($darkGreyText, 5%);
+						border-left-color:transparent;
+					}
+					&:after{
+						border-left-color:darken($darkGreyText, 5%);
+					}
+				}
+
+				&.current {
+					background-color: $lightGreyText;
+					&:before{border-color:$lightGreyText;border-left-color:transparent;}
+					&:after{border-left-color:$lightGreyText;}
+				}
+
+				&.complete {
+					background-color: $purple;
+					&:before{border-color:$purple;border-left-color:transparent;}
+					&:after{border-left-color:$purple;}
+				}
+			}
+		}
+	}
+
+	.plansWrapper {
+		width: calc(80% - 30px);
+		margin-right: 30px;
+		float: left;
+		display: flex;
+		flex-direction: column;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			width: 100%;
+			float: none;
+		}
+
+		.plans-heading {
+			@media #{$phablet}, #{$phone} {
+				margin-bottom: 20px;
+				margin-top: -20px;
+			}
+
+			&.nav-wrapper {
+				margin-bottom: 60px;
+				@media #{$phablet}, #{$phone} {
+					margin-bottom: 0;
+				}
+			}
+
+			max-width: 650px;
+
+
+			h2 {
+				color: $purple;
+				line-height: 1.5;
+				font-size: 30px;
+				font-weight: 700;
+
+				@media #{$phablet}, #{$phone} {
+					font-size: 18px;
+					line-height: 1.4;
+					margin-bottom: 5px;
+					text-align: center;
+				}
+			}
+
+			p {
+				color: $darkGreyText;
+				font-size: 18px;
+				line-height: 1.2;
+				font-weight: 600;
+				font-style: italic;
+
+				@media #{$phablet}, #{$phone} {
+					font-size: 10px;
+					line-height: 1.4;
+					text-align: center;
+
+					&:nth-last-of-type(1) {
+						font-size: 8px;
+					}
+				}
+			}
+
+			nav {
+				margin-top: 40px;
+
+				@media #{$phablet}, #{$phone} {
+					margin-top: 0;
+				}
+
+				span {
+					margin-right: 40px;
+
+					@media #{$phablet}, #{$phone} {
+						display: block;
+						line-height: 1.4;
+						margin-bottom: 5px;
+					}
+
+					&:nth-last-of-type(1) {
+						margin-right: 0;
+					}
+				}
+
+				a {
+					color: $tealBlue;
+					text-transform: uppercase;
+					font-weight: 700;
+					text-decoration: none;
+					
+
+					&:hover {
+						color: $purple;
+					}
+
+					i {
+						font-family: $icon;
+					}
+				}
+			}
+		}
+
+		.plans-heading.nav-wrapper {
+			@media #{$tablet}, #{$phablet}, #{$phone} {
+				order: 3;
+			}
+		}
+
+		ul.plans {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+			@media  #{$phablet}, #{$phone} {
+				padding: 0;
+				margin-bottom: 40px;
+			}
+
+			> li {
+				width: calc((100% / 3) - 20px);
+				background: white;
+				margin-bottom: 30px;
+				border-radius: 5px;
+				border: 1px solid $greyBorder;
+				color: $darkGreyText;
+				text-align: center;
+				padding-bottom: 100px;
+				position: relative;
+				overflow: hidden;
+				display: block;
+
+				@media #{$phablet}, #{$phone} {
+					padding-bottom: 0;
+					margin-bottom: 5px;
+					min-height: 145px;
+					display: flex;
+					align-items: center;
+					flex-wrap: wrap;
+				}
+
+				&.is-new {
+					// @media #{$phablet}, #{$phone} {
+					// 	padding-left: 40px;
+
+					// 	a {
+					// 		left: 60px;
+
+					// 	}
+					// }
+
+					@media #{$phablet}, #{$phone} {
+						padding-top: 40px;
+						border: 1px solid $tealBlue;
+
+						h6 {
+							transform: translate(0, -40px);
+						}
+
+						a {
+						    transform: translate(0%, 60px);
+						}
+					}
+
+					&:hover {
+						a {
+							@media #{$phablet}, #{$phone} {
+								transform: translate(0%, 60px) scale(1);
+							}
+						}
+					}
+				}
+				
+				.plan-wrapper {
+					@media #{$phablet}, #{$phone} {
+						position: relative;
+						display: flex;
+						width: 100%;
+						justify-content: space-between;
+						flex-wrap: wrap;
+					}
+				}
+
+				.black-friday {
+					@media #{$phablet}, #{$phone} {
+						background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+						text-align: center;
+						padding: 10px;
+						width: 100%;
+					}
+
+					h2 {
+						color: $purple;
+						font-size: 20px;
+						padding: 0 20px;
+						font-weight: 700;
+						margin-top: 30px;
+
+						@media #{$phablet}, #{$phone} {
+							font-size: 18px;
+							color: white;
+							margin-top: 0;
+							padding: 0;
+						}
+					}
+
+					p {
+						color: $darkGreyText;
+						font-size: 16px;
+						@media #{$phablet}, #{$phone} {
+							font-size: 14px;
+							color: white;
+							font-weight: 300;
+						}
+					}
+
+				}
+
+				@media #{$phablet} {
+					width: calc(50% - 15px);
+				}
+
+				@media #{$phone} {
+					width: 100%;
+					margin-right: 0;
+				}
+
+				&:hover {
+					border: 1px solid $tealBlue;
+					a {
+						transform: translateX(-50%) scale(1.3);
+
+						@media #{$phablet}, #{$phone} {
+							transform: translate(0%, 50px) scale(1);
+						}
+					}
+				}
+
+				.new {
+					position: absolute;
+					background: $tealBlue;
+					color: white;
+					padding: 50px 50px 5px 50px;
+					text-transform: uppercase;
+					font-size: 14px;
+					font-weight: 700;
+					left: -60px;
+					top: -28px;
+					top: -16px;
+					transform: rotate(-45deg);
+					z-index: 2;
+
+					// @media #{$phablet}, #{$phone} {
+					// 	transform: rotate(0);
+					// 	width: 40px;
+					// 	height: 100%;
+					// 	top: 0;
+					// 	left: 0;
+					// 	padding: 0;
+
+					// 	span {
+					// 		position: absolute;
+					// 		transform: rotate(-90deg);
+					// 		top: 50%;
+					// 		left: 50%;
+					// 		transform-origin: left;
+					// 	}
+					// }
+
+					@media #{$phablet}, #{$phone} {
+						transform: rotate(0);
+						width: 100%;
+						left: 0;
+						top: 0;
+						padding: 0;
+						height: 40px;
+						line-height: 40px;
+						text-align: center;
+					}
+				}
+
+				.holiday-deal {
+					position: absolute;
+					background: $holidayRed;
+					color: white;
+					padding: 50px 50px 5px 50px;
+					text-transform: uppercase;
+					font-size: 12px;
+					font-weight: 700;
+					left: -69px;
+					top: -28px;
+					top: -9px;
+					transform: rotate(-45deg);
+				}
+
+				h6 {
+					padding: 30px;
+					font-size: 60px;
+					font-weight: 800;
+
+					@media #{$phablet}, #{$phone} {
+						padding: 20px 0 0 0;
+						font-size: 48px;
+						text-align: center;
+						width: 150px;
+						align-self: center;
+					    transform: translate(0, -30px);
+					}
+
+
+					sub {
+						vertical-align: baseline;
+						font-size: 14px;
+						font-weight: 400;
+					}
+
+					sup {
+						vertical-align: super;
+						font-size: 30px;
+					}
+				}
+
+				h5 {
+					background: $lightGreyText;
+					background: none;
+					line-height: 40px;
+					color: white;
+					font-weight: 700;
+					margin-bottom: 30px;
+					color: $purple;
+					font-size: 18px;
+				}
+
+				.plan-specific-features {
+					@media #{$phablet}, #{$phone} {
+						flex: 1;
+						order: -1;
+					}
+				}
+
+				ul {
+					@media #{$phablet}, #{$phone} {
+						flex: 1;
+						padding: 10px;
+					}
+					li {
+						margin-bottom: 5px;
+						line-height: 1.2;
+						padding: 0 30px;
+
+						@media #{$phablet}, #{$phone} {
+							padding: 0;
+							font-size: 14px;
+						}
+						em {
+							color: $purple;
+							font-weight: 700;
+						}
+					}
+				}
+
+				img {
+					width: 30%;
+					display: block;
+					margin: auto;
+
+					@media #{$phablet}, #{$phone} {
+						display: none;
+					}
+				}
+
+				p {
+					color: $lightGreyText;
+					font-size: 14px;
+					padding-top: 5px;
+				}
+
+				a {
+					display: inline-block;
+					background: $purple;
+					background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+					border-radius: 40px;
+					padding: 0 40px;
+					height: 40px;
+					line-height: 40px;
+					color: white;
+					font-weight: 600;
+					transition: all .3s ease;
+					text-decoration: none;
+					margin: 30px 0;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+
+					@media #{$phablet}, #{$phone} {
+						right: 20px;
+						left: initial;
+						bottom: 50%;
+					    transform: translate(0%, 50px);
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.verifyWrapper {
+		width: calc(80% - 30px);
+		margin-right: 30px;
+		float: left;
+		background: white;
+		border-radius: 5px;
+		padding: 30px;
+		margin-bottom: 30px;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			width: 100%;
+			float: none;
+		}
+
+		.verify {
+			padding-bottom: 30px;
+			border-bottom: 1px solid $greyBorder;
+			@extend .clearfix;
+			h1 {
+				color: $tealBlue;
+				font-size: 30px;
+				margin-bottom: 30px;
+			}
+
+			input[type="text"], input[type="email"] {
+				height: 50px;
+				border: 2px solid $greyBorder;
+				color: $darkGreyText;
+				padding: 0 20px;
+				outline: none;
+				border-radius: 5px;
+				font-family: $sans;
+				font-size: 18px;
+				float: left;
+				width: calc(33.33333333333333% - 20px);
+				margin-right: 30px;
+				margin-bottom: 30px;
+
+				@media #{$phablet} {
+					width: calc(50% - 15px);
+
+					&:nth-of-type(2n) {
+						margin-right: 0;
+					}
+				}
+
+				@media #{$phone} {
+					width: 100%;
+					margin-right: 0;
+				}
+
+				&:nth-last-of-type(1) {
+					@media #{$tablet}, #{$smlDesktop}, #{$desktop} {
+						margin-right: 0;
+					}
+				}
+
+				&::-webkit-input-placeholder {
+				  color: $lightGreyText;
+				}
+				
+				&:-moz-placeholder {
+				  color: $lightGreyText;  
+				}
+				
+				&::-moz-placeholder {
+				  color: $lightGreyText;  
+				}
+				
+				&:-ms-input-placeholder {  
+				  color: $lightGreyText;  
+				}
+
+				&:focus {
+					border: 2px solid $tealBlue;
+				}
+			}
+
+			.b-contact {
+				@extend .clearfix;
+			}
+
+			.b-type {
+				margin: 0 0 30px 0;
+
+				.b-inputWrap {
+					margin: 10px 0;
+
+					input[type="radio"] {
+						display: none;
+						background: url('../images/checked.svg') no-repeat;
+					}
+
+					input[type="radio"] + label:before {
+						content: '';
+						display: inline-block;
+						width: 15px;
+						height: 15px;
+						background: url('../images/unchecked.svg') no-repeat;
+						vertical-align: middle;
+						cursor: pointer;
+						margin: -1px 10px 0 0px;
+					}
+
+					input[type="radio"]:checked + label:before {
+						background: url('../images/checked.svg') no-repeat;
+					}
+
+					label {
+						display: inline-block;
+						font-size: 16px;
+						color: $darkGreyText;
+						font-family: $sans;
+						cursor: pointer;
+						font-weight: 700;
+						line-height: 1.2;
+					}
+				}
+			}
+		}
+
+		.proof {
+			padding-top: 30px;
+			color: $darkGreyText;
+
+			h3 {
+				font-weight: 700;
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 14px;
+				margin-bottom: 5px;
+				color: $lightGreyText;
+				em {
+					font-style: italic;
+				}
+			}
+
+			.b-fileInput {
+				margin: 30px 0;
+
+				p {
+					color: $lightGreyText;
+					font-size: 14px;
+					font-weight: 600;
+					margin-bottom: 10px;
+				}
+
+				input[type="file"] {
+					display: none;
+				}
+
+				a {
+					color: white;
+					height: 50px;
+					line-height: 50px;
+					padding: 0 30px;
+					font-size: 16px;
+					font-weight: 600;
+					text-decoration: none;
+					background: $tealBlue;
+					display: inline-block;
+					border-radius: 50px;
+					cursor: pointer;
+
+					&:hover {
+						background: $lightGreyText;
+					}
+				}
+			}
+
+			.b-proofFile{
+				display: inline-block;
+
+				img {
+					border: 2px solid $blueText;
+				}
+
+				p {
+					text-align: center;
+				}
+			}
+		}
+
+		.b-submit {
+			margin: 30px 0 60px;
+
+			p {
+				margin-top: 10px;
+				font-size: 14px;
+				font-style: italic;
+				color: $darkGreyText;
+			}
+
+			input[type="submit"] {
+				height: 50px;
+				padding: 0 30px;
+				color: white;
+				background: $purple;
+				background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+				border-radius: 50px;
+				cursor: pointer;
+				border: none;
+				font-size: 18px;
+				outline: none;
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 14px;
+
+				&:hover {
+					background: $purple;
+				}
+			}
+		}
+	}
+
+
+	.paymentsWrapper {
+		width: calc(80% - 30px);
+		margin-right: 30px;
+		float: left;
+		background: white;
+		border-radius: 5px;
+		padding: 30px;
+		margin-bottom: 30px;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			width: 100%;
+			float: none;
+
+			padding: 30px 20px;
+		}
+
+
+		.paymentStatus,
+		.paymentDetails-shipping,
+		.paymentDetails-billing,
+		.discount,
+		.creditCardInfo {
+			padding: 30px;
+			border-bottom: 1px solid $greyBorder;
+			@extend .clearfix;
+
+			@media #{$phone} {
+				padding:  30px 0;
+			}
+
+			&.creditCardInfo {
+				border-bottom: none;
+			}
+
+
+
+			h1 {
+				font-size: 30px;
+				color: $tealBlue;
+
+				img {
+					vertical-align: middle;
+				}
+			}
+
+			p {
+				font-size: 16px;
+				color: $darkGreyText;
+
+				em {
+					font-size:14px;
+					color: $lightGreyText;
+					padding-top: 10px;
+					display: inline-block;
+				}
+			}
+
+			h4 {
+				color: $darkGreyText;
+				font-size: 18px;
+				font-weight: 700;
+				padding-top: 30px;
+				padding-bottom: 10px;
+			}
+			
+			select {
+				width: calc(50% - 90px);
+				float: right;
+				height: 50px;
+				border: 2px solid $greyBorder;
+				outline: none;
+				margin: 0 60px 30px 0;
+				border-radius: 5px;
+				font-family: $sans;
+				padding: 0 20px;
+				color: $darkGreyText;
+				font-size: 18px;
+				@media #{$phone} {
+					width: 100%;
+					margin-right: 0;
+				}
+			}
+
+			input[type="text"],
+			input[type="tel"],
+			input[type="email"],
+			input[type="password"] {
+				width: calc(50% - 30px);
+				float: left;
+				height: 50px;
+				border: 2px solid $greyBorder;
+				outline: none;
+				margin: 0 60px 30px 0;
+				border-radius: 5px;
+				font-family: $sans;
+				padding: 0 20px;
+				color: $darkGreyText;
+				font-size: 18px;
+
+				@media #{$phone} {
+					width: 100%;
+					margin-right: 0;
+				}
+
+				&:focus {
+					border-color: $blueText;
+				}
+
+				&:nth-of-type(2n) {
+					margin-right: 0;
+				}
+
+			}
+			&.discount {
+				input {
+					margin-right: 0;
+					border-right: 0;
+					border-radius: 5px 0 0 5px;
+
+					@media #{$phone} {
+						width: 70%;
+						margin-right: 0;
+					}
+
+					&:focus ~ buttom {
+						border-color: $tealBlue !important;
+					}
+				}
+
+				button {
+					float: left;
+					height: 50px;
+					padding: 0 30px;
+					background: $tealBlue;
+					border: 1px solid $greyBorder;
+					border-radius: 0 5px 5px 0;
+					color: white;
+					font-family: $sans;
+					text-transform: uppercase;
+					font-size: 15px;
+					border-left: none;
+					cursor: pointer;
+
+					@media #{$phone} {
+						width: 30%;
+					}
+
+					&:hover {
+						background: $lightGreyText;
+					}
+				}
+			}
+
+			&.creditCardInfo {
+				.autopay {
+					background: rgba($tealBlue, .1);
+					display: inline-block;
+					padding: 17px 30px 17px 17px;
+					border-radius: 5px;
+
+					input[type="checkbox"] {
+						display: none;
+						background: url('../images/checked.svg') no-repeat;
+					}
+
+					input[type="checkbox"] + label:before {
+						content: '';
+						display: inline-block;
+						width: 15px;
+						height: 15px;
+						background: url('../images/unchecked.svg') no-repeat;
+						vertical-align: middle;
+						cursor: pointer;
+						margin: -1px 10px 0 0px;
+					}
+
+					input[type="checkbox"]:checked + label:before {
+						background: url('../images/checked.svg') no-repeat;
+					}
+
+					label {
+						display: inline-block;
+						font-size: 16px;
+						color: $darkGreyText;
+						font-family: $sans;
+						cursor: pointer;
+						font-weight: 400;
+						line-height: 1.4;
+
+
+						span {
+							color: $lightGreyText;
+						}
+					}
+				}
+
+				.form {
+					width: 50%;
+					@extend .clearfix;
+
+					@media #{$phone} {
+						width: 100%;
+					}
+					input {
+						width: 100%;
+						margin-right: 0;
+					}
+					.number {
+						width:100%;
+						margin: 0 0 30px 0;
+					}
+
+					.cvv {
+						@extend .clearfix;
+					}
+
+					.exp,
+					.cvv {
+						width: calc(50% - 15px);
+						margin-right: 30px;
+						float: left;
+					}
+
+					.cvv {
+						margin-right: 0;
+						position: relative;
+
+						.cardTip {
+							position: absolute;
+							top: 14px;
+							right: 10px;
+						}
+					}
+				}
+			}
+
+			.sameAsShipping {
+				margin-bottom: 20px;
+				input[type="checkbox"] {
+					display: none;
+					background: url('../images/checked.svg') no-repeat;
+				}
+
+				input[type="checkbox"] + label:before {
+					content: '';
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					background: url('../images/unchecked.svg') no-repeat;
+					vertical-align: middle;
+					cursor: pointer;
+					margin: -1px 10px 0 0px;
+				}
+
+				input[type="checkbox"]:checked + label:before {
+					background: url('../images/checked.svg') no-repeat;
+				}
+
+				label {
+					display: inline-block;
+					font-size: 16px;
+					color: $darkGreyText;
+					font-family: $sans;
+					cursor: pointer;
+					font-weight: 400;
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+
+	.confirmationWrapper {
+		width: calc(80% - 30px);
+		margin-right: 30px;
+		float: left;
+		background: white;
+		border-radius: 5px;
+		padding: 30px;
+		margin-bottom: 30px;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			width: 100%;
+			float: none;
+		}
+
+		.orderNumber {
+			float: left;
+		}
+
+		.orderDate {
+			float: right;
+		}
+
+		.orderNumber, .orderDate {
+			color: $lightGreyText;
+			span {
+				color: $darkGreyText;
+			}
+
+			@media #{$phablet}, #{$phone} {
+				float: none;
+				text-align: center;
+				padding-bottom: 10px;
+			}
+		}
+
+
+		h1 {
+			clear: both;
+			text-align: center;
+			color: $tealBlue;
+			font-size: 71px;
+			font-weight: 300;
+			line-height: 1.2;
+			padding-top: 10px;
+
+			@media #{$phone} {
+				font-size: 48px;
+			}
+			span {
+				display: block;
+				font-size: 16px;
+				color: $darkGreyText;
+				font-weight: 400;
+			}
+
+			img {
+				width: 30%;
+				max-width: 115px;
+				display: block;
+				margin: auto;
+			}
+		}
+
+		table {
+			margin: 30px 0;
+			width: 100%;
+
+			thead {
+				th {
+					font-size: 13px;
+					color: $lightGreyText;
+					border-bottom: 1px solid $greyBorder;
+					padding-bottom: 10px;
+					&.item {
+						text-align: left;
+					}
+
+					&.price {
+						text-align: right;
+					}
+				}
+			}
+
+			tbody {
+				color: $darkGreyText;
+				tr {
+					border-bottom: 1px solid $greyBorder;
+					
+					td {
+						padding: 20px 0;
+						@media #{$phone} {
+							padding: 10px;
+							font-size: 12px;
+						}
+
+						&.item {
+							font-weight: 700;
+						}
+
+						&.price {
+							text-align: right;
+						}
+					}	
+				}
+			}
+
+			tfoot tr {
+				td {
+					padding-top: 30px;
+					vertical-align: bottom;
+
+					@media #{$phone} {
+						padding-top: 15px;
+					}
+
+					&[colspan="3"] {
+						text-align: right;
+					}
+
+					p {
+						color: $lightGreyText;
+						padding-top: 10px;
+
+						@media #{$phone} {
+							font-size: 12px;
+							white-space: nowrap;
+						}
+
+						span {
+							color: $darkGreyText;
+						}
+					}
+
+					h6 {
+						font-weight: 700;
+						color: $darkGreyText;
+						@media #{$phone} {
+							font-size: 14px;
+						}
+						span {
+							display: block;
+							color: $purple;
+							font-weight: 300;
+							font-size: 30px;
+
+							@media #{$phone} {
+								font-size: 24px;
+								font-weight: 400;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.billingShipping {
+			@extend .clearfix;
+			color: $darkGreyText;
+			margin-top: 40px;
+			padding: 40px 0;
+			border-top: 1px solid $greyBorder;
+
+			@media #{$phone} {
+				padding: 20px 0 0;
+				margin-top: 20px;
+			}
+			li {
+				width: 33.33333333333333%;
+				float: left;
+				line-height: 1.5;
+
+				@media #{$phablet}{
+					width: 50%;
+					margin-bottom: 20px;
+				}
+
+				@media #{$phone} {
+					width: 100%;
+					margin-bottom: 20px;
+					text-align: center;
+				}
+
+				h6 {
+					font-weight: 700;
+				}
+
+				p {
+					line-height: 1.5;
+				}
+			}
+		}
+
+		.rating {
+			padding: 40px 0;
+			border-top: 1px solid $greyBorder;
+			text-align: center;
+
+			@media #{$phone} {
+				padding: 20px 0 0px;
+			}
+
+			h5 {
+				color: $tealBlue;
+				font-size: 24px;
+				margin-bottom: 20px;
+
+				@media #{$phone} {
+					font-size: 18px;
+				}
+			}
+
+			li {
+				margin: 0 20px;
+				display: inline-block;
+				@media #{$phone} {
+					margin: 0 5px;
+				}
+				a {
+					font-size: 40px;
+					font-family: $icon;
+					text-decoration: none;
+					color: $lightGreyText;
+
+					@media #{$phone} {
+						font-size: 30px;
+					}
+
+					&:hover {
+						color: $greenText;
+					}
+				}
+			}
+		}
+	}
+
+	.showCart {
+		display: none;
+		height: 50px;
+		line-height: 50px;
+		background: $purple;
+		padding: 0 30px;
+		@extend .clearfix;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+
+		.next {
+			float: right;
+		}
+
+		.openCart {
+			float: left;
+		}
+
+		a {
+			color: white;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 700;
+
+			i {
+				font-family: $icon;
+				font-weight: 400;
+			}
+		}
+
+		@media  #{$tablet}, #{$phablet}, #{$phone} {
+			display: block;
+		}
+	}
+
+	aside.cart {
+		float: left;
+		width: 20%;
+		border-radius: 5px;
+
+		@media  #{$tablet}, #{$phablet}, #{$phone} {
+			border-radius: 0;
+			clear: both;
+			width: 100%;
+			float: none;
+			background: white;
+			position: fixed;
+			bottom: 50px;
+			z-index: 100;
+			width: 100%;
+			left: 0;
+			transform: translatey(100%); 
+			transition: all .3s ease;
+			max-height: 70%;
+			overflow-y: scroll;
+
+			&.showing {
+				z-index: 1000;
+				transform: translatey(0%);
+			}
+		}
+
+		h5 {
+			padding: 20px 30px;
+			color: $tealBlue;
+			font-size: 16px;
+			text-transform: uppercase;
+			font-weight: 700;
+			border: 1px solid $greyBorder;
+			border-radius: 5px 5px 0 0;
+			background: white;
+			position: relative;
+
+			@media  #{$tablet}, #{$phablet}, #{$phone} {
+				border-radius: 0;
+			}
+
+			@media #{$smlDesktop}, #{$desktop} {
+				&:after {
+					content: '';
+					position: absolute;
+					top: -1px;
+					left: -1px;
+					width: 100%;
+					height: 28px;
+					background: $lightGreyBG;
+					transform: translatey(-100%);
+					border: 1px solid $lightGreyBG;
+				}
+			}
+		}
+
+		.selectedPlan {
+			border: 1px solid $greyBorder;
+			padding: 10px 30px 20px;
+			position: relative;
+			background: white;
+
+			&:hover {
+				border: 1px solid $tealBlue;
+				i {
+					display: block;
+				}
+			}
+
+			i {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				font-size: 24px;
+				font-family: $icon;
+				color: $lightGreyText;
+				display: none;
+				cursor: pointer;
+				&:hover {
+					color: $tealBlue;
+				}
+			}
+
+			ul {
+				li {
+					border-bottom: 2px solid $greyBorder;
+					padding: 20px 0;
+					color: $darkGreyText;
+					&:last-child {
+						border-bottom: none;
+						padding-bottom: 0;
+					}
+
+					.price {
+						font-size: 36px;
+						margin-bottom: 10px;
+						sup {
+							vertical-align: super;
+							font-size: 18px;
+						}
+
+						sub {
+							font-size: 18px;
+						}
+					}
+
+					.option {
+						font-size: 16px;
+					}
+
+					.description {
+						font-size: 14px;
+						font-style: italic;
+						line-height: 1.5;
+					}
+				}
+			}
+		}
+
+		.total {
+			background: $lightGreyBG;
+			border: 1px solid $greyBorder;
+			padding: 15px 30px;
+			color: $darkGreyText;
+
+			p {
+				font-weight: 700;
+				padding: 3px 0;
+					
+				span {
+					float: right;
+
+					sub {
+						font-size: 12px;
+					}
+				}
+
+				&.tax {
+					font-weight: 400;
+				}
+			}
+		}
+
+		.button {
+			white-space: nowrap;
+			@media  #{$tablet}, #{$phablet}, #{$phone} {
+				display: none;
+			}
+			a {
+				display: block;
+				background: $purple;
+				background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+				color: white;
+				height: 60px;
+				line-height: 60px;
+				border-radius: 0 0 5px 5px;
+				text-transform: uppercase;
+				font-weight: 700;
+				padding: 0 30px;
+				text-decoration: none;
+				transition: all .3s ease;
+				overflow: hidden;
+
+				&:hover {
+					padding: 0 60px;
+				}
+				i {
+					float: right;
+					font-weight: normal;
+					font-family: $icon;
+				}
+			}
+		}
+
+		p.fineprint {
+			font-size: 12px;
+			padding: 10px;
+			text-align: center;
+			color: $darkGreyText;
+			line-height: 1.2;
+
+			a {
+				font-weight: 600;
+				text-decoration: none;
+				color: $tealBlue;
+			}
+		}
+	}
+
+	aside.login {
+		float: left;
+		width: 20%;
+		border-radius: 5px;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			clear: both;
+			width: 100%;
+			float: none;
+			background: white;
+			padding: 30px;
+		}
+
+		h6 {
+			text-align: center;
+			color: $darkGreyText;
+			font-size: 18px;
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
+
+		form {
+			ul {
+				li {
+					margin-bottom: 20px;
+					position: relative;
+
+					a {
+						position: absolute;
+						top: 18px;
+						right: 10px;
+						font-size: 12px;
+						color: $tealBlue;
+						text-decoration: none;
+						font-style: italic;
+					}
+
+					input {
+						width: 100%;
+						height: 50px;
+						border: 2px solid $greyBorder;
+						padding: 0 20px;
+						outline: none;
+						font-family: $sans;
+						font-size: 18px;
+						color: $darkGreyText;
+						border-radius: 5px;
+
+						&:focus {
+							border: 2px solid $tealBlue;
+						}
+					}
+				}
+			}
+
+			button {
+				display: block;
+				background: $purple;
+				background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+				color: white;
+				height: 60px;
+				line-height: 60px;
+				text-transform: uppercase;
+				font-weight: 700;
+				padding: 0 30px;
+				text-decoration: none;		
+				overflow: hidden;
+				font-family: $sans;
+				margin: auto;
+				border: none;
+				border-radius: 60px;
+				font-size: 18px;
+				cursor: pointer;
+
+				&:hover {
+					i {
+						padding-left: 30px;
+					}
+				}
+				i {
+					transition: all .3s ease;
+					float: right;
+					font-weight: normal;
+					font-family: $icon;
+					padding-left: 10px;
+				}
+			}
+		}
+
+		.twitter {
+			margin-top: 30px;
+			background: white;
+			border-radius: 5px;
+			padding: 30px;
+			text-align: right;
+
+			p {
+				color: $darkGreyText;
+				line-height: 1.5;
+				padding-bottom: 20px;
+				text-align: left;
+			}
+
+			a {
+				color: $tealBlue;
+				text-decoration: none;
+
+				i {
+					font-family: $icon;
+					font-size: 28px;
+				}
+			}
+		}
+	}
+}
+
+.featuresHero {
+	text-align: center;
+	h1 {
+		color: $purple;
+		font-size: 48px;
+		font-style: italic;
+		padding: 80px 0 40px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1.2;
+
+		@media #{$phablet}, #{$phone} {
+			padding: 40px 20px;
+			font-size: 36px;
+		}
+	}
+
+	p {
+		color: $darkGreyText;
+		font-size: 20px;
+		max-width: 800px;
+		margin: 0 auto 40px;
+		line-height: 1.4;
+
+		@media #{$phablet}, #{$phone} {
+			padding: 0 20px;
+			font-size: 16px;
+		}
+	}
+
+	a {
+		background: $purple;
+		background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+		border-radius: 50px;
+		padding: 0 30px;
+		height: 50px;
+		line-height: 50px;
+		display: inline-block;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 20px;
+		cursor: pointer;
+		span {
+			font-size: 14px;
+		}
+
+		i {
+			font-family: $icon;
+			font-weight: normal;
+			padding-left: 20px;
+		}
+
+		&:hover {
+			background: $darkPurple;
+		}
+	}
+
+	img {
+		display: block;
+		width: 90%;
+		margin: auto;
+		margin-top: -100px;
+		position: relative;
+		z-index: -1;
+
+		@media #{$phablet}, #{$phone} {
+			margin-top: 0;
+		}
+	}
+}
+
+
+.phonesFeaturesHero {
+	.wrapper {
+		position: relative;
+		text-align: center;
+		position: relative;
+		padding-bottom: 100px;
+		overflow: hidden;
+	}
+
+	@media #{$phablet}, #{$phone} {
+		padding-bottom: 60px;
+	}
+	h1 {
+		color: $purple;
+		font-size: 48px;
+		font-style: italic;
+		padding: 80px 0 40px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1.2;
+		max-width: 600px;
+		margin: auto;
+
+		@media #{$phablet}, #{$phone} {
+			padding: 40px 20px;
+			font-size: 36px;
+		}
+	}
+
+	p {
+		color: $darkGreyText;
+		font-size: 20px;
+		max-width: 600px;
+		margin: 0 auto 40px;
+		line-height: 1.4;
+
+		@media #{$phablet}, #{$phone} {
+			padding: 0 20px;
+			font-size: 16px;
+		}
+	}
+
+	a {
+		background: $purple;
+		background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+		border-radius: 50px;
+		padding: 0 30px;
+		height: 50px;
+		line-height: 50px;
+		display: inline-block;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 14px;
+		cursor: pointer;
+		span {
+			font-size: 14px;
+		}
+
+		i {
+			font-family: $icon;
+			font-weight: normal;
+			padding-left: 20px;
+		}
+
+		&:hover {
+			background: $darkPurple;
+		}
+	}
+
+	img {
+		display: block;
+		position: absolute;
+		bottom: -180px;
+		left: -100px;
+		z-index: -1;
+
+		@media #{$phablet}, #{$phone} {
+			display: none;
+		}
+	}
+}
+
+.featuresPreview {
+	.wrapper {
+		background: url('../images/features-bg.jpg') center center no-repeat;
+		background-size: cover;
+		@extend .clearfix;
+		border-radius: 5px 5px 0 0;
+		position: relative;
+
+		@media #{$phablet}, #{$phone} {
+			width: 100%;
+			padding: 0;
+			border-radius: 0;
+		}
+	}
+
+	h2 {
+		padding: 40px 0;
+		text-align: center;
+		color: white;
+		font-size: 36px;
+		font-weight: 700;
+
+		@media #{$phablet}, #{$phone} {
+			font-size: 28px;
+			padding: 40px 20px;
+		}
+	}
+
+	ul {
+		margin: 0 100px 60px 100px;
+
+		@media #{$phablet}, #{$phone} {
+			margin: 0 0 40px 0;
+		}
+
+		li {
+			display: inline-block;
+			width: 32%;
+			margin-bottom: 15px;
+			color: white;
+			font-weight: 400;
+			padding-left: 40px;
+			position: relative;
+			line-height: 1.4;
+			vertical-align: top;
+			span {
+				font-weight: 700;
+			}
+
+			@media #{$phablet} {
+				width: 48%;
+			}
+			@media #{$phone} {
+				width: 100%;
+				text-align: center;
+				padding-left: 0px;
+			}
+
+			&:before {
+				content: 'V';
+				font-family: $icon;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				@media #{$phone} {
+					display: none;
+				}
+			}
+		}
+	}
+
+	p.fineprint {
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+		font-size: 14px;
+		font-style: italic;
+		color: white;
+	}
+}
+
+.featuresSingles {
+
+	@media #{$phablet}, #{$phone} {
+		.wrapper {
+			width: 100%;
+		}
+	}
+
+	article {
+		padding: 80px;
+
+		@media #{$phablet}, #{$phone} {
+			padding: 40px;
+			text-align: center;
+		}
+
+		h3 {
+			font-size: 30px;
+			font-weight: 700;
+			margin-bottom: 30px;
+			color: $purple;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 1.4;
+			margin-bottom: 20px;
+			color: $darkGreyText;
+		}
+
+		a {
+			text-transform: uppercase;
+			font-weight: 700;
+			text-decoration: none;
+			color: $purple;
+			display: inline-block;
+
+			i {
+				font-family: $icon;
+				text-transform: none;
+				font-weight: normal;
+
+				color: $tealBlue;
+			}
+
+			&:hover {
+				color: $tealBlue;
+			}
+		}
+	}
+
+	.virtual-receptionist {
+		background: white url('../images/features-hi.png') left 120px center no-repeat;
+		padding-left: 40%;
+
+		@media #{$phablet}, #{$phone} {
+			background: white;
+			padding-left: 40px;
+		}
+	}
+
+	.smart-voicemail {
+		background: $purple url('../images/features-voicemail.png') right 80px center no-repeat;
+		background-size: 20%;
+		padding-right: 35%;
+
+		@media #{$phablet}, #{$phone} {
+			background: $purple;
+			padding-right: 40px;
+		}
+
+		h3, p {
+			color: white;
+		}
+	}
+
+	.never-miss-a-call {
+		background: white url('../images/features-bring-phone-teltik.png') left bottom no-repeat;
+		background-size: 35%;
+		padding-left: 40%;
+
+		@media #{$phablet}, #{$phone} {
+			background: white;
+			padding-left: 40px;
+		}
+	}
+
+	.noContracts {
+		background: white url('../images/features-no-contract.jpg') right center no-repeat;
+		background-size: 30%;
+		padding-right: 35%;
+		border-bottom: 1px solid $greyBorder;
+
+		@media #{$phablet}, #{$phone} {
+			background: white;
+			padding-right: 40px;
+		}
+	}
+
+	.ownPhone {
+		background: white url('../images/features-bring-phone-teltik.png') left bottom no-repeat;
+		background-size: 35%;
+		padding-left: 40%;
+
+		@media #{$phablet}, #{$phone} {
+			background: white;
+			padding-left: 40px;
+		}
+	}
+
+	.hotspots {
+		background: $purple url('../images/features-hotspot.png') right 80px bottom -10px no-repeat;
+		background-size: 20%;
+		padding-right: 35%;
+
+		@media #{$phablet}, #{$phone} {
+			background: $purple;
+			padding-right: 40px;
+		}
+
+		h3, p {
+			color: white;
+		}
+	}
+
+	.unlimitedData {
+		background: white url('../images/features-unliimed-data.png') 120px center no-repeat;
+		background-size: 20%;
+		padding-left: 40%;
+
+		@media #{$phablet}, #{$phone} {
+			background: white;
+			padding-left: 40px;
+		}
+	}
+
+	.wifiCalling {
+		background: $tealBlue url('../images/features-wifi-calling.png') right 80px center no-repeat;
+		background-size: 20%;
+		padding-right: 35%;
+
+		@media #{$phablet}, #{$phone} {
+			background: $tealBlue;
+			padding-right: 40px;
+		}
+
+		h3, p {
+			color: white;
+		}
+	}
+
+	.musicFreedom {
+		background: white url('../images/features-music.jpg') 100px bottom no-repeat;
+		background-size: 22%;
+		padding-left: 40%;
+
+		@media #{$phablet}, #{$phone} {
+			background: white;
+			padding-left: 40px;
+		}
+
+		img {
+			height: 30px;
+			float: right;
+			margin-top: 30px;
+
+			@media #{$phone}, #{$phablet} {
+				display: block;
+				width: 90%;
+				height: auto;
+				margin: 10px auto 0;
+				float: none;
+			}
+		}
+
+	}
+
+	.dataStash {
+	 	background: $purple url('../images/features-data-stash.png') right 80px center no-repeat;
+		background-size: 20%;
+		padding-right: 35%;
+
+		@media #{$phablet}, #{$phone} {
+			background: $purple;
+			padding-right: 40px;
+		}
+
+		h3, p {
+			color: white;
+		}
+	}
+
+	.etf {
+		background: white url('../images/features-etf.jpg') 100px -50px no-repeat;
+		background-size: 25%;
+		padding-left: 40%;
+
+		@media #{$phablet}, #{$phone} {
+			background: white;
+			padding-left: 40px;
+		}
+	}
+}
+
+
+.feature-details {
+	
+	.wrapper {
+		@media  #{$phablet}, #{$phone} {
+			width: 100%;
+		}
+	}
+
+	nav {
+		border-top: 1px solid $greyBorder;
+		border-bottom: 1px solid $greyBorder;
+		background: white;
+		position: relative;
+
+		.arrow {
+			position: absolute;
+			width: 0; 
+			height: 0; 
+			border-left: 30px solid transparent;
+			border-right: 30px solid transparent;
+			border-bottom: 30px solid $purple;
+			bottom: -1px;
+			transform: translatex(-50%);
+			transition: all .3s linear;
+
+			@media #{$phone} {
+				border-left: 15px solid transparent;
+				border-right: 15px solid transparent;
+				border-bottom: 15px solid $purple;
+				bottom: -2px;
+			}
+			
+			&[data-features="professional"] { left: calc(25% / 2);}
+			&[data-features="reporting"] { left: calc(25% + (25% / 2));}
+			&[data-features="availability"] { left: calc(50% + (25% / 2));}
+			&[data-features="call-handling"] { left: calc(75% + (25% / 2));}
+		}
+		
+		ul {
+			display: flex;
+
+			li {
+				padding: 100px 0;
+				display: flex;
+				flex: 1;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				border-right: 1px solid $greyBorder;
+				cursor: pointer;
+
+				@media #{$tablet}, #{$phablet} {
+					padding: 60px 0;
+				}
+
+				@media #{$tablet}, #{$phablet}, #{$phone} {
+					padding: 30px 0;
+				}
+
+				&:last-child {
+					border-right: 0;
+				}
+
+				&.active {
+					h4 {
+						color: black;
+					}
+					.image-icon {
+						img.default {display: none;}
+						img.active {display: block;}
+					}
+				}
+
+				.image-icon {
+					display: inline-block;
+					width: auto;
+					text-align: center;
+					img.default {display: block;}
+					img.active { display: none; }
+					pointer-events: none;
+
+					@media #{$tablet}, #{$phablet}, #{$phone} {
+						width: 50%;
+
+						img {
+							width: 100%;
+						}
+					}
+				}
+
+				h4 {
+					padding-top: 20px;
+					font-size: 30px;
+					font-weight: 700;
+					color: $lightGreyText;
+					pointer-events: none;
+
+					@media #{$tablet}, #{$phablet}, #{$phone} {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.feature-group-details {
+	padding: 40px;
+	background: $purple;
+
+	.group {
+		display: none;
+		&.active {
+			display: block;
+		}
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+
+			li {
+				padding: 0 20px 0 40px;
+				margin-bottom: 30px;
+				width: 50%;
+				color: white;
+				line-height: 1.3;
+				position: relative;
+
+				@media #{$phablet}, #{$phone} {
+					width: 100%;
+				}
+
+				&:before {
+					position: absolute;
+					top: 2px;
+					left: 0;
+					content: 'V';
+					font-family: $icon;
+					font-size: 20px;
+					color: $tealBlue;
+				}
+
+				h3 {
+					font-size: 24px;
+					font-weight: 700;
+					color: white;
+					margin-bottom: 3px;
+				}
+
+				p {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}
+
+.features-up-next {
+
+	.wrapper {
+		background: white;
+		padding: 100px 0;
+		text-align: center;
+
+		@media  #{$phablet}, #{$phone} {
+			width: 100%;
+			padding: 60px 0;
+		}
+
+		h5 {
+			margin-bottom: 60px;
+			color: black;
+			font-weight: 700;
+			font-size: 58px;
+
+			@media  #{$phablet}, #{$phone} {
+				font-size: 36px;
+				margin-bottom: 40px;
+			}
+
+			span {
+				text-transform: uppercase;
+				display: block;
+				margin-bottom: 10px;
+				color: $purple;
+				font-style: italic;
+				font-size: 28px;
+
+				@media  #{$phablet}, #{$phone} {
+					font-size: 24px;
+				}
+			}
+		}
+
+		a.next {
+			display: inline-block;
+			font-family: $icon;
+			width: 80px;
+			height: 80px;
+			color: white;
+			background: $purple;
+			background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+			border-radius: 50%;
+			line-height: 80px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 48px;
+			cursor: pointer;
+			outline: none;
+
+			@media  #{$phablet}, #{$phone} {
+				width: 60px;
+				height: 60px;
+				line-height: 60px;
+				font-size: 36px;
+			}
+
+			&:hover {
+				background: $darkPurple;
+			}
+		}
+	}
+}
+
+.blog {
+	
+	padding-top: 150px;
+
+	@media #{$phablet}, #{$phone} {
+		padding-top: 75px;
+		.wrapper {
+			width: 95%;
+		}
+	}
+
+	article, nav.pagination {
+		max-width: 650px;
+	}
+
+	article {
+		padding-bottom: 60px;
+		margin-bottom: 60px;
+		border-bottom: 1px solid $greyBorder;
+
+		@media #{$phablet}, #{$phone} {
+			padding-bottom: 30px;
+			margin-bottom: 30px;
+		}
+
+
+		h1 a {
+			color: $greenText;
+			font-size: 30px;
+			font-weight: 700;
+			text-decoration: none;
+			line-height: 1.2;
+
+			@media #{$phablet}, #{$phone} {
+				font-size: 18px;
+			}
+
+			&:hover {
+				color: $blueText;
+			}
+		}
+
+		h3 {
+			color: $lightGreyText;
+			font-size: 14px;
+			margin-bottom: 40px;
+			padding-top: 5px;
+
+			@media #{$phablet}, #{$phone} {
+				margin-bottom: 30px;
+			}
+
+			a {
+				color: $darkGreyText;
+				text-decoration: none;
+			}
+		}
+
+		figure {
+			margin-bottom: 40px;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+			figcaption {
+				padding-top: 10px;
+				font-size: 14px;
+				color: $lightGreyText;
+				font-style: italic;
+
+				@media #{$phablet}, #{$phone} {
+					font-size: 12px;
+					padding-top: 5px;
+				}
+			}
+		}
+
+		p {
+			color: $darkGreyText;
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 40px;
+
+			@media #{$phablet}, #{$phone} {
+				font-size: 14px;
+				margin-bottom: 30px;
+			}
+		}
+
+		a.readMore {
+			font-size: 16px;
+			font-weight: 700;
+			color: $blueText;
+			text-transform: uppercase;
+			text-decoration: none;
+
+			@media #{$phablet}, #{$phone} {
+				font-size: 14px !important;
+			}
+
+			i {
+				text-transform: none;
+				font-family: $icon;
+				font-weight: normal;
+			}
+		}
+	}
+
+	nav.pagination {
+		margin-bottom: 40px;
+		@extend .clearfix;
+		.prev {
+			float: left;
+		}
+		.next {
+			float: right;
+		}
+
+		.next, .prev {
+			text-transform: uppercase;
+			font-size: 16px;
+			color: $lightGreyText;
+			text-decoration: none;
+			font-weight: 700;
+
+			&:hover {
+				color: $darkGreyText;
+
+				@media #{$phablet}, #{$phone} {
+					font-size: 14px;
+				}
+			}
+		}
+
+		ul {
+			@media #{$phablet}, #{$phone} {
+				display: none;
+			}
+
+			width: 100%;
+			text-align: center;
+			li {
+				display: inline-block;
+				margin: 0 5px;
+
+				a {
+					color: $darkGreyText;
+					font-weight: 700;
+					text-decoration: none;
+
+					&:hover, &.active {
+						color: $greenText;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.etf {
+	@media #{$tablet}, #{$phablet}, #{$phone} {
+		.wrapper {
+			width: 100%;
+		}
+	}
+
+
+
+	.etf-hero {
+		padding: 80px 0;
+		background: url('../images/break-free.jpg') no-repeat right bottom -60px;
+
+		@media #{$tablet} {
+			padding: 60px 0;
+		}
+
+		@media #{$phablet} {
+			padding: 40px 0;
+		}
+
+		@media #{$phone} {
+			padding: 30px 0;
+		}
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			padding-bottom: 300px;
+			text-align: center;
+			background: url('../images/break-free.jpg') no-repeat center bottom -250px;
+		}
+
+		h1 {
+			margin: 80px 0;
+			color: $blueText;
+			font-style: italic;
+			font-size: 48px;
+			max-width: 650px;
+			padding-left: 80px;
+			line-height: 1.2;
+
+			@media #{$tablet}, #{$phablet}, #{$phone} {
+				width: 90%;
+				margin: 40px auto;
+				padding-left: 0;
+			}
+
+			@media #{$phablet}, #{$phone} {
+				font-size: 30px;
+			}
+
+			em {
+				color: $greenText;
+				font-size: 60px;
+				text-transform: uppercase;
+				display: block;
+				font-weight: 700;
+
+				@media #{$phablet}, #{$phone} {
+					font-size: 40px;
+				}
+			}
+		}
+
+		p {
+			padding-left: 80px;
+			line-height: 1.5;
+			color: $darkGreyText;
+			font-size: 20px;
+			max-width: 650px;
+
+			@media #{$phablet}, #{$phone} {
+				font-size: 16px;
+			}
+
+			@media #{$tablet}, #{$phablet}, #{$phone} {
+				width: 90%;
+				margin: 40px auto;
+				padding-left: 0;
+			}
+		}
+	}
+
+	.steps {
+		background: white;
+		border-radius: 5px 5px 0 0;
+		padding: 80px;
+
+		@media #{$tablet} {
+			padding: 60px;
+		}
+
+		@media #{$phablet} {
+			padding: 40px;
+		}
+
+		@media #{$phone} {
+			padding: 30px;
+		}
+		
+		h3 {
+			font-size: 30px;
+			font-weight: 700;
+			color: $greenText;
+			margin-bottom: 50px;
+		}
+
+		ul {
+			li {
+				color: $darkGreyText;
+				font-size: 16px;
+				line-height: 1.3;
+				margin-bottom: 50px;
+				position: relative;
+				padding-left: 30px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				span {
+					color: $blueText;
+					font-size: 24px;
+					font-weight: 700;
+					position: absolute;
+					top: -5px;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	.toDo {
+		background: $greenBG url('../images/eft-steps.png') no-repeat right 200px center;
+		padding: 80px;
+
+		@media #{$tablet} {
+			padding: 60px;
+			background: $greenBG;
+		}
+
+		@media #{$phablet} {
+			background: $greenBG;
+			padding: 40px;
+		}
+
+		@media #{$phone} {
+			padding: 30px;
+			background: $greenBG;
+		}
+		
+		h3 {
+			font-size: 30px;
+			font-weight: 700;
+			color: white;
+			margin-bottom: 50px;
+		}
+
+		ul {
+			max-width: 650px;
+			li {
+				color: white;
+				font-size: 16px;
+				margin-bottom: 50px;
+				line-height: 1.3;
+
+				a {
+					color: white;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				span {
+					font-weight: 700;
+					display: block;
+				}
+			}
+		}
+	}
+
+	.request {
+		background: white;
+
+
+		h3 {
+			font-size: 30px;
+			color: $blueText;
+			padding: 80px;
+
+			@media #{$tablet} {
+				padding: 60px;
+			}
+
+			@media #{$phablet} {
+				padding: 40px;
+			}
+
+			@media #{$phone} {
+				padding: 30px;
+			}
+
+			span {
+				color: $lightGreyText;
+				display: block;
+				font-size: 14px;
+			}
+		}
+
+		.elements {
+			max-width: 650px;
+			padding: 20px 80px;
+			@extend .clearfix;
+
+			@media #{$tablet} {
+				padding:20px 60px;
+			}
+
+			@media #{$phablet} {
+				padding:20px 40px;
+			}
+
+			@media #{$phone} {
+				padding:20px 30px;
+			}
+
+			li {
+				width: 100%;
+				margin-bottom: 4%;
+				float: left;
+				position: relative;
+
+				&.half {
+					width: 48%;
+					margin-right: 4%;
+
+					@media #{$phone} {
+						width: 100%;
+						margin-right:0;
+					}
+				}
+
+				&.right {
+					margin-right: 0;
+				}
+				
+				.tip {
+					position: absolute;
+					right: 10px;
+					top: 10px;
+					color: $darkGreyText;
+					font-size: 13px;
+					font-style: italic;
+					width: 150px;
+					text-align: right;
+					line-height: 1.2;
+				}
+
+				input, select {
+					width: 100%;
+					height: 50px;
+					border: 2px solid $greyBorder;
+					border-radius: 5px;
+					background: white;
+					outline: none;
+					padding: 0 20px;
+					color: $darkGreyText;
+					font-size: 16px;
+
+					&:focus {
+						border-color: $blueBG;
+					}
+
+					&::-webkit-input-placeholder {
+					  color: $lightGreyText;
+					  font-family: $sans;
+					}
+					
+					&:-moz-placeholder {
+					  color: $lightGreyText;
+					  font-family: $sans;  
+					}
+					
+					&::-moz-placeholder {
+					  color: $lightGreyText;
+					  font-family: $sans;  
+					}
+					
+					&:-ms-input-placeholder {  
+					  color: $lightGreyText;
+					  font-family: $sans;  
+					}
+				}
+			}
+		}
+
+		.addNumber {
+			display: inline-block;
+			margin: 20px 80px;
+			background: $blueBG;
+			height: 50px;
+			line-height: 50px;
+			padding: 0 20px;
+			color: white;
+			border-radius: 5px;
+			text-decoration: none;
+
+			@media #{$tablet} {
+				margin:20px 60px;
+			}
+
+			@media #{$phablet} {
+				margin:20px 40px;
+			}
+
+			@media #{$phone} {
+				margin:20px 30px;
+			}
+
+			&:hover {
+				background: $greenBG;
+			}
+
+			i {
+				font-weight: 700;
+			}
+		}
+
+		.docs {
+			border-top: 1px solid $greyBorder;
+			padding: 40px 80px 80px 80px;
+
+			@media #{$tablet} {
+				padding: 60px;
+				padding-top: 20px;
+			}
+
+			@media #{$phablet} {
+				padding: 40px;
+				padding-top: 20px;
+			}
+
+			@media #{$phone} {
+				padding: 30px;
+				padding-top: 20px;
+			}
+
+			.fileInput {
+				margin: 30px 0;
+
+				p {
+					color: $lightGreyText;
+					font-size: 14px;
+					font-weight: 600;
+					margin-bottom: 10px;
+				}
+
+				input[type="file"] {
+					display: none;
+				}
+
+				a {
+					color: white;
+					height: 50px;
+					line-height: 50px;
+					padding: 0 30px;
+					font-size: 16px;
+					font-weight: 600;
+					text-decoration: none;
+					background: $blueBG;
+					display: inline-block;
+					border-radius: 5px;
+
+					&:hover {
+						background: $lightGreyText;
+					}
+				}
+			}
+
+			ul.files {
+				li {
+					display: inline-block;
+					margin-right: 20px;
+					margin-bottom: 20px;
+
+					img {
+						border: 2px solid $greyBorder;
+					}
+
+					p {
+						text-align: center;
+						color: $lightGreyText;
+					}
+				}
+			}
+		}
+
+		input[type="submit"] {
+			margin: 0 0 80px 80px;
+			background: $greenBG;
+			color: white;
+			height: 50px;
+			line-height: 50px;
+			padding: 0 30px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: none;
+			font-family: $sans;
+			cursor: pointer;
+
+			@media #{$tablet} {
+				margin:0 0 60px 60px;
+			}
+
+			@media #{$phablet} {
+				margin:0 0 40px 40px;
+			}
+
+			@media #{$phone} {
+				margin:0 0 30px 30px;
+			}
+
+			&:hover {
+				background: $blueBG;
+			}
+		}
+	}
+
+	.fineprint {
+		padding: 30px 0;
+
+		p {
+			width: 90%;
+			margin: auto;
+			font-size: 11px;
+			text-align: center;
+			line-height: 1.3;
+			color: $darkGreyText;
+		}
+	}
+}
+
+
+
+.map {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	background: rgba($blackBG, .8);
+	transition: all .3s ease-in-out;
+	opacity: 0;
+	pointer-events: none;
+
+	&.visible {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	.close-map {
+		position: absolute;
+	    width: 50px;
+	    height: 50px;
+	    line-height: 50px;
+	    text-align: center;
+	    color: $tealBlue;
+	    font-family: "icons";
+	    text-decoration: none;
+	    top: 0;
+	    right: 0;
+	    cursor: pointer;
+
+	    &:hover {
+	    	color: white;
+	    }
+	}
+
+	iframe {
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		height: calc(100% - 100px);
+		width: calc(100% - 100px);
+		border-radius: 5px;
+	}
+}
+
+
+// CONTROL PANAL
+
+.cp {
+	padding-top: 60px;
+	padding-bottom: 30px;
+	@extend .clearfix;
+	@media #{$phone} {
+		padding-top: 30px;
+	}
+
+
+	.cpNav {
+		margin-left: 20%;
+		padding-left: 30px;
+		line-height: 60px;
+		
+
+		@media  #{$tablet}, #{$phablet}, #{$phone} {
+			white-space: nowrap;
+			margin-left: 0;
+			padding-left: 0;
+			overflow: auto;
+
+			-ms-overflow-style: none;
+			overflow: -moz-scrollbars-none;
+
+			&::-webkit-scrollbar { 
+			    display: none; 
+			}
+		}
+		li {
+			display: inline-block;
+			margin-left: 30px;
+
+			a {
+				color: $lightGreyText;
+				font-size: 15px;
+				text-transform: uppercase;
+				font-weight: 700;
+				padding: 5px;
+				border-bottom: 2px solid transparent;
+				text-decoration: none;
+				position: relative;
+
+				span {
+					position: absolute;
+					font-weight: 12px;
+					font-style: italic;
+					font-weight: 500;
+					top: -12px;
+					text-transform: none;
+					line-height: normal;
+				}
+
+				i {
+					font-family: $icon;
+				}
+
+				&:hover {
+					color: $blueText;
+					border-bottom: 2px solid $blueText;
+				}
+			}
+
+			&:last-child {
+				float: right;
+				margin-right: 30px;
+
+				@media  #{$phablet}, #{$phone} {
+					float: none;
+				}
+
+				a:hover {
+					color: $lightGreyText;
+					border-bottom: 2px solid transparent;
+				}
+			}
+		}
+	}
+
+
+	aside.bill {
+		float: left;
+		width: 20%;
+
+		@media  #{$tablet}, #{$phablet}, #{$phone} {
+			width: 100%; 
+			margin-bottom: 20px;
+		}
+		
+		.billWrapper {
+			border: 1px solid $greyBorder;
+			border-radius: 5px;
+			background: white;
+			text-align: center;
+			overflow: hidden;
+
+			h3 {
+				margin: 30px 0;
+				font-size: 16px;
+				color: $darkGreyText;
+				line-height: 1.2;
+				span {
+					display: block;
+					font-size: 14px;
+					color: $lightGreyText;
+				}
+			}
+
+			h2 {
+				color: $purple;
+				font-weight: 700;
+				font-size: 54px;
+				margin-bottom: 40px;
+
+				sup {
+					vertical-align: super;
+					font-size: 28px;
+				}
+			}
+
+			a {
+				font-style: italic;
+				font-size: 14px;
+				text-decoration: none;
+				color: $tealBlue;
+
+				&:hover {
+					color: $darkGreyText;
+				}
+			}
+
+			.button {
+				display: block;
+				margin-top: 10px;
+				background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+				color: white;
+				font-weight: 700;
+				line-height: 50px;
+				height: 50px;
+				font-style: normal;
+				font-weight: 16px;
+
+				&:hover {
+					background: $purple;
+					color: white;
+				}
+			}
+		}
+
+		p.fineprint {
+			font-size: 12px;
+			padding: 10px;
+			text-align: center;
+			color: $darkGreyText;
+			line-height: 1.2;
+
+			a {
+				font-weight: 600;
+				text-decoration: none;
+				color: $blueText;
+			}
+		}
+
+		.addLine {
+			display: block;
+			margin-top: 30px;
+			text-align: center;
+			height: 70px;
+			line-height: 70px;
+			border-radius: 5px;
+			border: 2px dashed $lightGreyText;
+			color: $darkGreyText;
+			text-decoration: none;
+			font-weight: 700;
+			text-transform: uppercase;
+
+			i {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				background: $tealBlue;
+				text-align: center;
+				line-height: 40px;
+				text-align: center;
+				color: white;
+				margin: 13px 0 0 10px;
+				border-radius: 5px;
+				font-size: 28px;
+				vertical-align: top;
+			}
+		}
+	}
+
+	.cp-sections {
+		width: calc(80% - 30px);
+		float: left;
+		margin-left: 30px;
+
+		@media  #{$tablet}, #{$phablet}, #{$phone} {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	.cp-section {
+		margin-bottom: 30px;
+		border-radius: 5px;
+		background: white;
+
+		h1 {
+			padding: 30px 0 10px 30px ;
+			color: $lightGreyText;
+			font-size: 30px;
+			font-weight: 300;
+
+			@media #{$phablet}, #{$phone} {
+				font-size: 24px;
+			}
+		}
+
+		.addLine {
+		    /*display: block;*/
+		    margin-top: 30px;
+		    text-align: center;
+		    /*height: 70px;*/
+		    line-height: 70px;
+		    border-radius: 5px;
+		    /*border: 2px dashed #aab8bd;*/
+		    color: #2dafbb;
+		    text-decoration: none;
+		    font-weight: 400;
+		    text-transform: uppercase;
+		    margin-left: 40px;
+		    font-size: 15px;
+		}
+		.addCardForm {
+			padding: 0 40px;
+			label {
+				display: block;
+				font-size: 14px;
+				color: #aab8bd;
+			}
+			input[type="text"]{
+				width: 100%;
+			    height: 25px;
+			    font-family: "Open Sans", sans-serif;
+			    background: transparent;
+			    border: 1px solid #d7dee0;
+			    border-radius: 5px;
+			    padding: 0 10px;
+			    color: #4c606b;
+			    outline: none;
+			    margin-top: 5px;
+			    display: block;
+			}
+			select {
+				width: 100%;
+			    height: 25px;
+			    font-family: "Open Sans", sans-serif;
+			    border: 1px solid #d7dee0;
+			    border-radius: 5px;
+			    padding: 0 10p;
+			    color: #4c606b;
+			    display: block;
+			    margin-top: 5px;
+			    padding-left: 5px;
+			}
+			ul { overflow: hidden; }
+			li {
+				display: block;
+				margin-top: 15px;
+				width: 50%;
+				float: left;
+				&.cvv {
+					max-width: 115px;
+					span { display: block; }
+					input {
+						width: calc(100% - 55px);
+						display: inline-block;
+						margin-right: 10px;
+					}
+					img {
+						position: relative;
+						top: 5px;
+					}
+				}
+				&.cc-card { max-width: 185px; }
+				&.expiration-month {
+					width: 130px;
+				}
+				&.expiration-year {
+					max-width: 110px;
+				}
+				&.zip { width: 70px; }
+			}
+			.formButtons {
+				margin-top: 30px;
+				padding-bottom: 30px;
+				input {
+					padding: 7px 15px;
+					font-style: italic;
+					font-size: 14px;
+					border-radius: 5px;
+					margin-left: 10px;
+					display: inline-block;
+					width: auto;
+					height: 40px;
+					line-height: normal;
+					&[type="submit"] {
+						background: #33cccc;
+						color: white;
+						border: 1px solid #33cccc;
+					}
+					&[type="reset"] {
+						background: white;
+						color: red;
+						border: 1px solid red;
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.billGlance {
+		p {
+			font-size: 14px;
+			color: $darkGreyText;
+			padding-left: 30px;
+			line-height: 1.4;
+
+			span {
+				display: inline-block;
+				background: rgba($tealBlue, .1);
+				border-radius: 5px;
+				padding: 5px 10px;
+				a {
+					font-style: italic;
+					text-decoration: none;
+					color: $tealBlue;
+				}
+			}
+		}
+
+		ul {
+			margin-top: 30px;
+			border-top: 1px solid $greyBorder;
+			display: table;
+			width: 100%;
+			@extend .clearfix;
+
+			@media  #{$phone} {
+				display: block;
+			}
+
+			li {
+				display: table-cell;
+				width: 25%;
+				padding: 40px 0 20px;
+				font-size: 36px;
+				color: $darkGreyText;
+				font-weight: 300;
+				text-align: center;
+
+				@media  #{$phone} {
+					display: block;
+					width: 50%;
+					float: left;
+					padding: 20px
+				}
+
+
+				sup {
+					vertical-align: super;
+					font-size: 18px;
+				}
+
+				h4 {
+					color: $lightGreyText;
+					font-size: 14px;
+					font-weight: 700;
+					margin-bottom: 15px;
+				}
+
+				span {
+					margin-top: 10px;
+					display: block;
+					font-size: 14px;
+					font-weight: 300;
+					color: $darkGreyText;
+				}
+
+				&:last-child {
+					color: $purple;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+
+	.billPlans {
+
+		.billPlans-lines {
+			margin-top: 30px;
+			border-top: 1px solid $greyBorder;
+
+			> li {
+				border-bottom: 1px solid $greyBorder;
+				padding: 20px;
+				position: relative;
+
+				.menu {
+					position: absolute;
+					top: 30px;
+					right: 30px;
+					/*z-index: 10;*/
+					a.trigger {
+						color: $darkGreyText;
+						font-family: $icon;
+						text-decoration: none;
+						font-size: 16px;
+						z-index: 10;
+					}
+
+					ul {
+						z-index: 20;
+						position: absolute;
+						right: -30px;
+						top: 30px;
+						background: $blackBG;
+						padding: 10px 20px;
+						border-radius: 5px;
+						transform: scale(0);
+						transform-origin: 82% -6%;
+						opacity: 0;
+						pointer-events: none;
+						transition: all .3s ease-in-out;
+
+						&.isOpen {
+							opacity:1;
+							transform: scale(1);
+							pointer-events: all;
+						}
+
+
+						&:before {
+							content: '';
+							width: 20px;
+							height: 20px;
+							border-radius: 3px;
+							background: $blackBG;
+							position: absolute;
+							top: -8px;
+							right: 28px;
+							transform: rotate(45deg);
+							z-index: 1;
+						}
+
+						li {
+							text-align: center;
+							white-space: nowrap;
+							line-height: 1.4;
+							z-index: 10;
+							position: relative;
+
+							a {
+								color: white;
+								text-decoration: none;
+								font-size: 12px;
+
+								&:hover {
+									color: $blueText;
+								}
+							}
+						}
+					}
+				}
+
+				ul.billPlans-details {
+					display: table;
+					width: 100%;
+
+					@media  #{$phablet}, #{$phone} {
+						display: block;
+					}
+
+					li {
+						display: table-cell;
+						border-left: 1px solid $greyBorder;
+						padding: 0 30px;
+						@extend .clearfix;
+						vertical-align: top;
+
+
+						@media  #{$phablet}, #{$phone} {
+							display: block;
+							border-left: none;
+							padding: 30px 0;
+							border-top: 1px solid $greyBorder;
+						}
+
+						&:first-child {
+							border-left: none;
+							border-top: none;
+							padding-left: 0;
+						}
+
+
+						figure {
+							float: left;
+							width: 100px;
+							text-align: center;
+						}
+
+						dl {
+							float: left;
+							dt {
+								color: $lightGreyText;
+								font-size: 14px;
+								font-weight: 700;
+							}
+
+							dd {
+								display: block;
+								color: $darkGreyText;
+
+								&:nth-of-type(1) {
+									margin-bottom: 30px;
+								}
+
+								input {
+									height: 25px;
+									font-family: $sans;
+									background: transparent;
+									border: 1px solid $greyBorder;
+									border-radius: 5px;
+									padding: 0 10px;
+									color: $darkGreyText;
+									outline: none;
+									margin-top: 5px;
+
+									&:disabled {
+										border-color: transparent;
+										padding: 0;
+										height: 18px;
+										margin-top: 0;
+									}
+								}
+
+								p {
+									padding-top: 15px;
+									display: none;
+								}
+
+								a {
+									padding: 7px 15px;
+									font-style: italic;
+									font-size: 14px;
+									text-decoration: none;
+									border-radius: 5px;
+									margin-left: 10px;
+								}
+
+								.savePlanOption {
+									background: $blueBG;
+									color: white;
+									border: 1px solid $blueBG;
+								}
+
+								.cancelPlanOption {
+									background: white;
+									color: red;
+									border: 1px solid red;
+								}
+							}
+
+							strong {
+								font-weight: 700;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+
+		.addNewLine {
+			padding: 30px;
+			border-bottom: 1px solid $greyBorder;
+			line-height: 1.3;
+
+			color: $darkGreyText;
+
+			strong {
+				font-weight: 700;
+			}
+
+			em {
+				color: $purple;
+			}
+
+
+			a {
+				color: $darkGreyText;
+				text-decoration: none;
+				font-weight: 700;
+				text-transform: uppercase;
+
+				i {
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					background: $tealBlue;
+					text-align: center;
+					line-height: 30px;
+					text-align: center;
+					color: white;
+					border-radius: 5px;
+					font-size: 20px;
+					margin: 0 10px;
+				}
+			}
+		}
+
+		.totals {
+			padding: 30px;
+			@extend .clearfix;
+			position: relative;
+
+			ul {
+				float: left;
+
+				@media  #{$phone} {
+					float: none;
+				}
+
+				li {
+					text-align: right;
+					font-weight: 700;
+					color: $darkGreyText;
+					margin-top: 30px;
+					font-size: 14px;
+
+					span {
+						float: left;
+						color: $lightGreyText;
+						font-weight: normal;
+						text-align: left;
+						padding-right: 60px;
+
+						em {
+							display: block;
+							color: $darkGreyText;
+							font-size: 12px;
+							font-style: italic;
+						}
+					}
+				}
+			}
+
+			.grandTotal {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+
+				color: $purple;
+				font-size: 24px;
+				font-weight: 700;
+
+				@media  #{$phone} {
+					margin-top: 30px;
+					position: static;
+					text-align: right;
+				}
+
+				span {
+					color: $lightGreyText;
+					font-size: 14px;
+					font-weight: normal;
+
+					@media  #{$phone} {
+						float: left;
+						vertical-align: bottom;
+					}
+				}
+			}
+		}
+	}
+
+
+	.cp-account {
+		
+		ul {
+			margin-top: 30px;
+			li {
+				border-top: 1px solid $greyBorder;
+				padding: 20px 30px;
+				@extend .clearfix;
+
+				label {
+					display: block;
+					font-size: 14px;
+					color: $lightGreyText;
+				}
+
+				input {
+					width: auto;
+					height: 25px;
+					font-family: $sans;
+					background: transparent;
+					border: 1px solid $greyBorder;
+					border-radius: 5px;
+					padding: 0 10px;
+					color: $darkGreyText;
+					outline: none;
+					margin-top: 5px;
+
+					&:disabled {
+						border-color: transparent;
+						padding: 0;
+						height: 18px;
+						margin-top: 0;
+					}
+				}
+
+				.editMeControls {
+					float: right;
+					
+					a {
+						float: right;
+						padding: 7px 15px;
+						font-style: italic;
+						font-size: 14px;
+						text-decoration: none;
+						border-radius: 5px;
+						margin-left: 10px;
+					}
+
+					.editMe {
+						background: $whiteBlueBG;
+						color: $tealBlue;
+					}
+
+					.saveMe {
+						background: $tealBlue;
+						color: white;
+						border: 1px solid $tealBlue;
+						display: none;
+					}
+
+					.cancelMe {
+						display: none;
+						background: white;
+						color: red;
+						border: 1px solid red;
+					}
+				}
+
+			}
+		}
+	}
+
+	.cp-payment {
+		.autopay {
+			background: $whiteBlueBG;
+			display: inline-block;
+			padding: 17px 30px 17px 17px;
+			border-radius: 5px;
+			margin: 10px 30px 0 30px;
+
+			input[type="checkbox"] {
+				display: none;
+				background: url('../images/checked.svg') no-repeat;
+			}
+
+			input[type="checkbox"] + label:before {
+				content: '';
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				background: url('../images/unchecked.svg') no-repeat;
+				vertical-align: middle;
+				cursor: pointer;
+				margin: -1px 10px 0 0px;
+			}
+
+			input[type="checkbox"]:checked + label:before {
+				background: url('../images/checked.svg') no-repeat;
+			}
+
+			label {
+				display: inline-block;
+				font-size: 16px;
+				color: $darkGreyText;
+				font-family: $sans;
+				cursor: pointer;
+				font-weight: 400;
+				line-height: 1.4;
+
+
+				span {
+					color: $lightGreyText;
+				}
+			}
+		}
+
+
+		ul.cp-paymentOptions {
+			width: 100%;
+			margin-top: 60px;
+			
+			li {
+				border: 1px solid white;
+				border-top: 1px solid $greyBorder;
+				padding: 0 30px;
+				@extend .clearfix;
+				color: $darkGreyText;
+				position: relative;
+
+				/*&:first-child {
+					.expiry .expires {
+						opacity: 1;
+						pointer-events: all;
+					}
+				}*/
+
+				label {
+					display: block;
+					font-size: 14px;
+					color: $lightGreyText;
+					/*margin-bottom: 5px;*/
+				}
+
+				.inputs {
+					display: none;
+				}
+
+				input {
+					height: 25px;
+					font-family: $sans;
+					background: transparent;
+					border: 1px solid $greyBorder;
+					border-radius: 5px;
+					padding: 0 10px;
+					color: $darkGreyText;
+					outline: none;
+					margin-top: 5px;
+				}
+
+				a.openCard {
+					position: absolute;
+					top: 30px;
+					width: 60px;
+					right: 0;
+					text-align: center;
+					font-family: $icon;
+					color: $darkGreyText;
+					text-decoration: none;
+					i {
+						transition: all .3s ease;
+						transform: rotate(0deg);
+						display: block;
+					}
+				}
+
+				&.active {
+					border: 1px solid $tealBlue;
+
+					a.openCard {
+						i {
+							transform: rotate(180deg);
+						}
+					}
+				}
+
+				figure {
+					float: left;
+					width: 64px;
+					padding-top: 30px;
+				}
+
+				.additinal {
+					padding-top: 20px;
+					line-height: 1.2;
+					display: none;
+
+					span {
+						display: block;
+						color: $lightGreyText;
+					}
+				}
+
+				.card {
+					float: left;
+					width: calc(50% - 32px);
+					padding: 30px 30px 30px 0;
+
+					@media #{$phone} {
+						width: calc(100% - 70px);
+						padding: 30px 30px 0 0;
+					}
+
+					.status {
+						color: $greenText;
+						font-size: 14px;
+						font-style: italic;
+						display: block;
+						margin-bottom: 5px;
+
+						a {
+							color: $tealBlue;
+							text-decoration: none;
+						}
+					}
+				}
+
+				.expiry {
+					float: left;
+					width: calc(50% - 32px);
+					padding: 30px 30px 30px 0;
+
+					@media #{$phone} {
+						width: calc(100% - 70px);
+						padding: 20px 30px 30px 63px;
+					}
+
+					.expires {
+						/*position: relative;*/
+						/*top: -50px;*/
+						margin-bottom: 5px;
+						color: $lightGreyText;
+						font-size: 14px;
+						display: block;
+						font-style: italic;
+						/*opacity: 0;*/
+						/*pointer-events: none;*/
+					}
+				}
+					
+				.editCardControls {
+					display: none;
+					clear: both;
+					@extend .clearfix;
+					margin-bottom: 30px;
+					
+					a {
+						float: right;
+						padding: 7px 15px;
+						font-style: italic;
+						font-size: 14px;
+						text-decoration: none;
+						border-radius: 5px;
+						margin-left: 10px;
+					}
+
+					.editCard {
+						background: $whiteBlueBG;
+						color: $blueText;
+					}
+
+					.saveCard {
+						background: $tealBlue;
+						color: white;
+						border: 1px solid $tealBlue;
+						display: none;
+					}
+
+					.cancelCard {
+						display: none;
+						background: white;
+						color: red;
+						border: 1px solid red;
+					}
+				}
+
+			}
+
+		}
+
+		.updateCard {
+			
+			border-top: 1px solid $greyBorder;
+
+			a.updateLine {
+				color: $blueText;
+				text-decoration: none;
+				font-weight: 700;
+				padding: 30px;
+				display: block;
+
+				i {
+					display: inline-block;
+					color: white;
+					height: 30px;
+					width: 30px;
+					font-size: 18px;
+					text-align: center;
+					line-height: 30px;
+					background: $blueBG;
+					border-radius: 5px;
+					margin-right: 10px;
+				}
+			}
+
+			.updateCardForm {
+				// display: none;
+				padding: 30px;
+				@extend .clearfix;
+
+				.formButtons {
+					float: right;
+
+				}
+
+				input[type="reset"],
+				input[type="submit"] {
+					display: inline-block;
+					padding: 7px 15px;
+					font-style: italic;
+					font-size: 14px;
+					outline: none;
+					border-radius: 5px;
+					cursor: pointer;
+					margin-left: 10px;
+				}
+
+				input[type="submit"] {
+					background: $tealBlue;
+					color: white;
+					border: 1px solid $tealBlue;
+				}
+
+				input[type="reset"] {
+					background: white;
+					color: red;
+					border: 1px solid red;
+				}
+
+				ul {
+					width: 100%;
+					max-width: 300px;
+					@extend .clearfix;
+					li {
+						float: left;
+						width: 100%;
+						margin-bottom: 20px;
+
+						&.half {
+							width: 47.5%;
+							margin-right: 5%;
+						}
+
+						&.right {
+							margin-right: 0;
+						}
+
+						&.cvv {
+
+							label {
+								input {
+									width: 100px;
+								}
+								img {
+									display: inline-block;
+									margin-left: 10px;
+								    vertical-align: middle;
+								}
+							}
+						}
+
+						label {
+							span {
+								display: block;
+								font-size: 14px;
+								color: $lightGreyText;
+								margin-bottom: 5px;
+							}
+
+							input, select {
+								width: 100%;
+								height: 25px;
+								font-family: $sans;
+								background: transparent;
+								border: 1px solid $greyBorder;
+								border-radius: 5px;
+								padding: 0 10px;
+								color: $darkGreyText;
+								outline: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+	.cp-history {
+
+
+		.table {
+			width: 100%;
+			padding-top: 40px;
+			overflow-y: hidden;
+			overflow-x: auto;
+
+			table {
+				width: 100%;
+				min-width: 600px;
+
+				thead {
+					th {
+						text-align: center;
+						padding: 10px 0;
+						font-size: 14px;
+						color: $lightGreyText;
+						font-weight: 600;
+
+						&:first-child {
+							padding-left: 30px;
+						}
+
+						&:last-child {
+							padding-right: 30px;
+						}
+					}
+				}
+
+
+				tbody {
+					tr {
+						border-top: 1px solid $greyBorder;
+						
+						td {
+							height: 50px;
+							vertical-align: middle;
+							color: $darkGreyText;
+							text-align: center;
+							font-size: 14px;
+							padding: 0 10px;
+
+							strong {
+								font-weight: 700;
+							}
+
+							a {
+								background: $whiteBlueBG;
+								background: rgba($tealBlue, .1);
+								padding: 7px 20px;
+								display: inline-block;
+								color: $tealBlue;
+								font-size: 14px;
+								text-decoration: none;
+								border-radius: 5px;
+								font-style: italic;
+							}
+
+							&:first-child {
+								padding-left: 30px;
+							}
+
+							&:last-child {
+								padding-right: 30px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+.modal.usageHistory, .modal.manualPayment {
+	position: absolute;
+	top: 250px;
+	left: 50%;
+	transform: translatex(-50%);
+	z-index: 1000;
+	@extend .clearfix;
+	width: 100%;
+	display: none;
+
+	@media #{$tablet}, #{$phablet}, #{$phone} {
+		position: fixed;
+		top: 0;
+		overflow-y: auto;
+		width: 100% !important;
+	}
+
+	.wrapper {
+		padding-left: 20%;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			padding-left: 0;
+		}
+	}
+
+	.close {
+		position: absolute;
+		top: 20px;
+		right: 10px;
+		z-index: 10;
+		color: $darkGreyText;
+		font-family: $icon;
+		text-decoration: none;
+
+	}
+
+	nav {
+		position: relative;
+		ul {
+			height: 50px;
+			line-height: 50px;
+
+			li {
+				display: inline-block;
+				padding: 0 10px;
+				margin-right: 30px;
+				position: relative;
+
+				&:after {
+					content: '';
+					width: 20px;
+					height: 20px;
+					background: white;
+					border-radius: 3px;
+					position: absolute;
+					bottom: -13px;
+					left: 50%;
+					margin-left: -10px;
+					transform: rotate(-45deg);
+					display: none;
+				}
+
+				&.active {
+					&:after {
+						display: block;
+					}
+
+					a {
+						color: white;
+					}
+				}
+
+				a {
+					color: #ccc;
+					font-size: 15px;
+					text-transform: uppercase;
+					text-decoration: none;
+					font-weight: 700;
+
+					&:hover {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+
+	ul.usage {
+		background: white;
+		border-radius: 5px;
+
+		li {
+			display: none;
+
+			&.active {
+				display: block;
+			}
+		}
+
+		h4 {
+			color: $blueText;
+			padding: 40px 0 10px 40px;
+			font-size: 30px;
+		}
+
+		p {
+			color: $darkGreyText;
+			font-size: 15px;
+			padding: 0 0 0 40px;
+		}
+
+		dl {
+			padding: 40px;
+
+			dt {
+				color: $lightGreyText;
+				font-size: 14px;
+
+				span {
+					float: right;
+
+					em {
+						color: $darkGreyText;
+					}
+				}
+			}
+
+			dd {
+				margin-bottom: 40px;
+				position: relative;
+				background: $lightGreyBG;
+				border-radius: 10px;
+				height: 8px;
+				width: 100%;
+				margin-top: 10px;
+				overflow: hidden;
+
+				span {
+					position: absolute;
+					top: 0;
+					left: 0;
+					background: $greenBG;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+
+	.log {
+		width: 100%;
+		padding-top: 40px;
+		overflow-y: hidden;
+		overflow-x: auto;
+
+		table {
+			width: 100%;
+			min-width: 500px;
+
+			thead {
+				th {
+					text-align: left;
+					color: $lightGreyText;
+					font-weight: 700;
+					font-size: 14px;
+					padding: 15px 0;
+					
+					&:last-child {
+						text-align: right;
+						padding-right: 40px;
+					}
+				}
+			}
+
+			tbody {
+				color: $darkGreyText;
+				tr {
+					height: 30px;
+
+
+					&:nth-child(odd) {
+						background: $lightGreyBG;
+					}
+
+					th {
+						padding-left: 40px;
+						font-weight: 700;
+						vertical-align: middle;
+					}
+
+					td {
+						vertical-align: middle;
+					}
+
+					td:last-child {
+						text-align: right;
+						padding-right: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.modal.planOptions {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	transform: translatex(-50%);
+	background: white;
+	z-index: 1000;
+	border-radius: 5px;
+	@extend .clearfix;
+	width: calc(100% - 60px);
+	max-width: $max-width;	
+	display: flex;
+	transition: all .3s ease-in-out;
+	opacity: 0;
+	pointer-events: none;
+
+	@media #{$tablet}, #{$phablet}, #{$phone} {
+		// display: block;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&.visible {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	@media #{$tablet}, #{$phablet}, #{$phone} {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		transform: translatex(0);
+		top: 0;
+		left: 0;
+		overflow-y: auto;
+		border-radius: 0;
+	}
+
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 10;
+		color: $darkGreyText;
+		font-family: $icon;
+		text-decoration: none;
+
+	}
+
+	.addThisMobile-wrapper {
+		text-align: center;
+	}
+
+	.addThisMobile {
+		display: none;
+		// width: 100%;
+		// left: 0;
+		// bottom: 0;
+		// border-radius: 0;
+		// margin: 0;
+		// background: $purple;
+		// height: 50px;
+		// line-height: 50px;
+		// padding: 0 30px;
+		// color: white;
+		// text-transform: uppercase;
+		// font-weight: 700;
+		// text-decoration: none;
+		// text-align: center;
+
+		background: $purple;
+		background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+		border-radius: 40px;
+		padding: 0 40px;
+		height: 50px;
+		line-height: 50px;
+		color: white;
+		font-weight: 600;
+		transition: all .3s ease;
+		text-decoration: none;
+		margin: 0 0 30px 0;
+		font-size: 18px;
+		text-transform: uppercase;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			display: inline-block;
+		}
+	}
+
+	aside {
+		background: $tealBlue;
+		width: 35%;
+		border-radius: 0 5px 5px 0;
+		max-width: 380px;
+		position: relative;
+		order: 2;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			border-radius: 0;
+			float: none;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			position: static;
+		}
+
+		.glance {
+			color: white;
+			text-align: center;
+
+			h6 {
+				font-size: 130px;
+				font-weight: 800;
+				padding: 30px;
+
+				@media #{$tablet}, #{$phablet}, #{$phone} {
+					font-size: 100px;
+				}
+
+				sub {
+					vertical-align: baseline;
+					font-size: 30px;
+					font-weight: 400;
+				}
+
+				sup {
+					vertical-align: super;
+					font-size: 60px;
+				}
+			}
+
+			ul {
+				padding: 0 30px;
+				@media #{$tablet}, #{$phablet}, #{$phone} {
+					padding-bottom: 30px;
+				}
+				li {
+					margin-bottom: 5px;
+					line-height: 1.2;
+					padding: 0 30px;
+					em {
+						font-weight: 700;
+					}
+				}
+
+			}
+
+			a {
+				background: $purple;
+				background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+				height: 50px;
+				line-height: 50px;
+				border-radius: 50px;
+				display: inline-block;
+				padding: 0 30px;
+				color: white;
+				text-transform: uppercase;
+				font-weight: 700;
+				text-decoration: none;
+				margin: 30px auto;
+
+				&:hover {
+					background: $purple;
+				}
+
+				@media #{$tablet}, #{$phablet}, #{$phone} {
+					display: none;
+				}
+			}
+		}
+
+		.compatibility {
+			border-top: 1px solid rgba($darkGreyText, .5);
+			border-bottom: 1px solid rgba($darkGreyText, .5);
+
+			h6 {
+				text-align: center;
+				line-height: 1.4;
+			}
+		}
+
+		.compatibility, .coverage {
+			padding: 30px;
+			@media #{$tablet}, #{$phablet}, #{$phone} {
+				display: none;
+			}
+			a {
+				font-weight: 700;
+				color: white;
+				text-decoration: none;
+
+				i {
+					font-family: $icon;
+					padding-left: 10px;
+				}
+			}
+
+			form {
+				h6 {
+					font-weight: 700;
+					color: white;
+					margin-bottom: 10px;
+
+					span {
+						display: block;
+						font-style: italic;
+						font-weight: 400;
+						font-size: 14px;
+					}
+				}
+
+				input[type="text"] {
+					width: 100%;
+					height: 50px;
+					border-radius: 5px;
+					border: none;
+					padding: 0 20px;
+					font-size: 18px;
+					font-family: $sans;
+					outline: none;
+				}
+			}
+
+			.percent {
+				padding: 20px 0;
+				position: relative;
+				img {
+					width: 80%;
+					margin: 20px auto;
+					display: block;
+				}
+				span {
+					font-size: 100px;
+					font-weight: 700;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					color: $darkGreyText;
+				}
+			}
+
+			p {
+				color: white;
+				font-size: 14px;
+				font-style: italic;
+				line-height: 1.4;
+				padding-bottom: 30px;
+			}
+		}
+	}
+
+	.featuresWrapper{
+		flex:1;
+		padding: 0 40px;
+		background: #fff;
+		border: 6px solid $tealBlue;
+		border-right: none;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			width: 100%;
+			float: none;
+			padding: 0 20px;
+
+			border: 6px solid $tealBlue;
+			border-right: 6px solid $tealBlue;
+			border-bottom: none;
+		}
+	}
+
+	.simOptions,
+	.portingOptions,
+	.cloudPhoneOptions,
+	.tabletDataPlan,
+	.addOns {
+		padding: 40px 0;
+		border-bottom: 1px solid $greyBorder;
+
+		@media #{$tablet}, #{$phablet}, #{$phone} {
+			padding: 30px 0;
+
+			&.tabletDataPlan {
+				border-bottom: none;
+			}
+		}
+
+		&.addOns {
+			border-bottom: 0;
+		}
+
+		input[type="radio"], input[type="checkbox"] {
+			display: none;
+			background: url('../images/checked.svg') no-repeat;
+		}
+
+		input[type="radio"] + label:before, input[type="checkbox"] + label:before {
+			content: '';
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background: url('../images/unchecked.svg') no-repeat;
+			vertical-align: middle;
+			cursor: pointer;
+			margin: -1px 10px 0 0px;
+		}
+
+		input[type="radio"]:checked + label:before, input[type="checkbox"]:checked + label:before {
+			background: url('../images/checked.svg') no-repeat;
+		}
+
+		label {
+			display: inline-block;
+			font-size: 16px;
+			color: $darkGreyText;
+			font-family: $sans;
+			cursor: pointer;
+			font-weight: 700;
+			line-height: 1.2;
+			margin-right: 15px;
+
+			span {
+				font-size: 14px;
+				font-weight: 400;
+				color: $lightGreyText;
+			}
+		}
+
+		h3 {
+			color: black;
+			font-size: 28px;
+			margin-bottom: 30px;
+			span {
+				font-size: 14px;
+				color: $lightGreyText;
+			}
+		}
+
+		h6 {
+			color: $darkGreyText;
+			font-weight: 700;
+			line-height: 1.4;
+			margin-bottom: 30px;
+			span {
+				display: block;
+				font-weight: 400;
+				font-size: 14px;
+				font-style: italic;
+
+				strong {
+					font-weight: 700;
+				}
+			}
+		}
+
+		ul {
+			color: $darkGreyText;
+			margin-bottom: 20px;
+			li {
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				ul {
+					margin-top: 15px;
+					li {
+						margin-bottom: 10px;
+						line-height: 1.4;
+
+						@media #{$tablet}, #{$phablet}, #{$phone} {
+							font-size: 14px;
+							margin-bottom: 5px;
+						}
+					}
+				}
+
+				p {
+					margin-top: 15px;
+					line-height: 1.4;
+
+					@media #{$tablet}, #{$phablet}, #{$phone} {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		form {
+			p {
+				margin-bottom: 10px;
+				color: $darkGreyText;
+			}
+			input[type="tel"] {
+				height: 50px;
+				border: 2px solid $greyBorder;
+				border-radius: 5px;
+				padding: 0 20px;
+				font-size: 18px;
+				outline: none;
+				font-weight: $sans;
+				color: $darkGreyText;
+
+				&:focus {
+					border-color: $tealBlue;
+				}
+			}
+		}
+	}
+}
+
+.porting-option {
+	p {
+		margin-bottom: 10px;
+		color: $darkGreyText;
+	}
+	input[type="tel"] {
+		height: 50px;
+		border: 2px solid $greyBorder;
+		border-radius: 5px;
+		padding: 0 20px;
+		font-size: 18px;
+		outline: none;
+		font-weight: $sans;
+		color: $darkGreyText;
+
+		&:focus {
+			border-color: $tealBlue;
+		}
+	}
+}
+
+li.bringOwnSimCard {
+	input#sim_number {
+		height: 50px;
+		border: 2px solid $greyBorder;
+		border-radius: 5px;
+		padding: 0 20px;
+		font-size: 18px;
+		outline: none;
+		font-weight: $sans;
+		color: $darkGreyText;
+
+		&:focus {
+			border-color: $tealBlue;
+		}
+	}
+}
+
+.plansCartItemsListTbl-wrapper {
+	overflow: auto;
+}
+
+.plansCartItemsListTbl, .plansOrderSummaryTbl{
+  color: #4c606b;
+  margin-top: 20px;
+}
+.plansCartItemsListTbl td, .plansOrderSummaryTbl td{
+  font-size: 14px;
+  border: solid 1px #d7dee0 !important;
+  border-collapse: collapse;
+  padding: 10px;
+}
+.plansCartItemsListTbl .table-header{
+  background-color: #1db4cb;
+  // background-color: $purple;
+  color: #fff;
+}
+
+.plansOrderSummaryTbl{
+  float: right;
+  text-align: right;
+}
+
+p.plansCartItemsListNotice{
+  margin: 20px 0;
+  font-size: 14px !important;
+  color: #4c606b;
+  font-weight: bold;
+}
+
+.cp-porting-p, .cp-changeplan-p{
+   margin: 10px 30px 10px;
+   font-size: 13px;
+   color: #333;
+   line-height: 150%
+}
+.cp-porting-notice{
+  font-size: 16px;
+  font-weight: bold;
+  color: #4c606b;
+  padding-left: 30px;
+  line-height: 1.4
+}
+
+.cp-porting-table td{
+   text-align: left !important;
+}
+.cp-porting-table td input{
+   width: 250px !important;
+}
+
+
+.whyTeltik {
+	.wrapper {
+		position: relative;
+		text-align: center;
+		position: relative;
+		padding-bottom: 100px;
+		overflow: hidden;
+	}
+
+	@media #{$phablet}, #{$phone} {
+		padding-bottom: 60px;
+	}
+	h1 {
+		color: $purple;
+		font-size: 48px;
+		font-style: italic;
+		padding: 80px 0 40px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1.2;
+		max-width: 600px;
+		margin: auto;
+
+		@media #{$phablet}, #{$phone} {
+			padding: 40px 20px;
+			font-size: 36px;
+		}
+	}
+
+	h2 {
+		color: $purple;
+		font-weight: 700;
+		font-size: 36px;
+		margin-bottom: 40px;
+
+		sup {
+			vertical-align: super;
+			font-size: 28px;
+		}
+	}
+
+	h3 {
+		margin: 30px 0 0;
+		font-size: 24px;
+		color: $purple;
+		line-height: 1.2;
+		font-weight: 600;
+		span {
+			display: block;
+			font-size: 14px;
+			color: $lightGreyText;
+		}
+	}
+
+	
+
+	div, p {
+		color: $darkGreyText;
+		font-size: 20px;
+		max-width: 600px;
+		margin: 0 auto 40px;
+		line-height: 1.4;
+
+		@media #{$phablet}, #{$phone} {
+			padding: 0 20px;
+			font-size: 16px;
+		}
+	}
+
+	a {
+		background: $purple;
+		background: linear-gradient(45deg, $pink 0%, $darkPurple 100%);
+		border-radius: 50px;
+		padding: 0 30px;
+		height: 50px;
+		line-height: 50px;
+		display: inline-block;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 14px;
+		cursor: pointer;
+		span {
+			font-size: 14px;
+		}
+
+		i {
+			font-family: $icon;
+			font-weight: normal;
+			padding-left: 20px;
+		}
+
+		&:hover {
+			background: $darkPurple;
+		}
+	}
+
+	img {
+		display: block;
+		position: absolute;
+		bottom: -180px;
+		left: -100px;
+		z-index: -1;
+
+		@media #{$phablet}, #{$phone} {
+			display: none;
+		}
+	}
+
+	ul {
+			color: $darkGreyText;
+			margin-bottom: 20px;
+			text-align: left;
+		    margin-bottom: 20px;
+		    list-style-type: disc;
+		    margin-left: 22px;
+
+			li {
+				margin-bottom: 2px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				ul {
+					margin-top: 15px;
+					li {
+						margin-bottom: 10px;
+						line-height: 1.4;
+
+						@media #{$tablet}, #{$phablet}, #{$phone} {
+							font-size: 14px;
+							margin-bottom: 5px;
+						}
+					}
+				}
+
+				p {
+					margin-top: 15px;
+					line-height: 1.4;
+
+					@media #{$tablet}, #{$phablet}, #{$phone} {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+	strong {
+		font-size: 16px;
+		font-weight: 700;
+	}
+}
+
+.apps {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	background: rgba($blackBG, .8);
+	transition: all .3s ease-in-out;
+	opacity: 0;
+	pointer-events: none;
+
+	&.visible {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	.close-apps {
+		position: absolute;
+	    width: 50px;
+	    height: 50px;
+	    line-height: 50px;
+	    text-align: center;
+	    color: $tealBlue;
+	    font-family: "icons";
+	    text-decoration: none;
+	    top: 0;
+	    right: 0;
+	    cursor: pointer;
+
+	    &:hover {
+	    	color: white;
+	    }
+	}
+
+	section {
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		height: calc(100% - 100px);
+		width: calc(100% - 100px);
+		border-radius: 5px;
+		background-color: #fff;
+		overflow-y:scroll;
+		padding-bottom: 20px;
+
+		h3 {
+		margin: 30px 0 0;
+		font-size: 24px;
+		color: #000;
+		line-height: 1.2;
+		font-weight: 700;
+		padding-bottom: 5px;
+		}
+
+		ul > li {
+			line-height: 1.4;
+		}
+	}
+
+}
+
+/* CONVERGE MAP */
+#pccMultiSearchContainer { display: none !important; }
+
+@media screen and (max-width: 767px) {
+	.addCardForm {
+		li {
+			width: 100% !important;
+			padding-right: 0 !important;
+			float: none !important;
+			max-width: 100% !important;
+			&.half {
+				float: none !important;
+				width: 100% !important;
+				padding-right: 0 !important;
+			}
+			&.cvv {
+				margin-top: 15px !important;
+				input { width: calc(100% - 55px) !important; }
+			}
+			select {
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,360 @@
+@media(min-width:0px) and (max-width:480px){
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:80% auto;
+		padding-top:300px;
+	}
+	.loginbx{
+		float: left;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 50px 0;
+	}
+	.loginbx .form-control {
+		padding: 20px 28px;
+		font-size: 15px;
+	}
+	.loginbtn{
+		padding: 15px 20px;
+		margin: 15px;
+	}
+	.dimgcomp img{
+		display: none;
+		opacity: 0;
+	}
+	.compimg {
+		position: absolute;
+		top: 80px;
+		left: 20%;
+		right: 20%;
+		margin: auto;
+	}
+	.loginbx.devloginbx h1{
+		font-size: 24px;
+		margin: 0 0 30px 0;
+	}
+	.loginbx.devloginbx{
+		margin-top: 90px;
+	}
+	.devloginbx .loginbtn {
+		font-size: 16px;
+		padding: 7px 12px;
+		border: 4px solid #fff;
+		margin-top: 10px;
+	}
+	.compimg{
+		display: block;	
+	}
+}
+
+@media(min-width:481px) and (max-width:620px){
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:80% auto;
+		padding-top:400px;
+	}
+	.loginbx{
+		float: left;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 50px 0;
+	}
+	.loginbx .form-control {
+		padding: 20px 28px;
+		font-size: 15px;
+	}
+	.loginbtn{
+		padding: 15px 20px;
+		margin: 15px;
+	}
+	.dimgcomp img{
+		display: none;
+		opacity: 0;
+	}
+	.compimg {
+		position: absolute;
+		top: 80px;
+		left: 20%;
+		right: 20%;
+		margin: auto;
+	}
+	.loginbx.devloginbx h1{
+		font-size: 24px;
+		margin: 0 0 30px 0;
+	}
+	.loginbx.devloginbx{
+		margin-top: 140px;
+	}
+	.devloginbx .loginbtn {
+		font-size: 16px;
+		padding: 7px 12px;
+		border: 4px solid #fff;
+		margin-top: 10px;
+	}
+	.compimg{
+		display: block;	
+	}
+}
+
+@media(min-width:620px) and (max-width:767px){
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:80% auto;
+		padding-top:500px;
+	}
+	.loginbx{
+		float: left;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 50px 0;
+	}
+	.loginbx .form-control {
+		padding: 20px 28px;
+		font-size: 15px;
+	}
+	.loginbtn{
+		padding: 15px 20px;
+		margin: 15px;
+	}
+	.dimgcomp img{
+		display: none;
+		opacity: 0;
+	}
+	.compimg {
+		position: absolute;
+		top: 80px;
+		left: 20%;
+		right: 20%;
+		margin: auto;
+	}
+	.loginbx.devloginbx h1{
+		font-size: 24px;
+		margin: 0 0 30px 0;
+	}
+	.loginbx.devloginbx{
+		margin-top: 140px;
+	}
+	.devloginbx .loginbtn {
+		font-size: 16px;
+		padding: 7px 12px;
+		border: 4px solid #fff;
+		margin-top: 10px;
+	}
+	.compimg{
+		display: block;	
+	}
+}
+
+
+@media(min-width:768px) and (max-width:991px){
+	 
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:50% auto;
+		padding-top:80px;
+	}
+	.loginbx{
+		float: left;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 50px 0;
+	}
+	.loginbx .form-control {
+		padding: 20px 28px;
+		font-size: 15px;
+	}
+	.loginbtn{
+		padding: 15px 20px;
+		margin: 15px;
+	}
+	body.devlogin{
+		padding-top: 130px;
+	}
+	.loginbx.devloginbx h1{
+		font-size: 24px;
+		margin:0px 0 40px 0;
+	}
+	.loginbx.devloginbx .form-control{
+		font-size:16px;
+		padding: 22px 30px;
+	}
+	.devloginbx .loginbtn {
+		font-size: 16px;
+		padding: 7px 12px;
+		border: 4px solid #fff;
+		margin-top: 10px;
+	}
+	
+}
+
+@media(min-width:992px) and (max-width:1200px){
+	.devimagenew {
+		background-size: 100% auto;
+		display: block;
+	}
+	.devloginbx{
+		margin:00px 0 0 0;
+	}
+	.dimgcomp img{
+		display: none;
+	} 
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:50% auto;
+		padding-top:80px;
+	}
+	.loginbx{
+		float: left;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 50px 0;
+	}
+	.loginbx .form-control {
+		padding: 25px 28px;
+		font-size: 18px;
+	}
+	body.devlogin{
+		padding-top: 130px;
+	}
+	.loginbx.devloginbx h1{
+		font-size: 34px;
+		margin:0px 0 40px 0;
+	}
+}
+
+@media(min-width:1201px) and (max-width:1440px){
+	.devimagenew {
+		background-size: 100% auto;
+		display: block;
+	}
+	.devloginbx{
+		margin:30px 0 0 0;
+	}
+	.dimgcomp img{
+		display: none;
+	}
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:60% auto;
+		padding-top: 120px;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 60px 0;
+	}
+	
+}
+@media(min-width:1441px) and (max-width:1600px){
+	.devimagenew {
+		background-size: 100% auto;
+		display: block;
+	}
+	.devloginbx{
+		margin:100px 0 0 0;
+	}
+	.dimgcomp img{
+		display: none;
+	} 
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:50% auto;
+		padding-top: 120px;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 60px 0;
+	}
+	
+} 
+@media(min-width:1601px) and (max-width:1919px){
+	.devimagenew {
+		background-size: 100% auto;
+		display: block;
+	}
+	.devloginbx{
+		margin:100px 0 0 0;
+	}
+	.dimgcomp img{
+		display: none;
+	}
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:60% auto;
+		padding-top: 120px;
+	}
+	.loginbx{
+		float: left;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 60px 0;
+	}
+	
+} 
+
+@media(min-width:1920px) and (max-width:2500px){
+	.devimagenew {
+		background-size: 100% auto;
+		display: block;
+	}
+	.devloginbx{
+		margin:160px 0 0 0;
+	}
+	.dimgcomp img{
+		display: none;
+	}
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:auto auto;
+		padding-top: 240px;
+	}
+	.loginbx{
+		float: left;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 60px 0;
+	}
+	
+} 
+
+@media(min-width:2501px) and (max-width:5000px){
+	.devimagenew {
+		background-size: 100% auto;
+		display: block;
+	}
+	.devloginbx{
+		margin:50% 0 0 0;
+	}
+	.dimgcomp img{
+		display: none;
+	}
+	div.mainlogin{
+		background: url(../img/mainbg1.png) top right no-repeat;
+		background-size:auto auto;
+		padding-top: 240px;
+	}
+	.loginbx{
+		float: left;
+	}
+	.loginbx h1{
+		font-size:44px;
+		font-weight: 700;
+		margin: 0 0 60px 0;
+	}
+	
+} 

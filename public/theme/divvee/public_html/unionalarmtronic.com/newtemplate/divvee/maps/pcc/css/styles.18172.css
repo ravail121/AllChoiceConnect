@@ -1,0 +1,1825 @@
+/**** Custom Color **************************/
+.mapclrstyle {
+	filter: hue-rotate(50deg);
+}
+div.gm-style > div > div > div > div > div > div > div > img {
+	filter: hue-rotate(50deg);
+}
+div#mapCanvas > div > div > div > div > div:nth-child(4) {
+	/* background-color: green; */
+	filter: hue-rotate(50deg);
+}
+/*********************************************/
+
+/**** CSS Reset. Removes default and extra styles ****/
+
+html {
+	color :  #000;
+	background :  #FFF;
+	-webkit-text-size-adjust: 100%; /* Prevent font scaling in mobile landscape while allowing user zoom */
+}
+body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+	-moz-box-sizing : border-box;
+	font-family : sans-serif;
+	line-height : normal
+}
+body { 
+	color: #6a6a6a;
+}
+table {
+	border-collapse : collapse;
+	border-spacing : 0
+}
+img {
+	border : 0
+}
+
+ol, ul {
+	list-style : none
+}
+th {
+	text-align : left
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size : 100%;
+	font-weight : normal
+}
+input {
+	font-family : inherit;
+	font-size : inherit;
+	font-weight : inherit
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+
+legend {
+    color: #000
+}
+
+
+#pccCoveragePopup h1, #pccHeader h1
+{
+    font-weight:     bold;
+    font-size:		25px;
+	margin:			0;
+	padding:		0;
+	line-height:	normal;
+}
+#pccCoveragePopup h1.large, #pccHeader h1.large		{font-size:36px;}
+#pccCoveragePopup h1.medium, #pccHeader h1.medium	{font-size:20px;}
+#pccCoveragePopup h1.mobile	, #pccHeader h1.mobile	{font-size:26px;}
+
+#pccCoveragePopup h2, #pccHeader h2
+{
+    
+    font-size:		14px;
+	margin: 		0;
+	padding: 		0;
+	line-height: 	normal;
+}
+#pccCoveragePopup h2.bold, #pccHeader h2.bold		{font-weight:     bold;}
+#pccCoveragePopup h2.italic, #pccHeader h2.italic	{font-style:italic;}
+
+#pccCoveragePopup h3, #pccHeader h3 , #sliderContent h3
+{
+    
+    font-size:		12px;
+	font-weight:	normal;
+	margin: 		0;
+	padding: 		0;
+	line-height: 	normal;
+}
+#pccCoveragePopup h3.bold, #pccHeader h3.bold		{font-weight:     bold;}
+#pccCoveragePopup h3.italic, #pccHeader h3.italic	{font-style:italic;}
+
+#pccCoveragePopup h4
+{
+    
+    font-size:		12px;
+	margin: 		0;
+	padding: 		0;
+	line-height: 	normal;
+}
+#pccHeader h4
+{
+    
+    font-size:		11px;
+	margin: 		0;
+	padding: 		0;
+	line-height: 	normal;
+}
+#pccCoveragePopup h4.bold, #pccHeader h4.bold		{font-weight:     bold;}
+
+#pccCoveragePopup h5, #pccHeader h5
+{
+    
+    font-size:		11px;
+	padding: 		0;
+	margin: 		0;
+	line-height:	normal;
+}
+#pccCoveragePopup h5.bold, #pccHeader h5.bold, #sliderContent h5.bold	{font-weight:     bold;}
+
+#pccCoveragePopup h6, #pccHeader h6, #sliderContent h6
+{
+    
+    font-size:		12px;
+	padding: 		0;
+	margin: 		0;
+	line-height: 	normal;
+}
+/*#pccCoveragePopup h6.bold, #pccHeader h6.bold	, #sliderContent h6.bold	{font-weight:     bold;}*/
+
+#pccCoveragePopup .inline{
+	float: 		none;
+	height: 	inherit;
+}
+/*
+.bold{
+	font-weight: bold;
+}
+*/
+H2 div.small{
+	font-size: 80%;
+	display: inline-block;
+}
+/**** Spacers ****/
+.sp2				{margin-bottom:2px !important;}
+.sp5				{margin-bottom:5px !important;}
+.sp8				{margin-bottom:8px !important;}
+.sp12				{margin-bottom:12px !important;}
+.sp16				{margin-bottom:16px !important;}
+.sp24				{margin-bottom:24px !important;}
+
+.pd8				{padding-bottom:8px !important;}
+.pd12				{padding-bottom:12px !important;}
+
+.rMarg3				{margin-right:3px !important;}
+.rMarg5				{margin-right: 5px !important;}
+.rMarg10			{margin-right: 10px !important;}
+.pcc_rMarg27		{margin-right: 27px !important;}
+
+.pcc_sp10				{margin-bottom:10px !important;}
+.pcc_sp15				{margin-bottom:15px !important;}
+.pcc_sp20				{margin-bottom:20px !important;}
+.pcc_sp25				{margin-bottom:25px !important;}
+.pcc_sp30				{margin-bottom:30px !important;}
+.pcc_sp40				{margin-bottom:40px !important;}
+/* right margin */
+.pcc_rMarg10			{margin-right: 10px !important;}
+.pcc_rMarg20			{margin-right: 20px !important;}
+.pcc_rMarg15			{margin-right: 15px !important;}
+
+.pcc_tMarg15			{margin-top: 15px !important;}
+
+.pcc_tPad15				{padding-top: 15px !important;}
+.pcc_tPad10				{padding-top: 10px !important;}
+
+
+
+
+
+/**** General Use Sprites ****/
+.pccArrowDownSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -41px -0px;
+	width:			13px;
+	height:			8px;
+}
+
+.pccArrowUpSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -40px -21px;
+	width:			13px;
+	height:			8px;
+}
+
+.pccToggleOnSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -1px -221px;
+	width:			112px;
+	height:			20px;
+}
+
+.pccToggleOffSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -1px -250px;
+	width:			112px;
+	height:			21px;
+}
+
+.pccPlusIconSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -35px -296px;
+	width:			11px;
+	height:			11px;
+
+	display:		inline-block;
+	padding-left:	20px;
+}
+
+.pccClearIconSprite
+{
+	background: 	url("../images/sprites.18172.png") no-repeat -21px -121px;
+	width: 			10px;
+	height: 		10px;
+
+	position: 		absolute;
+	display: 		inline-block;
+	right: 			10px;
+	margin-top: 	15px;
+}
+
+.pccCloseIconSprite
+{
+	background: 	url("../images/sprites.18172.png") no-repeat -1px -121px;
+	width: 			19px;
+	height: 		19px;
+
+	position:		absolute;
+	display:		inline-block;
+	top:			5px;
+	right:			5px;
+	padding:		10px;
+}
+
+.pccCloseIconSprite:hover
+{
+    background:		url("../images/sprites.18172.png") no-repeat -60px -121px;
+}
+
+
+
+/**** Legend Sprites ****/
+
+.pccLegendIconSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -21px -1px;
+	width:			20px;
+	height:			20px;
+}
+
+.pccVerifiedHexSprite
+{
+    background: 	url("../images/sprites.18172.png") no-repeat 0 -80px;
+    width:			19px;
+    height:			22px;
+}
+
+
+/**** MultiSearch Sprites ****/
+
+.pccMultiSearchIconSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -20px -41px;
+	width:			17px;
+	height:			17px;
+}
+
+.pccMultiSearchIconSpriteNoHover
+{
+    background:		url("../images/sprites.18172.png") no-repeat -20px -41px;
+    width:          17px;
+    height:         17px;
+    margin:         0 auto;
+}
+
+/**** Coverage Popup Sprites ****/
+.pccVerifiedSprite-type-LTE	
+{
+    background:		url("../images/sprites.18172.png") no-repeat -1px -1px;
+    width:			12px;
+    height:			14px;
+}
+
+.pccVerifiedSprite-type-4G
+{
+    background:		url("../images/sprites.18172.png") no-repeat -1px -21px;
+    width:			12px;
+    height:			14px;
+}
+
+.pccVerifiedSprite-type-3G
+{
+    background:		url("../images/sprites.18172.png") no-repeat -1px -41px;
+    width:			12px;
+    height:			14px;
+}
+
+.pccVerifiedSprite-type-2G
+{
+    background:		url("../images/sprites.18172.png") no-repeat -1px -61px;
+    width:			12px;
+    height:			14px;
+}
+
+
+.pccSpeedDialSprite-1
+{
+    background:		url("../images/sprites.18172.png") no-repeat -61px -1px;
+    width:			46px;
+    height:			35px;
+}
+
+.pccSpeedDialSprite-2
+{
+    background:		url("../images/sprites.18172.png") no-repeat -61px -41px;
+    width:			46px;
+    height:			35px;
+}
+
+.pccSpeedDialSprite-3
+{
+    background: 	url("../images/sprites.18172.png") no-repeat -61px -81px;
+    width:			46px;
+    height:			35px;
+}
+
+.pccSpeedDialSprite-4
+{
+    background: 	url("../images/sprites.18172.png") no-repeat -61px -121px;
+    width:			46px;
+    height:			35px;
+}
+
+.pccSpeedDialSprite-5
+{
+    background: 	url("../images/sprites.18172.png") no-repeat -61px -161px;
+    width:			46px;
+    height:			35px;
+}
+
+.deviceSpriteParent
+{
+    padding-right: 5px;
+    display: table-cell;
+}
+
+.deviceSpriteContent
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.pccDeviceSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -1px -280px;
+	width:			22px;
+	height:			36px;
+}
+
+.noWrap 
+{
+	white-space: nowrap;
+}
+
+.pccDeviceListSprite
+{
+    background: 	url("../images/sprites.18172.png") no-repeat -34px -280px;
+	width:			12px;
+	height:			8px;
+	margin-top:		5px;
+	margin-left:	10px;
+}
+
+.pccDownloadSprite
+{
+    background:		url("../images/sprites.18172.png") no-repeat -1px -141px;
+    width:			9px;
+    height:			12px;
+}
+
+
+
+
+
+
+
+
+
+/**** Flexbox - column grid layout classes ****/
+.hbox
+{
+	display:				-webkit-box;
+	display:				-moz-box;
+	display:				-ms-flexbox;
+	display:				-webkit-flex;
+	display: 				flex;
+	-wibkit-box-orient:		horizontal;
+	-moz-flex-direction:	row;
+	-ms-flex-direction:		row; /* IE 10 */
+	-webkit-flex-direction: row;
+	flex-direction: 		row;
+
+	/* IE */
+	display:				table-row\9; /* IE < 9 */
+}
+
+.hbox-flex
+{
+	-webkit-box-flex:		1;
+	-moz-box-flex:			1;
+	-webkit-flex: 			1;
+	-ms-flex:				1 0 0px; /* IE 10 */
+	flex: 					1;
+	width:					0px;
+
+	/* IE */
+	width:					10000px\9; /* IE < 9 */
+}
+
+/* IE < 9 */
+.hbox > div
+{
+	display:				table-cell\9;
+	vertical-align:			top\9;
+}
+
+
+
+
+
+
+
+
+
+.center						{margin:0 auto;text-align:center;}
+.centered					{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}
+.hidden						{display:none;}
+.invisible					{visibility:hidden;}
+.inline div					{display:inline-block;vertical-align:baseline;}
+.upper						{text-transform:uppercase;}
+
+
+.pccUnselectable
+{
+	-webkit-touch-callout:	none;
+	-webkit-user-select:	none;
+	-ms-user-select:		none;
+	user-select:			none;
+}
+
+.pccSelectable
+{
+	-webkit-touch-callout:	default;
+	-webkit-user-select:	all;
+	-ms-user-select:		all;
+	user-select:			all;
+}
+
+.pccHr
+{
+	margin:					0 15px;
+	border:					1px dotted #d4d4d4;
+}
+
+.pccPillButton
+{
+	background:				#1a75cf;
+	background-image:		-webkit-linear-gradient(top, #1a75cf, #035494);
+	background-image:		-moz-linear-gradient(top, #1a75cf, #035494);
+	background-image:		-ms-linear-gradient(top, #1a75cf, #035494);
+	background-image:		-o-linear-gradient(top, #1a75cf, #035494);
+	background-image:		linear-gradient(to bottom, #1a75cf, #035494);
+	color:					#ffffff;
+	border:					solid #1a75cf 1px;
+
+	height:					40px;
+	margin-left:			10px;
+	padding:                0 15px;
+
+	font-size:				14px;
+	text-decoration:		none;
+
+	-webkit-border-radius:	3;
+	border-radius:			3px;	
+}
+
+.pccPillButton:hover
+{
+	background:				#035494;
+	background-image:		-webkit-linear-gradient(top, #035494, #1a75cf);
+	background-image:		-moz-linear-gradient(top, #035494, #1a75cf);
+	background-image:		-ms-linear-gradient(top, #035494, #1a75cf);
+	background-image:		-o-linear-gradient(top, #035494, #1a75cf);
+	background-image:		linear-gradient(to bottom, #035494, #1a75cf);
+}
+
+ .pccPillButton.pccDisabled 
+{
+	background: #dddddd;
+	border: #dddddd;
+	color: #f2f2f2;
+}
+
+
+ .pccPillButton.pccDisabled:hover
+{
+	background: #dddddd;
+	border: #dddddd;
+	color: #f2f2f2;
+}
+
+#pccHeader
+{
+	box-sizing:				border-box;
+	-moz-box-sizing:		border-box;
+	padding: 				0;
+	position:               absolute;
+	height:                 74px;
+	width:					100%;
+	background:				#eeeeee;
+	box-shadow: 			0px 0px 10px #999;
+	border-bottom: 			1px solid #dddddd;
+	z-index:				2000;
+}
+
+.pccHeaderButton
+{
+	position:				relative;
+	display:				table;
+	height:					74px;
+	padding:				0px 10px;	
+	white-space:			nowrap;
+
+	-webkit-touch-callout:	none;
+	-webkit-user-select:	none;
+	-ms-user-select:		none;
+	user-select:			none;
+
+	cursor:					pointer;
+}
+
+
+.pccHeaderButton > div+div+div
+{
+	padding-left: 			30px;
+}
+
+
+.pccHeaderDivider
+{
+	padding:				18px 10px 0 10px;
+	background-color: 		transparent;
+}
+
+
+.pccHeaderDivider > div
+{
+	width:					0;
+	height:					40px;
+	border-right:			1px solid #cccccc;
+}
+
+
+.pccOverlay
+{
+	background:				#ffffff;
+	-webkit-touch-callout:	none;
+	-webkit-user-select:	none;
+	-ms-user-select:		none;
+	user-select:			none;
+
+	cursor:					default;
+}
+
+
+
+
+
+/* SPINNER specific stuff */
+#spinnerContainer{float:left;padding:6px 0}
+#spinner{height:20px;width:20px;padding:6px 4px 0 0}
+
+
+
+/* LEGEND specific stuff */
+
+.pccOverlay#pccLegendOverlay
+{
+	position: 				absolute;
+/* 
+	width: 					151px\9;
+ */
+	width: 					175px;
+	box-shadow: 			0px 3px 10px #999;
+	border-right: 			1px solid #dddddd;
+	border-left: 			1px solid #dddddd;
+	border-bottom: 			1px solid #dddddd;
+}
+
+#pccLegendButton
+{
+	width: 					149px\9;
+	width: 					152px;
+	padding-left:           20px;
+}
+
+.pccLegendVerifiedSection
+{
+	padding: 				15px;    
+}
+
+.pccLegendItems 
+{
+	padding: 				15px;
+}
+.pccLegendItemsDivider 
+{
+	border-top: 			1px dotted #cccccc;
+	margin: 				0 15px;
+}
+
+.pccLegendItemsDivider .pccLegendItems
+{
+	padding: 				15px 0;
+}
+
+.pccLegendItem
+{
+	display:				table;
+	margin-bottom:			5px;			
+}
+
+.pccLegendSwatch
+{
+	display:				inline-block;
+	width:					16px;
+	height:					16px;
+	padding:				0;
+}
+
+.pccLegendLabel
+{
+	display:				table-cell;
+	padding-left:			5px;
+	font-size:				12px;
+	color:					#808080;
+	vertical-align: 		middle;
+}
+
+.pccLegendItem.moreDrpDwn 
+{
+    margin: 0 -15px;
+    padding: 15px 21px 15px 15px;
+    background: #f2f2f2;
+}
+
+
+
+
+.pccTableSections
+{
+	padding:				18px 10px 0 10px;
+	background-color: 		transparent;
+}
+
+.pccTableButton
+{
+	white-space: 			nowrap;
+	display:				table;
+	height:					74px;
+	padding:				0px 10px;
+	cursor:					pointer;
+	-webkit-touch-callout:	none;
+	-webkit-user-select:	none;
+	-ms-user-select:		none;
+	user-select:			none;
+	position: 				relative;
+}
+
+.pccTableButton:hover 
+{
+	color: #000000;
+}
+	
+.pccTableButton > div+div+div
+{
+	padding-left: 			30px;
+}
+.pccTableButton.legendBtn
+{
+	width: 					149px\9;
+	width: 					152px;
+	padding-left:           20px;
+}
+.pccTableButton > div
+{
+	display:				table-cell;
+	padding:				0 3px;
+	vertical-align:			middle;
+}
+
+
+
+/* SEARCH specific stuff */
+
+#pccSearchContainer
+{
+	position: 				relative;
+}
+#pccSearchButton
+{
+	margin-left: 			10px;
+}
+
+.pccSearchInput
+{
+	padding-left: 			15px;
+	padding-right: 			15px;
+	width: 					100%;
+	box-sizing:				border-box;
+	-moz-box-sizing:		border-box;
+	height: 				40px;
+	line-height: 				40px;
+	border: 				1px solid #969696;
+	-webkit-border-radius: 	3px;
+	-moz-border-radius: 	3px;
+	border-radius: 			3px;
+	/*outline: 				none !important;*/
+	border: 				none;
+}
+
+.pccSearchTextBoxError
+{
+	border-color: 			red;
+
+}
+.pccSearchTextBoxNoError
+{
+	border-color: 			#969696;
+
+}
+
+.pccSearchTextBox{
+	position: 				relative;
+	box-sizing:				border-box;
+	-moz-box-sizing:		border-box;
+	border-style: 			solid;
+	border-width: 			1px;
+	-webkit-border-radius: 	3px;
+	-moz-border-radius: 	3px;
+	border-radius: 			3px;
+}	
+
+.pccClearSearchTextBox
+{
+	z-index				: 9;
+	position			: absolute;
+	right				: 192px;
+	top					: 18px;
+	background			: url("../images/sprites.18172.png") no-repeat -31px -112px;
+	width				: 28px;
+	height				: 30px;
+	margin-top			: 5px;
+}
+/* MULTISEARCH specific stuff */
+
+
+.pccMultiSearchInput
+{
+	padding-left: 			30px !important;
+	padding-right: 			20px !important;
+	width: 					100% !important;
+	height: 				40px !important;
+	line-height: 			40px ;
+	box-sizing:				border-box;
+	-moz-box-sizing:		border-box;
+	outline: 				none !important;
+	border: 				none;
+	margin-bottom: 			0 !important;
+}
+
+.textErrorHandling
+{
+	color: 					red;
+	padding: 				5px 0 10px 0;
+}
+
+.pccMyPlacesOverlay
+{
+	position: 				absolute;
+	width: 					400px;
+	right: 					0;
+	padding: 				15px;
+	z-index: 				999;
+	font-size: 				14px;
+	box-shadow: 			0px 3px 10px #999;
+	border-right: 			1px solid #dddddd;
+	border-left: 			1px solid #dddddd;
+	border-bottom: 			1px solid #dddddd;
+}
+
+.multiPlaceError
+{
+	border-color: 			red;
+
+}
+.multiPlaceNoError
+{
+	border-color: 			#969696;
+
+}
+
+.multiSearchTextBox{
+	position: 				relative;
+	box-sizing:				border-box;
+	-moz-box-sizing:		border-box;
+	border-style: 			solid;
+	border-width: 			1px;
+	-webkit-border-radius: 	3px;
+	-moz-border-radius: 	3px;
+	border-radius: 			3px;
+	margin-bottom:				10px;
+}
+
+.multiSearchTextBox > .multiSearchInputDiv
+{
+	width: 					100%;
+	
+} 
+.multiSearchTextId
+{
+	display: inline-block;
+	position: absolute;
+	font-weight: bold;
+	color: #e20074;
+	font-size: 16px;
+	height: 40px;
+	line-height: normal;
+	padding: 11px 10px;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+.multiSearchClearIcon{
+	position: absolute;
+	margin-right: 10px;
+	right: 0;
+	top: 0;
+	z-index: 2;
+}
+.deleteMultiSearchTextBox
+{
+	display: 				inline-block;
+	position: 				absolute;
+	right: 					10px;
+	background: 			url("../images/sprites.18172.png") no-repeat -21px -121px;
+	width: 					10px;
+	height: 				10px;
+	margin-top: 			15px;
+}
+
+
+/* Nav:  My Locations */
+.navLocations {
+	position: relative;
+	padding-top : 18px;
+	box-sizing : border-box;
+}
+
+
+.noRightBorder {
+	border-right : 1px solid # eeeeee;
+}
+
+
+.clearButton {
+	display : table;
+	height : 40px;
+}
+.clearButton > div {
+	display : table-cell;
+	vertical-align : middle;
+	padding-left : 8px;
+}
+		
+.leftAlign{
+    margin-left: 0;
+    margin-right: auto;
+}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* AUTOCOMPLETE specific stuff */
+
+.autocomplete-holder {
+    position: relative;
+	width:100%;
+}
+
+.autocomplete-dropdown {
+    border-bottom-right-radius: 2px; 
+    border-bottom-left-radius: 2px; 
+	border: 1px solid silver;
+	border-top: none;
+	width: 100%;
+    cursor: pointer;
+    z-index: 9999;
+    position: absolute;
+    margin-top: 2px;
+    background-color: #ffffff;
+	//box-shadow: 0px 2px 5px #999999;
+}
+
+.autocomplete-description {
+    font-size: 14px;
+}
+
+.autocomplete-row {
+	font-family : Arial, sans-serif;
+	font-size : 12px;
+    padding: 5px;
+    color: #000000;
+	width: 100%;
+	border-top:	1px solid #cccccc;
+	border-bottom:	0px;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow : ellipsis;
+}
+.autocomplete-row:hover {
+    background-color: 	#F5FAFF;
+}
+.autocomplete-selected-row {
+    background-color: 		#E6F5FF;
+}
+.autocomplete-selected-row:hover {
+    background-color: 	#E6F5FF;
+}
+
+.autocomplete-row-image {
+	width : 15px;
+	height : 20px;
+	margin-right : 5px;
+	margin-top : -5px;
+	display : inline-block;
+	vertical-align : top;
+	background-image : url("../images/autocomplete-icons.18172.png");
+	background-size : 34px;
+	background-position : -1px -157px;
+}
+
+.autocomplete-row-history-image {
+	width : 15px;
+	height : 20px;
+	margin-right : 5px;
+	margin-top : -5px;
+	display : inline-block;
+	vertical-align : top;
+	background-image : url("../images/autocomplete-icons.18172.png");
+	background-size : 34px;
+	background-position : -1px -60px;
+}
+
+.autocomplete-image-holder {
+    padding-top: 2px;
+    float: left;
+    height: 34px;
+    width: 34px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.autocomplete-image {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border-color: #ececec;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#pccSearchGoogleLogo
+{
+	height:					20px;
+	text-align:				right;
+	margin:					10px 20px;
+}
+
+.pccSearchAutocompleteRow
+{
+	padding:				6px 10px;
+	border-top:				1px solid #cccccc;
+}
+#pccSearchAutocomplete :first-child
+{
+	border-top: 0;
+}
+
+.pccSearchAutocompleteRow > div, .pccSeachHistoryRow > div
+{
+	display: 				table-cell;
+}
+
+.pccSeachHistoryRow
+{
+	padding:				6px 10px;
+	border-top:				1px solid #cccccc;
+}
+
+.pccSearchMatchedText
+{
+	font-size:				12px;
+	color:					#000000;
+}
+
+.pccSearchPredictedText
+{
+	font-size:				10px;
+	color:					#a0a0a0;
+}
+
+.pccSearchIcon{
+	padding-right: 			10px;
+	width: 					40px;
+
+}
+
+/* autocomplete */
+
+
+
+
+
+
+
+#pccMultiSearchContainer
+{
+	position: relative;
+}
+
+		
+		
+		
+
+
+
+
+
+/**** Map ****/
+
+#map
+{
+	position:				absolute;
+	top:					74px;
+	bottom:					0;
+	left:					0;
+	right:					0;
+	
+	z-index:				-1;
+}
+
+#mapCanvas
+{
+	height:					100%;
+}
+
+
+
+/**** Coverage Popup ****/
+
+#pccCoverageCaret
+{
+    width:					0;
+    height:					0;
+    
+    border-top:				8px solid transparent;
+    border-bottom:			8px solid transparent;
+    border-right:			12px solid #ffffff;
+}
+
+.pccCoverageRadioSection
+{
+	width:					248px;
+	padding:				15px 15px 15px 15px;	
+	background: 			#ffffff;
+}
+
+.pccCoverageBottomSection
+{
+	width:					248px;
+	padding:				0 15px 15px 15px;	
+	background: 			#ffffff;
+}
+
+.pccCoverageSignalSection
+{
+	width:					248px;
+    padding:				10px 15px;
+    background:				#f8f8f8;
+}
+
+.pccPartnerSignalSection
+{
+	padding:				10px 15px;
+    background:				#f8f8f8;
+	margin:					0 -15px;
+}
+
+.pccCoverageSpeedtestSection
+{
+	width:					248px;
+    padding:				15px 12px 15px 12px;
+    /* border-top:				1px solid #dddddd; */
+    text-align:				center;
+
+    background:				#ffffff;
+}
+
+#pccCoveragePopupBody
+{
+  box-shadow: 				0px 0px 10px #999;
+  background: 				#ffffff;;
+}
+
+#pccTypeStrengthSection > div
+{
+	padding-bottom: 		8px;
+}
+
+#pccTypeStrengthSection>div:last-child
+{
+	padding-bottom: 		0px;
+}
+
+#pccTypeStrengthSection>div>div>div:first-child
+{
+	width: 					140px;
+}
+
+.pccSignalStrength-0	
+{
+	background-image:url('../fonts/SignalStrength0.svg');
+	background-repeat:no-repeat;
+	display: inline-block;
+    width: 78px;
+    height: 17px;
+    padding: 0;
+}
+.pccSignalStrength-1	
+{
+	background-image:url('../fonts/SignalStrength1.svg');
+	background-repeat:no-repeat;
+	display: inline-block;
+    width: 78px;
+    height: 17px;
+    padding: 0;
+}
+.pccSignalStrength-2	
+{
+	background-image:url('../fonts/SignalStrength2.svg');
+	background-repeat:no-repeat;
+	display: inline-block;
+    width: 78px;
+    height: 17px;
+    padding: 0;
+}
+.pccSignalStrength-3	
+{
+	background-image:url('../fonts/SignalStrength3.svg');
+	background-repeat:no-repeat;
+	display: inline-block;
+    width: 78px;
+    height: 17px;
+    padding: 0;
+}
+.pccSignalStrength-4	
+{
+	background-image:url('../fonts/SignalStrength4.svg');
+	background-repeat:no-repeat;
+	display: inline-block;
+    width: 78px;
+    height: 17px;
+    padding: 0;
+}
+/* 
+.pccSignalStrengthValue
+{
+    width:                  85px;
+    margin:					0 10px;
+    
+    background:             #ffffff;
+    border:                 1px solid #e20074;
+    text-align:             center;
+}
+
+.pccSignalStrengthLabel
+{
+    width:					85px;
+    margin:					5px 10px 0 10px;
+    
+    background:				#ffffff;
+    text-align:				center;
+    font-size:				11px;
+}
+*/
+
+
+.pccPointer
+{
+	cursor:					pointer;
+}
+
+#pccFooter{
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0; 
+}
+
+/**** Slider PC/Tablet/Mobile ****/
+.sliderRibbon{
+    background:#ffffff;
+    width:100%;
+	font-size: 14px;
+	box-shadow: 0px 0px 10px #999;
+	border-top: 1px solid #dddddd;
+}
+.sliderHeader {
+    padding: 0 24px;
+    height:41px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    display: table;
+}
+.sliderHeader > div{
+    vertical-align: middle;
+    width:100%;
+}
+.sliderBody{
+    margin-left:0px;
+    overflow-x: auto;
+	
+}
+#sliderRibbonBottom{
+    padding-bottom: 12px;
+}
+#sliderContent{
+    white-space: nowrap;
+	margin-left: 24px;
+}
+.sliderRibbon .tableCell{
+    display: table-cell;
+	vertical-align: middle;
+}
+.hideDiv {
+    display: none;
+}
+.pccArrowDownSection{
+    padding-right: 24px;
+	padding-left: 15px;
+    vertical-align: middle;
+}
+.pccSliderText{
+    vertical-align: middle;
+}
+.pccSliderDivider{
+    width: 0;
+    border-left: 1px dotted #999999;
+    padding-left: 24px;
+    height: 30px;
+}
+
+.caretSection{
+    padding-top:45px;
+}
+/**** Bubble *****/
+.pccbubbleOverlay{
+    position: absolute;
+	width: 190px;
+	z-index: 3000;
+}
+
+.pccbubbleContent{
+	font-size: 14px;
+    background: #666666;
+    color: #ffffff;
+    padding: 10px;
+    white-space: normal
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	-webkit-text-size-adjust: none;
+}
+
+
+.pccbubbleContent a{
+	text-decoration: none;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.pcccaretDown {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 8px solid #666666;
+    margin: 0 auto;
+}
+
+.areaThumb{
+    display:inline-block;
+    width: 190px;
+    height:65px;
+    margin: 0 8px 12px 0;
+    cursor: pointer;
+    background:#e6e7e9;
+    white-space: normal;
+    vertical-align: top;
+}
+.areaThumbBox{
+    display: table;
+    height: 65px;
+    padding: 10px;
+	box-sizing: border-box;
+	-moz-box-sizing:		border-box;
+}
+.areaThumbBox div h2 {
+    font-size: 14px;
+    display:inline-block;
+}
+.areaThumbBox > div{
+    display:table-cell;
+    vertical-align: middle;
+}
+.areaThumbIcon{
+    padding-right: 10px;
+}
+.areaThumbIcon > div{
+    width: 24px;
+    height: 24px;
+    background: #8f8f8f;
+}
+
+/*pccSearchErrorBubbleContent*/
+
+.pccSearchErrorBubbleContent {
+    position: absolute;
+    background: #ffffff;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding:10px;
+    font-size: 14px;
+    border-radius: 5px
+}
+.pccSearchErrorBubbleContent:after, .pccSearchErrorBubbleContent:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.pccSearchErrorBubbleContent:after {
+    border-bottom-color: #ffffff;
+    border-width: 9px;
+    margin-left: -9px;
+    
+}
+.pccSearchErrorBubbleContent:before {
+    border-bottom-color: #ff0000;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+/***************************************************/
+
+/**** Brand-Overridable Stuff ****/
+.pccBrandColor						{color:#1a75cf;}
+.pccBrandContrastColor				{color:#ffffff;}
+.pccBrandLinkColor					{color:#1a75cf;}
+.pccBrandLinkColor:hover 			{color:#035494;}
+
+#disclaimerOverlay{z-index:20000;position:absolute;right:20px;padding: 25px;width: 327px;height: 295px; overflow-y: hidden; overflow-x: hidden;background-color:#fff;box-shadow: 0px 0px 10px #999;white-space: normal;}
+
+.pccDisclaimer{z-index:20000;position:absolute;height: 270px;right:5px;left: 13px; overflow-y: auto; overflow-x: hidden;background-color:#fff;white-space: normal;}
+
+.pccLableHover:hover 
+{
+	color: #000000;
+}
+
+#addAnotherSearch:hover 
+{
+  color: #035494;
+}
+
+#addAnotherSearch:hover .pccPlusIconSprite 
+{
+  background:		url("../images/sprites.18172.png") no-repeat -55px -296px;
+}
+
+#viewHereLink:hover
+{
+  color: #035494;
+}
+
+#viewHereLink:hover .pccDeviceListSprite 
+{
+	background:		url("../images/sprites.18172.png") no-repeat -55px -280px;
+}
+
+#pccFaqSection:hover .pccArrowUpSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -60px -21px;
+}
+
+#pccFaqSection:hover .pccLableHover
+{
+	color:  #000000;
+}
+
+#pccLegendButton:hover .pccArrowDownSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -60px -0px;
+}
+
+.pccTableButton:hover .pccMultiSearchIconSprite
+{
+	background:		url("../images/sprites.18172.png") no-repeat -59px -41px;
+}
+
+/**** Device popup related css ****/
+
+.pccDevicePopupOverlay{position:fixed;z-index:9999;top:0;left:0;width:100%;height:100%;background-color:#FFF;opacity:0.8;-ms-filter:"alpha(opacity=50)"}
+.pccDevicePopupDialog{z-index:10000;position:relative;width:700px;height:420px;margin: 0 auto;top:100px;background-color:#fff;box-shadow:2px 2px 10px #d5d5d5;border:1px solid #d5d5d5;border-radius: 6px;}
+.pccDevicePopupDialog>h1{font-size:20px;margin:10px;padding-left:10px;padding-right:20px}
+.pccDevicePopupDialogContent{position:relative;padding-left:20px;padding-bottom:20px;text-align:left;overflow-y:auto;height:360px;width:100%}
+.pccDevicePopUpTitle{padding-left:20px;padding-right:20px;padding-top:15px;padding-bottom:10px;}
+.pccDevicePopUpTitle>h1{font-weight:700;}
+.pccDevicePopupClose{position:absolute;top:15px;right:15px;cursor:pointer;display:inline-block;background: url("../images/sprites.18172.png") no-repeat -41px -121px; width: 19px; height: 19px;}
+.deviceElement{display:inline-block;width:300px;padding:3px}
+.expander{margin-bottom:20px}.expander ul{padding:0;margin:0}.expander li{list-style:none;line-height:17px}.expander>.header{cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.expander>.header>.label{font-size:15px;font-weight:700;}.expander .spacer{max-width:80px;min-width:50px}.expander>.header>.expanderIcon:after{float:left;width:20px;font-weight:700}.expander>.header>.expanderIcon.collapsed:after{content:"+"}.expander>.header>.expanderIcon.expanded:after{content:"-"}.expander>.content>div:first-child{padding-left:20px}.expander>.content>div{padding-top:15px}.columnIndent{width:20px}
+
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+	top: -0.3em;
+}
+
+
+/********************virtual keyboard*********************************/
+
+.pccKeyboardNumKeys {
+    display						:block;
+    width						:220px;
+    height						:356px;
+    margin-left					:20px;
+}
+.pccKeyBoardMainKeys .pccKeyboardFourthRow .pccKeyboardDeleteKey {
+    background-image			:url("../images/key-delete-bg.png");
+    width						:138px;
+	float						:right;
+}
+.pccKeyboardNumKeys .pccKeyboardFourthRow .pccKeyboardHideKey {
+    background-image			:url("../images/key-hide-bg.png");
+    width						:138px;
+}
+
+.pcckeyboardWrapper {
+    width						:1050px;
+    position					:fixed;
+    left						:0px;
+    bottom						:130px;
+    right						:0px;
+    //height					:200px;
+    z-index						:5000;
+    text-align					:center;
+    margin						:auto;
+}
+.pcckeyboardPanel {
+    width						:1050px;
+    display						:inline-block;
+    background-color			:#FFFFFF;
+    border						:2px solid silver;
+	padding-top					:25px;
+}
+.pcckeyboardWrapper .pccKeyBoardDrawerButton {
+    width						:100%;
+    height						:39px;
+    padding						:0 0;
+    float						:left;
+    font-size					:24px;
+    font-weight					:700;
+}
+.pcckeyboardWrapper .pccKeyBoardMainKeys {
+    text-align					:center;
+    padding-left				:30px;
+    display						:inline-block;
+}
+.pcckeyboardWrapper .pccKeyBoardMainKeys .pccKeyboardThirdRow {
+    text-align					:right;
+}
+.pccKeyboardCharKey {
+    display						:inline-block;
+    text-align					:center;
+    vertical-align				:middle;
+    color						:#000;
+    outline						:0;
+    padding-top					:15px;
+    font-size					:28px;
+    background-image			:url("../images/key-bg.png");
+    background-repeat			:no-repeat;
+    background-color			:white;
+    width						:65px;
+    height						:66px;
+    margin-bottom				:16px;
+    box-sizing					:border-box;
+    margin-right				:5px;
+    text-decoration				:none;
+    //border					:2px solid #A1A1A1;
+    //-ms-filter				:"progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=145, Color='#A1A1A1')";
+}
+
+.pccKeyboardCharKey:active {
+    opacity						:0.6;
+    filter						:alpha(opacity=60);
+	background-color			:silver;
+}
+.pccKeyboardkeyClicked {
+    //pointer-events				:none;
+    cursor						:default;
+}
+.pcckeyboardWrapper .pccKeyBoardMainKeys .pccKeyboardSpaceBarKey {
+    background-image			:url("../images/key-space-bg.png");
+    width						:215px;
+}
+.pcckeyboardWrapper .pccKeyBoardMainKeys,.pcckeyboardWrapper .pccKeyboardNumKeys {
+    padding-top					:9px;
+    float						:left;
+    height						:374px;
+    display						:inline-block;
+}
+
+/********************virtual keyboard*********************************/
+
+
+/********Keep Media Query section in last of the css file. This section is only for Mobile mode.*********/
+@media screen and (max-width: 723px)
+{
+	#map
+	{
+		top:	40px;
+	}
+    
+	#pccHeader
+	{
+		position: relative;
+		height: 40px !important;
+	}
+
+	.pccHeaderDivider
+	{
+		padding:	5px 0px 5px 0px;
+	}    
+
+	.pccHeaderDivider > div
+	{
+		height:		30px;
+	}
+
+	.pccTableSections
+	{
+		padding: 0;
+	}
+	.pccTableButton
+	{
+		margin: 0 auto;
+		position: static;
+		height: 40px;
+	}
+	.pccTableButton > div
+	{
+		margin: 0;
+		padding: 0;
+	}
+
+
+	.pccMaxWidth
+	{
+		width: 100%;
+	}	
+
+	#pccLegendButton
+	{
+		width:  auto;
+		padding: 0;
+	}
+	#pccLegendContainer, #pccMultiSearchContainer
+	{
+		padding: 0;
+		-webkit-box-flex:		1.0;
+		-webkit-flex: 			auto;
+		flex: 					auto;
+		width:					0px;
+		/* IE */
+		-ms-flex:				1 0 0px; /* IE 10 */
+		width:					10000px\9; /* IE < 9 */
+	}
+
+	#pccSearchContainer, #pccMultiSearchContainer
+	{
+		position: static;
+	}
+	.pccTableSections  > div
+	{
+		display: table;
+		margin: 0 auto;
+	}
+	.pccTableButton > div > h3
+	{
+		display: 		    	none;
+	}
+
+	#pccSearchBar
+	{
+		position: absolute;
+		left: 0;
+		width: 100%;
+		top: 40px;
+		background: #ffffff;
+		padding: 10px;
+		margin: 0;
+	}
+
+	#pccSearchIconContainer
+	{
+		width: 100%;
+		cursor: pointer;
+	}
+
+	#pccSearchIconMobile 
+	{
+		height: 40px;
+		vertical-align: middle;
+		display: table-cell;
+	}
+
+	.pccNavSearchButton 
+	{
+		background: url("../images/sprites.18172.png") no-repeat -20px -21px;
+		height: 16px;
+		width: 16px;
+		margin: 0 auto;
+	}
+
+	.pccMultiSearchIconSprite
+	{
+		margin: 0 auto;
+	}	
+	.pccMyPlacesOverlay
+	{
+		width: 100%!Important;
+		left: 0;
+		margin: 0;
+	}
+
+	.pccOverlay#pccLegendOverlay
+	{
+		position: absolute;
+		width:100%;
+	}
+
+	.pccLegendVerifiedSection 
+	{
+		padding:10px;
+		width: 305px;
+		background: #ffffff;
+		white-space: nowrap;
+		left: 0;
+		margin: 0 auto;
+	}
+
+	.pccLegendVerifiedSection > div
+	{
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+	#pccLegendItems 
+	{
+		padding: 15px;
+		position: absolute;
+		z-index: 200;
+		background: #ffffff;
+		width: 100%;
+		border: none;
+		height: 55px;
+	}
+	#pccLegendItems> div
+	{
+		vertical-align: middle;
+	}
+	.pccLegendSwatch
+	{
+		display: table-cell;
+	}
+	.pccLegendItems
+	{
+		padding: 10px;
+	}
+	.pccLegendItem 
+	{
+		display: inline-block;
+		margin-right: 20px;
+	}
+	.pccLegendItem  > div
+	{
+		display: table-cell;
+	}
+
+	.pccLegendItem.moreDrpDwn 
+	{
+		margin-left: -16px;
+		padding: 15px 21px 15px 15px;
+		background: #f2f2f2;
+		margin-bottom: -5px;
+		position: absolute;
+		width: 101%;
+	}
+
+	#pccSearchButton
+	{
+		text-indent: -9999px;
+		width: 42px;
+		background:	url("../images/search_white.18172.png") no-repeat center, linear-gradient(to bottom, #1a75cf, #035494);
+	}
+
+	#pccLegendContainer.pccNavSelected, #pccMultiSearchContainer.pccNavSelected, #pccSearchContainer.pccNavSelected, #pccSearchDevice.pccNavSelected
+	{
+		background: #ffffff;
+		height: 40px;
+	}
+	
+	.pccDevicePopupDialog{width:90%;height:90%;top:20px;box-shadow:4px 4px 8px #000;	}
+	
+	
+	
+	#disclaimerOverlay{z-index:20000;position:absolute;padding: 25px;width: auto; right:10px; left:10px; margin:0 auto; overflow-y: hidden; overflow-x: hidden;background-color:#fff;box-shadow: 0px 0px 10px #999;white-space: normal;}
+	
+	.pccDisclaimer{z-index:20000;position:absolute; overflow-y: auto; overflow-x: hidden;background-color:#fff;white-space: normal;padding-right:10px;}
+	
+	.pccSliderDivider
+	{
+		padding-left: 5px;
+	}
+	
+	.pccArrowDownSection
+	{
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	.sliderHeader
+	{
+		padding: 0 5px;
+		font-size: 12px;
+	}
+	#sliderContent
+	{
+		margin-left: 5px;
+	}
+	
+	.pccbubbleOverlay
+	{
+		width:100%;
+		position: absolute;
+		padding: 10px;
+	}
+
+	.pcccaretDown 
+	{
+		position: absolute;
+	}
+
+}
+
+/***********************Don't add styles after Media Query section***********************/

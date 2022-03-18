@@ -1,0 +1,117 @@
+
+<div id="pccCoveragePopup" class="hbox mapclrstyle" ng-switch="markerInfoType(currentMarker)">
+        <div class="pccCoverageCaretContainer"><div id="pccCoverageCaret"></div></div>	
+        <div id="" class="pccCoveragePopupBodyContainer">
+            <div class="pccCoveragePopupBody">
+            <!-- NO COVERAGE POPUP -->
+            <div ng-switch-when="none">
+                <div class="">
+                    <h2 class="bold">{{currentMarker.location['addressLine1']}}</h2>
+                    <h2 class="pcc_sp20">{{currentMarker.location['addressLine2']}}</h2>
+                    <div class="sp5" ng-if="!currentMarker.coverageArray.non700.hasExtendedRangeLTE">
+                        <h3 ng-bind-html="currentMarker.coverage['type-desc']|unsafe"></h3>
+                    </div>
+                     <div ng-if="currentMarker.coverageArray.non700.hasExtendedRangeLTE">
+                        <div class="sp5">
+                            <h3>Coverage available with Extended Range LTE capable device</h3>
+                        </div>
+                        <div ng-if="showCompareButton || showModeButton" class="pcc_tMarg15 pccItemsDivider "></div>
+                    </div>	
+                </div>
+            </div>
+            
+            <!-- AREA COVERAGE POPUP -->
+            <div ng-switch-when="area">
+                <div class="">
+                    <h2 class="bold">{{currentMarker.location['addressLine1']}}</h2>
+                    <h2 class="pcc_sp20">{{currentMarker.location['addressLine2']}}</h2>
+                    <div class="hbox sp5">
+                        <h3 ng-bind-html="currentMarker.location['description']|unsafe"></h3>
+                    </div>
+                </div>		
+            </div>
+    
+            <!-- ROAMING COVERAGE POPUP -->
+            <div ng-switch-when="roam">
+                <div class="">
+                    <h2 class="bold">{{currentMarker.location['addressLine1']}}</h2>
+                    <h2 class="pcc_sp20">{{currentMarker.location['addressLine2']}}</h2>
+    
+                    <div ng-switch="currentMarker.coverage['type']">
+                        <h2 class="pccBrandColor bold" ng-switch-when="type-roam">{{labels["type-2G-3G-4G"]}}</h2>
+                        <h2 class="pccBrandColor bold" ng-switch-when="type-roam850">{{labels["type-2G-3G-4G"]}}</h2>
+                        <h2 class="pccBrandColor bold" ng-switch-when="type-roamNoData">{{labels["title-roamNoData"]}}</h2>
+                        <h2 class="pccBrandColor bold" ng-switch-when="type-roamLTE">{{labels["type-LTE"]}}</h2>
+                        <h2 class="pccBrandColor bold" ng-switch-when="type-roamCAMX">{{labels["title-roamCAMX"]}}</h2>
+                        <!-- <div><h1 class="large upper bold legend-color-type-roam" ng-bind-html="currentMarker.coverage['type-text']|unsafe"></h1></div> -->
+                    </div>
+    
+                    <!-- SUBHEAD -->
+                    <h3 ng-if="currentMarker.coverage['type'] == 'type-roamNoData'" class="bold">{{labels["subhead-roamNoData"]}}</h3>
+                </div>
+                <!-- SIGNAL -->
+                <div class="pccPartnerSignalSection" ng-if="currentMarker.coverage['strength']">
+                    <h3 class="bold">{{currentMarker.coverage["strength-text"]}}:</h3>
+                    <div>
+                        <h3 class="">{{currentMarker.coverage["strength-desc"]}}</h3>
+                    </div>
+                </div>
+                    <!-- DESCRIPTION -->
+                <div class="pcc_tPad15">
+                    <h3  ng-bind-html="currentMarker.coverage['type-desc']|unsafe"></h3>							
+                    <!-- <div ng-if="currentMarker.coverage['type'] != 'type-roamCAMX'" class="pcc_tMarg15 pccCompareMapBtn pccPointer pcc_bold pccBrandLinkColor" ng-click="seePartnerCoverage()">
+                        View partner map <div class="pccCompareMapBtnArrow"></div>
+                    </div>				 -->
+                </div>			
+            </div>
+    
+            <!-- DEFAULT COVERAGE POPUP -->
+            <div ng-switch-when="coverage">
+                <div class="">
+                    <!-- ADDRESS -->
+                    <h2 class="bold">{{currentMarker.location['addressLine1']}}</h2>
+                    <h2 class="sp8">{{currentMarker.location['addressLine2']}}</h2>
+                
+                    <!-- RADIO -->
+                    <div class="pcc_sp15">
+                        <div>
+                            <h1 ng-class="'legend-color-' + currentMarker.coverage['type'] + ' large bold'" ng-bind-html="currentMarker.coverage['type-text']|unsafe"></h1>
+                        </div>
+                        <div>
+                            <!-- SUBHEAD -->
+                            <h3 ng-bind-html="currentMarker.coverage['type-head']|unsafe"></h3>
+                        </div>
+                    </div>			
+                </div>
+                <!-- SIGNAL -->
+                <div class="pccCoverageSignalSection" ng-if="currentMarker.coverage['strength']">
+                    <h3 class="bold">{{currentMarker.coverage["strength-text"]}}:</h3>
+                    <div>
+                        <h3 class="">{{currentMarker.coverage["strength-desc"]}}</h3>
+                    </div>
+                </div>
+                <div class="pcc_tMarg15" ng-if="currentMarker.coverage.requiresCapableDevice || currentMarker.speedtest"></div>
+            </div>
+            
+            <!-- SPEED TEST -->
+            <div class="pccCoverageSpeedtestSection" ng-if="currentMarker.speedtest">
+                <h6 class="bold pccBrandColor">SPEED TESTS</h6>
+                <h3 class="sp8">Customer Generated</h3>
+                <div ng-class="'pccSpeedDialSprite-' + currentMarker.speedtest['dial'] + ' center sp2'"></div>
+                <div class="inline">
+                    <div><h6 class="bold rMarg3" ng-bind-html="currentMarker.coverage['type-text']|unsafe"></h6></div>
+                    <div><div class="pccDownloadSprite rMarg3"></div></div>
+                    <div><h1 class="medium pccBrandColor">{{currentMarker.speedtest['speed']}}</h1></div>
+                    <div><h3 class="light">Mbps</h3></div>
+                </div>
+                <div>
+                    <h3>Average download speed of customer tests over last 90 days</h3>
+                </div>
+            </div>
+            
+            <!-- CLOSE BOX -->
+            <div class="pccCloseIconSprite pccPointer" ng-click="infoWindowCloseClicked($event)"></div>
+            </div>
+        </div>
+    </div>
+    

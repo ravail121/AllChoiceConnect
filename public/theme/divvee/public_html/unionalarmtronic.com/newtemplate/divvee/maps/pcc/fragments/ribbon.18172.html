@@ -1,0 +1,10 @@
+<div>
+	<div ng-repeat="slide in ribbonData.eduSlides">
+		<div id="pccbubbleOverlay{{$index + 1}}" class="pccbubbleOverlay" ng-show="(showPccSliderBubble == {{$index + 1}} && showRibbonDrawer)">
+				<div class="pccbubbleContent" compile="slide.info"></div>
+				<div id="pccBubbleCaretDown{{$index + 1}}" class="pcccaretDown"></div>
+		</div>
+	</div>
+	<div id="ribbonBody" class="sliderRibbon" windowresize>
+	</div>
+</div>

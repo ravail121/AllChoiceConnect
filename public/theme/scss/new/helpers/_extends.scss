@@ -1,0 +1,43 @@
+%extend_transition-linear {
+	@include browserPrefix( transition, all .3s linear );
+}
+
+%extend_transition-ease-in-out {
+	@include browserPrefix( transition, all .3s ease-in-out );
+}
+
+%extend_transition-ease {
+	@include browserPrefix( transition, all .3s ease );
+}
+
+
+%extend_img {
+	width: 100%;
+	height: auto;
+}
+
+%extend_hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+%extend_show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+%extend_center {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+%extend_gradient1 {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1ba4d6+0,ac00f6+100 */
+	background: #1ba4d6; /* Old browsers */
+	background: -moz-linear-gradient(left, #1ba4d6 0%, #00bcd4 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #1ba4d6 0%,#00bcd4 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #1ba4d6 0%,#00bcd4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ba4d6', endColorstr='#00bcd4',GradientType=1 ); /* IE6-9 */
+}

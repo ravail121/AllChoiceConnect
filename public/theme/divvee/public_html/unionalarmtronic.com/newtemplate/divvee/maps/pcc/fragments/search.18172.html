@@ -1,0 +1,30 @@
+
+<div class="pccTableSections">
+        <!-- PCC Search -->
+        <div id="pccSearchIconContainer" ng-click="toggleDrawer()" ng-show="($root.mobileSizeMode)?true:false">
+            <div id="pccSearchIconMobile" class="mapclrstyle">
+                <div class="pccNavSearchButton"></div>
+            </div>
+        </div>
+        <div id="pccSearchBar" ng-show="($root.mobileSizeMode)?showDrawer:true">
+            <form class="hbox" >
+                <div class="hbox-flex" >
+                    <!-- <input pccSearchBox id="pccSearchBox" type="text" autocomplete="off" autocorrect="off" ng-model="search.term" ng-focus="focus()" placeholder="search prompt"> -->
+                    <div ng-class="(searchInputError) ? 'pccSearchTextBox pccSearchTextBoxError' : 'pccSearchTextBox pccSearchTextBoxNoError'" 
+                        pccautocomplete id="pccSearch" placeholder="{{labels['title-searchPrompt']}}" model="search.term"  searchtext="searchText(text)" 
+                        searchplace="searchPlace(place)" history="history" searchistory="selectHistory(marker)"  inputclass="pccSearchInput"></div>
+    
+                    <div class="pccSearchErrorBubbleContent" ng-show="searchInputError" ng-bind-html="searchInputErrorMessage | unsafe"> </div>
+                    
+                </div>
+                <div>
+                    <input id="pccSearchButton" class="pccPillButton mapclrstyle" type="button" ng-click="searchText(search.term)" value="{{labels['title-searchButton']}}">
+                </div>
+            </form>
+        </div>
+        
+            
+        <div class="pccOverlaySearchSpacer"><div></div>
+        
+        </div>
+    </div>

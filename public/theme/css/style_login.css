@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+/*font-family: 'Open Sans', sans-serif;*/
+*{ 
+	margin:0px;
+	padding: 0px;
+}
+a:hover, a:focus{
+	text-decoration: none;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Open Sans', sans-serif;
+}
+body.mainlogin{
+	background: url(../img/mainbg1.png) top right no-repeat;
+	padding-top: 350px;
+}
+.devloginout{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+	background: -moz-linear-gradient(221deg, rgba(255,255,255,0) 0%, rgba(35,3,108,1) 100%);
+	background: -webkit-linear-gradient(221deg, rgba(255,255,255,0) 0%, rgba(35,3,108,1) 100%);
+	background: -o-linear-gradient(221deg, rgba(255,255,255,0) 0%, rgba(35,3,108,1) 100%);
+	background: -ms-linear-gradient(221deg, rgba(255,255,255,0) 0%, rgba(35,3,108,1) 100%);
+	background: linear-gradient(229deg, rgba(255,255,255,0) 0%, rgba(35,3,108,1) 100%); 
+}
+body.devlogin{
+	padding-top: 120px;
+	background: -moz-linear-gradient(0deg, rgba(25,17,33,1) 0%, rgba(25,17,33,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(25,17,33,1) 0%, rgba(25,17,33,1) 100%);
+	background: -o-linear-gradient(0deg, rgba(25,17,33,1) 0%, rgba(25,17,33,1) 100%);
+	background: -ms-linear-gradient(0deg, rgba(25,17,33,1) 0%, rgba(25,17,33,1) 100%);
+	background: linear-gradient(90deg, rgba(25,17,33,1) 0%, rgba(25,17,33,1) 100%); 
+}
+.form-control:focus{
+	box-shadow: none !important;
+}
+#wrapper{
+	width: 100%;
+}
+.loginmain{
+	width: 100%;
+}
+.loginbx{
+	text-align: center;
+	float: right;
+	margin: 0;
+}
+.loginbx h1{
+	font-size:44px;
+	font-weight: 700;
+	margin: 0px 0 80px 0;
+}
+.loginbx .form-control{
+	border: 1px solid #acacac;
+	border-radius: 50px;
+	text-align: center;
+	font-weight:600;
+	padding: 30px 30px;
+	font-size:24px;
+}
+.loginbx .form-control:focus{
+	border:1px solid #4c00ab;
+	color: #000;
+}
+.loginbtn{
+	border-radius: 50px;
+	font-size: 14px;
+	color: #fff;
+	background: #b800fb;
+	background: -moz-linear-gradient(-45deg, #b800fb 1%, #4c00ab 100%);
+	background: -webkit-linear-gradient(-45deg, #b800fb 1%,#4c00ab 100%); 
+	background: linear-gradient(135deg, #b800fb 1%,#4c00ab 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b800fb', endColorstr='#4c00ab',GradientType=1 );
+	padding: 25px 30px;
+	text-align: center;
+	border: none;
+	margin-top: 30px;
+}
+.devloginbx{
+	text-align: center;
+	float: right;
+	margin: 0;
+}
+.loginbx.devloginbx h1{
+	font-size:40px;
+	font-weight: 700;
+	color: #fff;
+	margin: 0px 0 80px 0;
+}
+.loginbx.devloginbx .form-control{
+	border: 1px solid #fff;
+	border-radius: 50px;
+	text-align: center;
+	font-weight:600;
+	padding: 30px 30px;
+	background: none;
+	color: #fff;
+	font-size:24px;
+	margin: 0 auto;
+}
+.loginbx.devloginbx .form-control:focus{
+	border:1px solid #4c00ab;
+	color: #fff;
+}
+.devloginbx .loginbtn{
+	border-radius: 50px;
+	font-size: 22px;
+	color: #fff;
+	background: none;
+	padding: 15px 22px;
+	text-align: center;
+	border: 5px solid #fff;
+	margin-top: 30px;
+}
+.compimg{
+	display: none;	
+}
+.forgotbtn{
+	font-size:100%;
+	color: #495057
+}
+.forgotbtn:hover, .forgotbtn:focus{
+	font-size:100%;
+	color: #4c00ab
+}
+.devforgotbtn{
+	font-size:100%;
+	color: #fff;
+}
+.devforgotbtn:hover, .devforgotbtn:focus{
+	font-size:100%;
+	color: #fff;
+}
+
+.devimagenew {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(../img/devlogin_bg.jpg) top right no-repeat;
+	background-size: 100% 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}

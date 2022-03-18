@@ -1,0 +1,6 @@
+@mixin userSelect($userSelect){
+	-webkit-user-select: $userSelect;  /* Chrome all / Safari all */
+       -moz-user-select: $userSelect;  /* Firefox all */
+        -ms-user-select: $userSelect;  /* IE 10+ */
+            user-select: $userSelect;  /* Likely future */
+}

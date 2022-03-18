@@ -1,0 +1,6 @@
+@mixin flexVerticalAlign($v-align){
+    -webkit-align-items: $v-align;
+      -webkit-box-align: $v-align;
+         -ms-flex-align: $v-align;
+            align-items: $v-align;
+}

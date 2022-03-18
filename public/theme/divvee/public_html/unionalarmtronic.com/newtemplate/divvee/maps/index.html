@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Personal1 Coverage1 Check</title>
+  	
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta charset="utf-8">
+  	
+	<meta name="author" content="T-Mobile, U.S.A.">
+	<meta name="description" content="Personal Coverage Check">
+	    
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-49705188-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+	
+	<link rel="stylesheet" type="text/css" href="pcc/css/styles.18172.css">
+	<!--<link rel="stylesheet" type="text/css" href="pcc/css/styles_mobile.css"/>-->
+  </head>
+  
+  <body id="pcc">
+  	<div id="ng-app" class="pccUnselectable" xmlns:ng="//angularjs.org" ng-controller="appController" ng-click="appContainerClicked()">
+		
+		<div id="pccHeader" class="hbox" style="display: none;">
+			<div ng-show="hasLegend" id="pccLegendContainer" ng-class="($root.mobileSizeMode && showDrawer)?'pccNavSelected':''" ng-controller="legendController">
+				<div ng-include="" src="template"></div>
+			</div>
+			<div ng-if="hasLegend" class="pccHeaderDivider"><div></div></div>
+			<div id="pccSearchContainer" ng-class="($root.mobileSizeMode && showDrawer)?'hbox-flex pccNavSelected':'hbox-flex'" ng-controller="searchController">
+				<div ng-include="" src="template"></div>
+			</div>		
+			<div ng-if="hasMultiSearch" class="pccHeaderDivider"><div></div></div>
+			<div ng-show="hasMultiSearch" id="pccMultiSearchContainer" ng-class="($root.mobileSizeMode && showDrawer)?'pccNavSelected':''" ng-controller="multiSearchController">
+				<div ng-include="" src="template"></div>
+			</div>
+			<div ng-if="hasDeviceSelection" class="pccHeaderDivider"><div></div></div>		
+			<div ng-show="hasDeviceSelection" id="pccSearchDevice" ng-class="($root.mobileSizeMode && showDeviceSelectionPopup)?'pccNavSelected':''" ng-controller="deviceSelectionController">
+				<div ng-include="" src="template"></div>
+			</div>				
+			<div ng-if="hasCloseButton" class="pccHeaderDivider"><div></div></div>		
+			<div ng-if="hasCloseButton" id="pccMultiSearchContainer" ng-click="closeMap()">
+				<div class="pccTableButton noRightBorder">
+				<div><h3 class="">{{labels["title-close"]}}</h3></div>
+				<div class="pccMaxWidth"><div class="pccClose"></div></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="map" ng-class="hasDeviceSelection ? 'tmoMapTop' : ''" ng-controller="mapController">
+			<div id="mapCanvas" ui-map="map" ui-options="mapOptions" ui-event="{'map-bounds_changed':	'mapBoundsChanged()',
+							'map-click':			'mapClicked($event, $params)',
+							'map-dblclick':			'mapDoubleClicked($event, $params)',
+							'map-drag':				'mapDrag()',
+							'map-dragend':			'mapDragEnd()',
+							'map-dragstart':		'mapDragStart()',
+							'map-idle':				'mapIdle()',
+							'map-zoom_changed':		'mapZoomChanged()'}">
+			</div>
+		
+			<div ng-repeat="marker in poiMarkers" ui-map-marker="poiMarkers[$index]" ui-event="{'map-click':			'markerClicked(marker, true)',
+							'map-dblclick':			'markerDoubleClicked(marker)'}">
+			</div>
+
+			<div ng-repeat="marker in routeMarkers" ui-map-marker="routeMarkers[$index]" ui-event="{'map-click':			'markerClicked(marker, true)',
+							'map-dblclick':			'markerDoubleClicked(marker)'}">
+			</div>
+
+			<div ng-repeat="marker in storeMarkers" ui-map-marker="storeMarkers[$index]" ui-event="{'map-click':			'markerClicked(marker, true)',
+							'map-dblclick':			'markerDoubleClicked(marker)'}">
+			</div>
+
+			<div ng-repeat="marker in userMarkers" ui-map-marker="userMarkers[$index]" ui-event="{'map-click':			'markerClicked(marker, true)',
+							'map-dblclick':			'markerDoubleClicked(marker)'}">
+			</div>
+
+			<div id="mapInfoWindow" ui-map-info-window="mapInfoWindow">
+				<div ng-include="" src="template"></div>
+			</div>
+		</div>
+
+		<div id="pccDeviceList" ng-controller="deviceListPopupController" ng-class="showPopup ? '' : 'hidden'">
+			<div ng-include="" src="template"></div>
+		</div>
+		
+		<div id="pccPartnerCoverageWindow" ng-controller="partnerCoverageController" ng-class="showPartnerCoverage ? '' : 'hidden'">
+			<div ng-include="" src="template"></div>
+		</div>
+	
+		<div id="pccFooter">
+			<div id="pccRibbonContainer" ng-controller="ribbonController" ng-class="showRibbon ? '' : 'hidden'">
+				<div ng-include="" src="ribbonTemplate"></div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="js/ui-keypress.js"></script>
+	<script type="text/javascript" src="js/ui-map.js"></script>
+	<script type="text/javascript" src="js/pccDirective.18172.js"></script>
+	<script type="text/javascript" src="js/pccService.18172.js"></script>
+    <script type="text/javascript" src="js/pcc.18172.js"></script>
+
+    <script id="pccLauncher">
+    	// fix for IE lack of console
+    	if (!window.console) window.console = {};
+		if (!window.console.log) window.console.log = function(){};
+		
+    	angular.bootstrap().invoke(function($http, $window)
+    	{
+			var mapName				= getQueryVariable("map", "tmo");
+			var language			= getQueryVariable("language", "en");
+			var channel				= getQueryVariable("channel",  "");
+			var search				= decodeURIComponent(getQueryVariable("search", ""));
+			
+			var  lte1900deviceURL	= getQueryVariable("lte1900deviceURL", "");
+			var  lte700deviceURL	= getQueryVariable("lte700deviceURL", "");
+			var  roam850deviceURL	= getQueryVariable("roam850deviceURL", "");
+			var  shop700DevicesURL	= getQueryVariable("shop700DevicesURL", "");
+			
+	   		$http.get("https://maps.t-mobile.com/Rest/pcc-getconfig.php?map=" + mapName + "&language=" + language)
+	   		.success(function(result)
+    		{
+				console.log("res: ",result);
+				console.log("frag: ",result.fragments);
+				for(key in result.fragments) {
+					name = result.fragments[key];
+					ary = name.split('.');
+					cnt = ary.length;
+					if(cnt==3 && ary[1] > 18000) result.fragments[key] = ary[0] + '.18172.' + ary[2];
+				}
+				{
+					name = result.mapColors;
+					ary = name.split('.');
+					cnt = ary.length;
+					if(cnt==3 && ary[1] > 18000) result.mapColors = ary[0] + '.18172.' + ary[2];
+				}
+				{
+					name = result.brand.closeIcon;
+					ary = name.split('.');
+					cnt = ary.length;
+					if(cnt==3 && ary[1] > 18000) result.brand.closeIcon = ary[0] + '.18172.' + ary[2];
+				}
+				{
+					name = result.brand.css;
+					ary = name.split('.');
+					cnt = ary.length;
+					if(cnt==3 && ary[1] > 18000) result.brand.css = ary[0] + '.18172.' + ary[2];
+				}
+    			
+    			// set the initial map center and zoom to a user-supplied value, or default to map-supplied value
+    			result.searchLocation		= search;		
+    			result.apiChannel			= channel || result.apiChannel;
+    			    			
+    			if (result.flags.hasExternalUrls)
+    			{
+					result.ExternalURLs	=
+					{
+						"LTE_1900"	: (lte1900deviceURL != "") ? lte1900deviceURL : result.fragments["lte1900deviceURL"],
+						"LTE_700"	: (lte700deviceURL != "") ? lte700deviceURL : result.fragments["lte700deviceURL"],
+						"ROAM_850"	: (roam850deviceURL != "") ? roam850deviceURL : result.fragments["roam850deviceURL"],
+						"SHOP_700"	: (shop700DevicesURL != "") ? shop700DevicesURL : result.fragments["shop700DevicesURL"]
+					};
+				}
+				    			
+ 				if (window.clientInformation)
+				{
+					result.systemPlatform	= window.clientInformation.platform;
+					result.systemStandalone	= window.clientInformation.standalone;
+					result.systemLanguage	= window.clientInformation.language || window.clientInformation.userLanguage;
+				}
+    			
+    			// fix for iOS rotation bug
+    			if (result.systemPlatform == "iPad")
+    			{
+    				window.addEventListener("orientationchange", function(){window.scrollTo(0,0)}, false);
+    			}
+
+				// load the css for this map's tile color set and brand
+				addCSS(result["mapColors"]);
+				addCSS(result.brand["css"]);		
+				
+				// add extensions if necessary
+				if (result.brand["extension"])
+				{
+					addScript(result.brand["extension"], function()
+					{
+						var elem = document.createElement("div");
+						elem.setAttribute("ng-controller", "extensionController");
+						document.getElementById("ng-app").appendChild(elem);						
+					});
+				}
+				
+				// start google maps api
+    			var config = angular.module("pccConfig", []).constant("pccSettings", result || {}); 
+    			//addScript("./js/google_map.js?client=" + result.apiClient + "&channel=" + result.apiChannel + "&v=3.31&libraries=places&region=US&language=" + result.apiLanguage + "&callback=onGoogleReady");
+				addScript("//maps.googleapis.com/maps/api/js?key=AIzaSyDx3PUsZlROQ4KO0gFiUJQsJYJYDNT6C1c&channel=" + result.apiChannel + "&v=3.31&libraries=places&region=US&language=" + result.apiLanguage + "&callback=onGoogleReady");
+    		})
+    		.error(function()
+			{
+				console.log("Did NOT get config!!!");
+			});
+    		
+    		
+			function getQueryVariable(variableName, defaultValue)
+			{
+				var query	= $window.location.search.substring(1);
+				var vars	= query.split("&");
+
+				for (var i = 0; i < vars.length; i++)
+				{
+					var pair = vars[i].split("=");
+
+					if (pair[0].toUpperCase() === variableName.toUpperCase())
+					{
+						return vars[i].substring(variableName.length + 1);
+					}
+				}
+	
+				return defaultValue;
+			}
+    	});
+    	
+    	
+		function addCSS(href)
+		{
+			if (href && href != "")
+			{
+				var link	= document.createElement("link");
+				link.rel	= "stylesheet";
+				link.type	= "text/css";
+				link.href	= href;
+			
+				document.getElementsByTagName("head")[0].appendChild(link);
+			}
+		}
+			
+			
+		function addScript(source, callback)
+		{
+			var script	= document.createElement("script");
+			script.type	= "text/javascript";
+			script.src	= source;
+			
+			if (callback)
+			{
+				if (script.attachEvent)
+				{
+					script.attachEvent('onreadystatechange', function()
+					{
+						if (script.readyState == 'complete' || script.readyState == 'loaded')
+							callback();
+					});
+				}
+				else if (script.addEventListener)
+				{
+					script.addEventListener('load', callback, false);
+				}
+			}
+			
+			document.getElementsByTagName("body")[0].appendChild(script);
+		}
+
+
+		function onGoogleReady()
+    	{
+    		addScript("pcc/libs/infobox/infobox.js", function(){angular.bootstrap(document, ["pccApp"])});
+    	}
+		
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+
+<div class="pccTableButton pccMaxWidth noRightBorder" ng-click="toggleDeviceSelectionDrawer()">
+	<div class="pccMaxWidth">
+		<div class="pccChangeDeviceIconSprite"></div>
+	</div>
+	<div>
+		<h3 ng-show="!isDeviceSelected" ng-class="showDeviceSelectionPopup ? 'upper pccBrandColor' : 'upper'" >CHOOSE DEVICE</h3>
+		<h3 ng-show="isDeviceSelected" ng-class="showDeviceSelectionPopup ? 'upper pccBrandColor' : 'upper'" >CHANGE DEVICE</h3>
+	</div>
+</div>
+
+<div id="pccDeviceSelection" ng-class="showDeviceSelectionPopup ? '' : 'hidden'" >
+	<div ng-show="(!$root.mobileSizeMode)?true:false" class='pccDevicePopupOverlay'></div>
+	<div id="pccDeviceSelectOverlay" ng-class="!$root.mobileSizeMode ? 'pccDeviceSelectorPopupDialog ng-scope' : 'pccDeviceSelectOverlay pccOverlay pccMyPlacesOverlay'" >
+		<div ng-show="(!$root.mobileSizeMode)?true:false" class="pcc_sp10">
+	        <div class="hbox">
+	            <div class="hbox-flex"></div>
+	            <div id="pccCloseButtonContainer" class="hbox pccPointer" ng-click="toggleDeviceSelectionDrawer()">
+	                <div><div class="upper noWrap pccSkipLabel">SKIP</div></div>
+	                <div class="pccClose"></div>
+	            </div>
+	        </div>
+	    </div>
+	   
+	    <div>
+	        <div ng-class="!$root.mobileSizeMode ? 'pcc_sp40' : 'pcc_sp25'">
+	            Our new Extended Range LTE enhances signal strength and coverage.  To ensure you can take advantage of our best technology available, you need a capable device.
+	        </div>
+	        
+	        <div ng-class="!$root.mobileSizeMode ? 'pcc_sp40 hbox':'pcc_sp20'">
+	            <div ng-class="!$root.mobileSizeMode ? 'hbox-flex':''">
+		            <div ng-class="!$root.mobileSizeMode ? 'pccLabelTable':'pcc_sp10'">
+		                <div ng-class="!$root.mobileSizeMode ? 'pccLabelTableCell pccDeviceDropDownLabel':'pccDeviceDropDownLabel'">I do not want to select a device right now.</div>
+		            </div>
+	            </div>
+	            <div>
+                        <input id="" class="pccPillButton mapclrstyle upper" type="button" ng-click="setDevice('')" value="See coverage">
+	            </div>
+            </div>
+	        
+	        <div class="pccBottomSection">   	
+		        <div ng-class="!$root.mobileSizeMode ? 'pcc_sp15' : 'pcc_sp10'" >
+		            <div class="pccDeviceDropDownLabel">See this list for capable devices:</div>
+		        </div>
+		        
+		        <div ng-class="!$root.mobileSizeMode ? '' : 'pcc_sp20'">
+		        
+		            <div ng-class="!$root.mobileSizeMode ? 'hbox pccSelectGroup' : ''">
+		            	<div ng-class="!$root.mobileSizeMode ? 'hbox-flex pcc_rMarg15' : ''">                    
+			                <select ng-class="!$root.mobileSizeMode ? 'pcc_select' : 'pcc_select pcc_sp15'" ng-model="manufacturers.selectedGroup" required="required" ng-change="manufacturerChangedEvent()">
+								<option value="">Filter by Manufacturer</option>
+								<option ng-repeat="group in manufacturers" value="{{group}}" ng-bind-html="group | unsafe"></option>
+							</select>
+						</div>
+						<div  ng-class="!$root.mobileSizeMode ? 'hbox-flex pcc_rMarg15' : ''">
+							<select id="deviceSelect" ng-class="!$root.mobileSizeMode ? 'pcc_select' : 'pcc_select pcc_sp15'" required="required" ng-model="devicesInGroup.selectedDevice" ng-change="deviceChangedEvent(devicesInGroup.selectedDevice)">
+									<option value="">Choose a Device</option>								
+									<option ng-repeat="device in devices[manufacturers.selectedGroup]" value="{{device}}" ng-bind-html="device | unsafe"></option>								
+									<option disabled="disabled">---------------------------------</option>
+									<option value="*unknownDevice*">My device is not in the list.</option>
+									<option value="*nonTMoDevice*">I brought my device from another carrier.</option>
+							</select>
+						</div>
+						<div>
+                                <input id="" ng-disabled="!devicesInGroup.selectedDevice" ng-class="devicesInGroup.selectedDevice ? 'pccPillButton mapclrstyle upper' : 'pccPillButton mapclrstyle pccDisabled upper'" type="button" ng-click="setDevice(devicesInGroup.selectedDevice)" value="See my coverage">
+			            </div>
+		            </div>
+		        </div>
+	        </div>
+	    </div>	
+	</div>
+</div>

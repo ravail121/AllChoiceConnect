@@ -1,0 +1,72 @@
+<div class='pccDevicePopupOverlay'></div>
+<div class='pccDevicePopupDialog mapclrstyle' ng-style='dialogStyle' ng-switch="type">
+	<div class='pccDevicePopupClose' ng-click='hideDialog()'></div>
+	
+	<div ng-switch-when="type-roam850">
+		<div class='pccDevicePopUpTitle'>
+			<h1 class="pccBrandColor">Compatible Devices in Your Area</h1>
+		</div>
+		<div class='pccDevicePopupDialogContent'>
+			<p>Coverage is provided by service partners in your area. To take advantage, you’ll need a phone compatible with Band V technology (3G, 850 MHz). Please check with your device manufacturer for details about supported bands.</p><br>
+		</div>
+	</div>
+	
+	<div ng-switch-default>
+		<div class='pccDevicePopUpTitle'>
+			<h1 class="pccBrandColor">LTE Capable Devices in This Area</h1>
+		</div>
+		<div class='pccDevicePopupDialogContent'>
+			<p>We've expanded our 4G LTE coverage in this area.<br>
+			This is great news! To support this expanding 4G LTE network, like other major carriers, we use a variety of technologies. <strong>This variety means not all devices can harness the speed boost available with the 4G LTE in your area.</strong> And this will vary by location, so always check the device list.<br><br>
+			To ensure you have a device that can take advantage of the best technology available, <strong>check out the list below for devices capable with the 4G LTE in this area.</strong> With any device not found on this list, based on the technology in your area ({{technology}}), you would experience up to 2G speeds. Of course, you will also have access to voice and text services.
+			</p><br>
+			<div>
+				<div ng-repeat="(group, devices) in devices" ng-show="group != group_OtherPhones && group != group_tabletDevices" class="expander">				
+					<div class="header" ng-click="toggleDeviceGroup(group)">
+						<div id="{{'expander' + group}}" ng-class= "deviceGroupToggle[group] ? 'expanderIcon expanded pccBrandColor' : 'expanderIcon collapsed pccBrandColor'"></div>
+						<div class="pccBrandColor">{{group}}</div>
+					</div>      
+					<div ng-class= "deviceGroupToggle[group] ? 'content': 'content hidden'">						  
+						<div>
+							<ul>
+								<li class="deviceElement" ng-repeat="device in devices">
+									<div ng-bind-html="device | unsafe"></div>
+								</li>
+							</ul>
+						</div>
+					</div>				
+				</div>				
+				<div ng-repeat="(group, devices) in devices" ng-show="group == group_OtherPhones " class="expander">				
+					<div class="header" ng-click="toggleDeviceGroup(group)" >
+						<div id="{{'expander' + group}}" ng-class= "deviceGroupToggle[group] ? 'expanderIcon expanded pccBrandColor' : 'expanderIcon collapsed pccBrandColor'"></div>
+						<div class="pccBrandColor">{{group}}</div>
+					</div>      
+					<div ng-class= "deviceGroupToggle[group] ? 'content': 'content hidden'">						  
+						<div>
+							<ul>
+								<li class="deviceElement" ng-repeat="device in devices">
+									<div ng-bind-html="device | unsafe"></div>
+								</li>
+							</ul>
+						</div>
+					</div>				
+				</div>
+				<div ng-repeat="(group, devices) in devices" ng-show="group == group_tabletDevices " class="expander">
+					<div class="header" ng-click="toggleDeviceGroup(group)">
+						<div id="{{'expander' + group}}" ng-class= "deviceGroupToggle[group] ? 'expanderIcon expanded pccBrandColor' : 'expanderIcon collapsed pccBrandColor'"></div>
+						<div class="pccBrandColor">{{group_tabletDevicesLabel}}</div>
+					</div>      
+					<div ng-class= "deviceGroupToggle[group] ? 'content': 'content hidden'">						  
+						<div>
+							<ul>
+								<li class="deviceElement" ng-repeat="device in devices">
+									<div ng-bind-html="device | unsafe"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>

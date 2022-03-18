@@ -1,0 +1,75 @@
+<!-- PCC Legend Tab -->
+<div id="pccLegendButton" class="pccTableButton mapclrstyle" ng-click="toggleDrawer()">
+        <div><div class="pccLegendIconSprite"></div></div>
+        <div><h3 ng-class="showDrawer ? 'upper pccBrandColor' : 'upper'" >{{labels["title-legend"]}}</h3></div>
+        <div><div ng-class="showDrawer ? 'pccArrowUpSprite' : 'pccArrowDownSprite'"></div></div>
+    </div>
+    
+    <!-- PCC Legend Overlay -->
+    <div id="pccLegendOverlay" class="pccOverlay" ng-if="showDrawer || showCompareButton || showVerified">	
+        
+        <div ng-if="showDrawer">		
+            <div ng-if="zoom >= 13" class="pccLegendsGroup">
+                <div class="pccLegendItems pccLegendItemsDivider">
+                    <div class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-LTE-excellent mapclrstyle"></div>
+                        <div class="pccLegendLabel">{{labels["type-LTE-Excellent"]}}</div>
+                    </div>				
+                    <div class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-LTE-good mapclrstyle"></div>
+                        <div class="pccLegendLabel">{{labels["type-LTE-Good"]}}</div>
+                    </div>				
+                    <div class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-LTE-fair mapclrstyle"></div>
+                        <div class="pccLegendLabel">{{labels["type-LTE-Fair"]}}</div>
+                    </div>				
+                    <div class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-LTE-partner mapclrstyle"></div>
+                        <div class="pccLegendLabel">{{labels["type-LTE-Partner"]}}</div>
+                    </div>
+                </div>			
+            </div>
+            
+            <div ng-if="zoom > 7 && zoom <= 12" class="pccLegendsGroup">
+                <div ng-class="!$root.mobileSizeMode ? 'pccLegendItems' : 'pccLegendItems pccLegendItemsDivider'">
+                    <div class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-LTE mapclrstyle"></div>
+                        <div class="pccLegendLabel">{{labels["type-LTE"]}}</div>
+                    </div>
+                    <div ng-if="mobileSizeMode" class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-2G-3G-4G-dark mapclrstyle"></div>
+                        <div class="pccLegendLabel"><span ng-bind-html="labels['type-2G-3G-4G'] | unsafe"></span><sup>*</sup></div>
+                    </div>
+                </div>			
+            </div>
+            
+            <div class="pccLegendsGroup">
+                <div class="pccLegendItems" ng-class="showDrawer && zoom > 7 ? 'pccLegendItemsDivider' : ''">
+                    <div ng-if="(zoom > 7 && zoom <= 12 && !mobileSizeMode) || (zoom > 12)" class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-2G-3G-4G-light mapclrstyle"></div>
+                        <div class="pccLegendLabel"><span ng-bind-html="labels['type-2G-3G-4G'] | unsafe"></span><sup>*</sup></div>
+                    </div>
+                    <div  ng-if="zoom > 7" class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-roamCAMX mapclrstyle"></div>
+                        <div class="pccLegendLabel">{{labels["title-roamCAMX"]}}</div>
+                    </div>
+                    <div  ng-if="zoom <= 7" class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-coverage mapclrstyle"></div>
+                        <div class="pccLegendLabel">{{labels["type-coverage"]}}</div>
+                    </div>
+                    <div class="pccLegendItem">
+                        <div class="pccLegendSwatch legend-swatch-type-none mapclrstyle"></div>
+                        <div class="pccLegendLabel">{{labels["type-none"]}}</div>
+                    </div>
+                    <div  ng-if="zoom > 7" class="pccLegendItem">
+                        <div id="pccLegendDisclaimer"><span ng-bind-html="labels['legend-disclaimer'] | unsafe"></span></div>
+                    </div>
+                </div>			
+            </div>
+            
+    
+        </div>
+        
+        
+    </div>
+    

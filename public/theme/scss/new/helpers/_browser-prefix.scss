@@ -1,0 +1,8 @@
+@mixin browserPrefix( $property, $value ){
+    $prefix: webkit moz ms o;
+    
+    @each $p in $prefix{
+        #{'-' + $p + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+}

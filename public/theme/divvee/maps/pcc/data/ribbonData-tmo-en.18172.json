@@ -1,0 +1,29 @@
+{
+	"eduSlides":
+		[
+			{
+				"url":"pcc/images/ribbon/Q1.18203.png",
+				"info":"In addition to showing our network technology in your area (eg. 4G LTE), when you see the Verified Coverage icon <img src='pcc/images/verified_icon.png'/> on the map you’ll know the majority of data connections from actual customers are connecting to the network with that technology, providing an added layer of confidence. <br><br>Note, all data is aggregated by location and not personally identifiable."
+			},
+			{
+				"url":"pcc/images/ribbon/Q2.18203.png",
+				"info":"Our Extended Range LTE signal goes 2x further and works 4x better in buildings in more places than before. To ensure you can take advantage of the enhanced signal strength and coverage, you need a capable device (limited Extended Range LTE-6 devices available). <br/><br/> <a ng-href='{{deviceListURL.LTE_700}}' target='_blank' ng-click='showDeviceList()'>View capable devices &nbsp;<img src='pcc/images/white_arrow.png'/></a> <span ng-if='hasShopDevices'><br/><br/><a ng-href='{{deviceListURL.SHOP_700}}' target='_blank'>Shop capable devices &nbsp;<img src='pcc/images/white_arrow.png'/></a></span>"
+			},
+			{
+				"url":"pcc/images/ribbon/Q3.18203.png",
+				"info":"Yes, coverage in Canada and Mexico is included in most plans! Receive unlimited talk, text and data with a maximum of 5GB of 4G LTE on T-Mobile ONE, Simple Choice North America, or legacy rate plans with a qualifying feature.  After 5GB of high-speed data is used in Mexico and Canada (or your high-speed data allotment is reached, whichever comes first), customers will stay connected with unlimited data at Simple Global speeds (up to 128kbps for most plans or 256kbps with T-Mobile ONE Plus).<br/><br/><a href='https://support.t-mobile.com/docs/DOC-36619' target='_blank'>Learn more &nbsp;<img src='pcc/images/white_arrow.png'/></a>"
+			},
+			{
+				"url":"pcc/images/ribbon/Q4.18203.png",
+				"info":"Traveling beyond North America?  Get unlimited data and texting in 140+ countries and destinations for no extra charge. <br/><br/><a href='http://www.t-mobile.com/optional-services/roaming.html' target='_blank'>Check international coverage &nbsp;<img src='pcc/images/white_arrow.png'/></a> <br><br>With Simple Choice North America, get 4G LTE data and unlimited talk and text when you’re in Mexico and Canada, just like in the U.S., all at no extra charge.<br/><br/><a href='http://explore.t-mobile.com/3countryplan' target='_blank'>Learn more &nbsp;<img src='pcc/images/white_arrow.png'/></a>"
+			},
+			{
+				"url":"pcc/images/ribbon/Q5.18203.png",
+				"info":"View a map showing where we’ve partnered with providers to deliver coverage. <br><br> <span class='pccPointer' ng-click='seePartnerCoverage()'>View map&nbsp;<img src='pcc/images/white_arrow.png'/></span>"
+			},
+			{
+				"url":"pcc/images/ribbon/Q6.18203.png",
+				"info":"Select areas have coverage that is provided by partners. The experience in these areas can fluctuate. Drop a pin on the map to learn about the type of coverage to expect in your area."
+			}
+		]
+}

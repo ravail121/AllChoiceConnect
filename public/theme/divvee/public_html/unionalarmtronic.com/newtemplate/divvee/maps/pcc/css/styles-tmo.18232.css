@@ -1,0 +1,1101 @@
+
+/* T-Mobile Magenta */
+
+.pccBrandColor				{color:#e20074;}
+.pccBrandContrastColor		{color:#ffffff;}
+.pccBrandLinkColor			{color:#e20074;}
+.pccBrandLinkColor:hover	{color:#ba0060;}
+
+
+.pccPillButton
+{
+	background:				#e83390;
+	background-image:		-webkit-linear-gradient(top, #e83390, #e20075);
+	background-image:		-moz-linear-gradient(top, #e83390, #e20075);
+	background-image:		-ms-linear-gradient(top, #e83390, #e20075);
+	background-image:		-o-linear-gradient(top, #e83390, #e20075);
+	background-image:		linear-gradient(to bottom, #e83390, #e20075);
+	color:					#ffffff;
+	border:					solid #c00164 1px;
+}
+
+.pccPillButton:hover
+{
+	background:				#d43386;
+	background-image:		-webkit-linear-gradient(top, #d43386, #c90068);
+	background-image:		-moz-linear-gradient(top, #d43386, #c90068);
+	background-image:		-ms-linear-gradient(top, #d43386, #c90068);
+	background-image:		-o-linear-gradient(top, #d43386, #c90068);
+	background-image:		linear-gradient(to bottom, #d43386, #c90068);
+}
+
+.pccHeaderDivider > div
+{
+	border-right:			1px dotted #cccccc;
+}
+
+.pccCoveragePopupBody
+{
+	width:					248px;
+	padding:				15px;
+	background: 			#ffffff;
+	box-shadow: 			0px 0px 10px #999;
+}
+
+.pccCoveragePopupBodyContainer
+{
+	position:				relative;
+}
+
+.pccCoverageCaretContainer
+{
+	padding-top:			45px; 
+	z-index: 				1;
+}
+
+.pccCoverageSignalSection
+{
+	padding:				10px 15px;
+    background:				#f8f8f8;
+	margin:					0 -15px -15px;
+}
+
+.pccCoverageSpeedtestSection
+{
+ 	width:					100%; 
+    padding:				15px 0 0 0;
+    /* border-top:				1px solid #dddddd; */
+    text-align:				center;
+    background:				#ffffff;
+}
+.pccPartnerSignalSection
+{
+	padding:				10px 15px;
+    background:				#f8f8f8;
+	margin:					0 -15px;
+}
+
+
+/**** General Use metro_sprites ****/
+.pccArrowDownSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -41px -0px;
+}
+
+.pccArrowUpSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -41px -21px;
+}
+
+.pccToggleOnSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -1px -221px;
+}
+
+.pccToggleOffSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -1px -251px;
+	width: 					112px;
+	height: 				20px;
+}
+
+.pccPlusIconSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -35px -296px;
+}
+
+.pccClearIconSprite
+{
+	background: 			url("../images/sprites-tmo.18232.png") no-repeat -21px -121px;
+}
+
+.pccCloseIconSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -1px -121px;
+}
+
+.pccCloseIconSprite:hover
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -150px -121px;
+} 
+
+
+/**** Legend metro_sprites ****/
+
+.pccLegendIconSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -21px -1px;
+}
+
+.pccVerifiedHexSprite
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat 0 -78px;
+	width:					21px;
+    height:					19px;
+    margin:                 -1px 5px;
+}
+
+
+/**** My Places metro_sprites ****/
+
+.pccMultiSearchIconSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -20px -41px;
+}
+
+.pccMultiSearchIconSpriteNoHover
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -20px -41px;
+}
+
+/**** Coverage Popup metro_sprites ****/
+.pccVerifiedSprite-type-LTE	
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -0px -1px;
+	width: 					16px;
+	height: 				14px;
+}
+
+.pccVerifiedSprite-type-4G
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -0px -21px;
+	width: 					16px;
+	height: 				14px;
+}
+
+.pccVerifiedSprite-type-3G
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -0px -41px;
+	width: 					16px;
+	height: 				14px;
+}
+
+.pccVerifiedSprite-type-2G
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -0px -61px;
+	width: 					16px;
+	height: 				14px;
+}
+
+
+.pccSpeedDialSprite-1
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -61px -1px;
+}
+
+.pccSpeedDialSprite-2
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -61px -41px;
+}
+
+.pccSpeedDialSprite-3
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -61px -81px;
+}
+
+.pccSpeedDialSprite-4
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -61px -121px;
+}
+
+.pccSpeedDialSprite-5
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -61px -161px;
+}
+
+
+.pccDeviceSprite
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -1px -280px;
+}
+
+.pccDeviceListSprite
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -35px -280px;
+  	width:					11px;
+	height:					8px;
+}
+
+.pccDownloadSprite
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -1px -141px;
+}
+
+#addAnotherSearch:hover 
+{
+  color: #ba0060;
+}
+
+#addAnotherSearch:hover .pccPlusIconSprite 
+{
+  background:				url("../images/sprites-tmo.18232.png") no-repeat -55px -296px;
+}
+
+#viewHereLink:hover 
+{
+  color: #ba0060;
+}
+
+#viewHereLink:hover .pccDeviceListSprite 
+{
+	background:				url("../images/sprites-tmo.18232.png") no-repeat -55px -280px;
+  	width:					11px;
+	height:					9px;
+}
+
+#pccFaqSection:hover .pccArrowUpSprite
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -150px -21px;
+}
+
+#pccFaqSection:hover .pccLableHover
+{
+    color:  #000000;
+}
+
+#pccLegendButton:hover .pccArrowDownSprite
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -150px -0px;
+}
+
+.pccTableButton:hover .pccMultiSearchIconSprite
+{
+    background:             url("../images/sprites-tmo.18232.png") no-repeat -149px -41px;
+}
+
+
+/********** Nov 2015 ****************/
+#pccHeader
+{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 0;
+    position: absolute;
+    height: 74px;
+    width: 100%;
+    background: #eeeeee;
+    box-shadow: 0px 0px 10px #999;
+    border-bottom: 1px solid #e6e6e6;
+    z-index: 2000;     
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(top,#fff,#f8f8f8);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f8f8f8));
+    background-image: -webkit-linear-gradient(top,#fff,#f8f8f8);
+    background-image: -o-linear-gradient(top,#fff,#f8f8f8);
+    background-image: linear-gradient(to bottom,#fff,#f8f8f8);
+    background-repeat: repeat-x;
+    border-left: none;
+    border-right: 0;
+    /* border-top: 1px solid #e6e6e6; */                 /* For IE8 */
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmOGY4ZjgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); /*SVG*/
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff8f8f8',GradientType=0);        */ 
+}
+
+/***** Tmo Header *****/
+/*TMO Logo*/
+.pccTMOLogo
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -35px -387px;
+    width:					99px;
+    height:					16px;
+}
+
+#pccTmoHeader
+{
+    width: 100%;
+    height: 40px;
+    background-color: #f6f5f5;
+    padding: 0 10px 0 0;
+}
+#pccTmoHeader .pccLabelTable
+{
+    padding-left: 20px;
+    font-size: 12px;
+
+}
+#pccTmoHeader .pccCloseLabel
+{
+    font-size: 12px;
+    padding-right: 10px;
+}
+#pccTmoHeader .pccLabelTable
+{
+    height: 40px;
+}
+
+.pccClose
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -1px -121px;
+    width:					19px;
+    height:					19px;
+}
+
+#pccCloseButtonContainer:hover
+{
+    color: #000000;
+}
+
+#pccCloseButtonContainer:hover .pccClose
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -150px -121px;
+}
+
+#pccCloseButtonContainer:hover
+{
+    color: #000000;
+}
+
+#pccCloseButtonContainer:hover .pccClose
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -150px -121px;
+}
+
+.pccDevicePopupClose
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -41px -121px; 
+}
+
+/**** CHANGE DEVICE Button ****/
+
+.pccChangeDeviceIconSprite
+{
+    background:				url("../images/sprites-tmo.18232.png") no-repeat -35px -316px;
+    width:					14px;
+    height:					24px;
+}
+
+.pccTableButton:hover .pccChangeDeviceIconSprite
+{
+    background:             url("../images/sprites-tmo.18232.png") no-repeat -55px -316px;
+}
+
+
+/**** Device Select Popup ****/
+.pccDeviceSelectorPopupDialog
+{
+    z-index: 10000;
+    position: absolute;
+    margin: 0 auto;
+    /* height: 295px; */
+    top: 100px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #d5d5d5;
+    width: 728px;
+    padding: 30px!Important;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+}
+
+.pccDeviceSelectorPopupDialog  p
+{
+    padding-right: 20px;
+    font-size: 16px;
+}
+.pccDeviceDropDownLabel
+{
+    font-size: 24px;
+}
+
+.pccDeviceSelectorPopupDialog .pccPointer
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.pccDeviceSelectorPopupDialog .pccPointer div
+{
+    display: inline-block;
+}
+.pccDeviceSelectorPopupDialog .pccPillButton
+{
+    width: 180px;
+    height: 30px;
+    font-size: 12px;
+    margin: 0;
+    padding: 0 5px;
+}
+.pccDeviceSelectorPopupDialog .pccBottomSection
+{
+    border-top: 1px dotted #9b9b9b;
+    padding-top: 30px;
+}
+.pccDeviceSelectorPopupDialog .pccBottomSection > div
+{
+    height: 30px;
+}
+.pccDeviceSelectorPopupDialog .pccBottomSection .pccPillButton
+{
+    margin: 0;
+    vertical-align: top;
+}
+.pccPillButton.pccPillButtonSecondary
+{
+    background: #fff;
+    background: -moz-linear-gradient(top,#fff 0,#f8f8f8 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#f8f8f8));
+    background: -webkit-linear-gradient(top,#fff 0,#f8f8f8 100%);
+    background: -o-linear-gradient(top,#fff 0,#f8f8f8 100%);
+    background: -ms-linear-gradient(top,#fff 0,#f8f8f8 100%);
+    background: linear-gradient(to bottom,#fff 0,#f8f8f8 100%);
+    background-repeat: repeat-x;
+    border: 1px solid rgba(220,220,220,0.75);
+    /*-webkit-box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.15);
+    box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.15);*/
+    color: #e20074;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#f8f8f8',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    /*text-shadow: 0 1px 1px rgba(255,255,255,0.75);*/
+}
+.pccPillButton.pccPillButtonSecondary:hover {
+    text-decoration: none;
+    background: #fff;
+    background: -moz-linear-gradient(top, #fff 0, #e8e8e8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #e8e8e8));
+    background: -webkit-linear-gradient(top, #fff 0, #e8e8e8 100%);
+    background: -o-linear-gradient(top, #fff 0, #e8e8e8 100%);
+    background: -ms-linear-gradient(top, #fff 0, #e8e8e8 100%);
+    background: linear-gradient(to bottom, #fff 0, #e8e8e8 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e8e8e8', GradientType=0);
+    -webkit-transition: background-position .1s linear;
+    -moz-transition: background-position .1s linear;
+    -o-transition: background-position .1s linear;
+    transition: background-position .1s linear
+}
+.pccSkipLabel
+{
+    font-size: 14px;
+    padding-top: 2px;
+    margin-right: 7px;
+}
+.pcc_select
+{
+    height: 30px;
+    padding: 4px 6px;
+    font-size: 14px;
+    color: #555 !important;
+    vertical-align: middle;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px
+}
+.pcc_select > .pcc_placeholder
+{
+    display:none;
+}
+.pccDeviceSelectorPopupDialog .pcc_select
+{
+    width: 100%;
+}
+
+option.pcc_selectHr
+{
+    border-top: 1px dotted #000;
+}
+.pccLabelTable{
+    display: table;
+}
+.pccLabelTableCell{
+    display: table-cell;
+    vertical-align: middle;
+}
+.pccDeviceSelectorPopupDialog   .pccBottomSection > .pccLabelTable,
+.pccDeviceSelectorPopupDialog   .pccBottomSection > .pccLabelTable > .pccLabelTableCell
+{
+    height: 30px;
+}
+
+/**** Legends ****/
+.pccOverlay#pccLegendOverlay{
+    width: 219px;
+}
+.pccLegendItemsDivider
+{
+    border-top: 1px dotted #cccccc;
+    padding: 10px 0;
+}
+.pccItemsDivider
+{
+    border-top: 1px dotted #cccccc;
+    /* padding: 10px 0; */
+}
+.pccLegendItemsDivider .pccLegendItem
+{
+    padding: 0;
+}
+.pccLegendItems.pccLegendItemsDivider {
+    padding: 12px 0;
+    margin: 0 15px;
+}
+.pccLegendItems {
+    padding: 12px 15px;
+}
+.pccLegendItem {
+    display: table;
+}
+.pccLegendItem:last-child {
+    margin-bottom: 0;
+}
+.pccLegendLabel {
+    font-size: 11px;
+}
+.pccLegendVerifiedSection {
+    padding: 15px;
+}
+#pccLegendDisclaimer {
+	font-size: 11px;
+    margin: 5px 5px 3px 0;
+}
+#pccLegendOverlay .pccPillButton{
+    margin: 0;
+    width: 100%; /*160px;*/
+    white-space: normal;
+    font-size: 12px;
+    height: inherit;
+    padding: 5px;
+}
+
+.pccLegendItem input.checkbox 
+{
+    margin: 0 3px;
+    vertical-align: text-top;
+}
+
+.pccLegendLabel.customerVerified 
+{
+    padding-left: 2px;
+    transform: translateY(-1px);
+}
+
+#legendCompareLinkSection
+{
+      padding: 12px 0 15px 0;
+      margin: 0 15px;
+}
+
+
+/**** Spacers ****/
+/* bottom margin*/
+.pcc_sp10				{margin-bottom:10px !important;}
+.pcc_sp15				{margin-bottom:15px !important;}
+.pcc_sp20				{margin-bottom:20px !important;}
+.pcc_sp25				{margin-bottom:25px !important;}
+.pcc_sp30				{margin-bottom:30px !important;}
+.pcc_sp40				{margin-bottom:40px !important;}
+/* right margin */
+.pcc_rMarg10			{margin-right: 10px !important;}
+.pcc_rMarg20			{margin-right: 20px !important;}
+.pcc_rMarg15			{margin-right: 15px !important;}
+
+.pcc_tMarg15			{margin-top: 15px !important;}
+
+.pcc_tPad15				{padding-top: 15px !important;}
+
+/**** TMO Typography ****/
+.pcc_bold
+{
+    font-weight: bold;
+}
+
+.pccCompareMapBtn
+{
+	font-size: 12px;
+    /* font-weight: bold; */
+    /* color: #e20074; */
+    display: inline-block;
+
+}
+.pccSecondaryLink
+{
+	color: #6a6a6a;
+}
+.pccSecondaryLink:hover
+{
+	color: #000000;
+}
+
+.pccSecondaryLink:hover .pccCompareMapBtnArrow 
+{
+  background:				url("../images/sprites-tmo.18232.png") no-repeat -55px -280px;
+  width:					11px;
+  height:					8px;
+}
+
+.pccCompareMapBtnArrow
+{
+    background: 			url("../images/sprites-tmo.18232.png") no-repeat -35px -280px;
+    width:					11px;
+    height:					8px;
+    display:				inline-block;
+    margin-left:			4px;
+}
+
+.pccCompareMapSection
+{
+	/* border-top: 1px dotted #cccccc; */
+	padding-top: 15px;
+	font-size: 12px;
+}
+
+.pccCompareMapSection:hover .pccCompareMapBtnArrow 
+{
+  background: 				url("../images/sprites-tmo.18232.png") no-repeat -55px -280px;
+  width:					11px;
+  height:					8px;
+}
+
+    /**** Compare Map Popup ****/
+    .pccComparePopupDialog
+    {
+        z-index: 10000;
+        position: fixed;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        padding: 25px 0 0 0;
+        max-height: 700px;
+        top: 20px;
+        background-color: #fff;
+        box-shadow: 2px 2px 10px #d5d5d5;
+        width: 940px;
+        border: 1px solid #d5d5d5;
+        border-radius: 6px;
+        bottom: 15px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    @media screen and (max-width: 740px){
+        .pccComparePopupDialog{
+            width:auto;
+            min-width: 385px;       
+        }
+    }
+    .pccComparePopupDialog .pccCompareMapDesc{
+        padding-right: 100px;
+    }
+    .pccCompareMapSpacer{
+        width: 25px;
+    }
+    .pccCompareMapBoxBox{
+        height: 480px;
+    }
+    @media screen and (max-width: 939px){
+        .pccCompareMapBoxBox{
+            height: 460px;
+        }   
+    }
+    @media screen and (min-width: 940px){
+        .pccCompareMapBoxBox{
+            height: 480px;
+        }   
+    }
+    @media screen and (min-width: 741px)and(max-width: 939px){
+        .pccCompareMapBoxBox{
+            height: 460px;
+        }   
+    }
+    @media screen and (max-width: 740px){
+        .pccCompareMapBoxBox{
+            height: 460px;
+        }   
+    }
+    .pccCompareLegend{
+        position: relative;
+        padding: 15px 25px;
+        height: 170px; 
+    }
+    @media screen and (min-width: 741px){
+        .pccCompareLegend{
+            height: 150px;
+        }   
+    }
+    .legendTitle{
+        margin-bottom:8px;
+        width: 100%;
+        font-size: 1.2em;
+    }
+    .legendCTAbold{
+        font-weight: 600;
+    }
+    .pccCompareLabel div{
+        font-size: 20px;
+        color: #e20074;
+        text-align: center;
+        width: 100%;
+        height: 48px;
+		padding: 0 20px;
+    }
+    .pccCompareLegendFooter .pccLegendItem{
+        margin-right: 20px;
+    }
+    .pccCompareLegendFooterBorder{
+        border-bottom: 1px dotted #9b9b9b;
+    }
+    .pccCompareLegendFooterBorder + div{
+        padding-top: 10px;
+    }
+    .pccCompareMapLegendlabel{
+        font-size: 12px;
+        padding-right: 20px;
+    }
+    .compareMapIntro{
+        position: relative;
+        z-index: 9500;
+        text-align: center;
+        margin: 10px 12%;
+    }
+    .pccCompareMapLegendlabel > div{
+
+    }
+    .pccCompareLegendFooter .legendColumn{
+        float:left;
+        width:172px;
+    }
+    .footerLegendL{
+        width: 60%;
+    }
+    .footerLegendR{
+        width: 40%;
+        float: right;
+        transform: translateX(-20px);
+        padding-top: 20px;
+    }
+    .legendShopCTA{
+        /* float: left; */
+		text-align: center;
+    }
+    .legendShopCTA a{
+        text-decoration: none;
+    }
+    
+    .pccCloseButtonContainer
+	{
+        position: absolute;
+        z-index: 10000;
+        right: 10px;
+        top: 10px;
+    }
+
+    .pccComparePopupDialog .pccLegendItem{
+        width: auto;
+    }
+
+    .pccCompareMapHeader{
+        width: 100%;
+        position: absolute;
+        z-index: 9000;
+        top: 60px;
+        left: 0;
+        padding: 15px;
+        background-color: #FFF;
+    }
+    .pccVersesLabel{
+        padding-top: 15px;
+    }
+    .pccVersesLabel>h6{
+        font-weight: bold;
+    }
+    .hbox.footerPush{
+        position: fixed;
+        z-index: 1000;
+        top: 570px;
+        bottom: auto;
+        width: auto;
+        height: 80px;
+
+        background-color: #FFF;
+        padding: 15px;
+    }
+    .mapBoxR,
+    .mapBoxL{
+        position: absolute;
+        width: 47.8%;
+        height: 420px;
+        top: 120px;
+        bottom: 90px;
+        margin: 0 3px;
+        border-left: 0px solid #FFF;
+        border-right: 0px solid #FFF;
+        border-top: 0 solid #FFF;
+        border-bottom: 0 solid #FFF;
+        box-sizing: border-box;
+        
+		-webkit-box-flex:		1;
+		-moz-box-flex:			1;
+		-webkit-flex: 			1;
+		-ms-flex:				1 0 0px; /* IE 10 */
+		flex: 					1;
+    }
+    .mapBoxR{
+        right: 0;
+        border-right: 22px solid #FFF; 
+    }
+    .mapBoxL{
+        border-left: 22px solid #FFF;
+    }
+    #mapLeftSide, #mapRightSide {
+        width: 100%; height: 100%; 
+    }
+    
+	.tmoMapTop
+	{
+		top:	114px !important;
+	}
+
+	.pccPartnerCoverageDialog
+	{	
+		z-index: 10000;
+	    position: relative;
+	    margin: 0 auto;
+	    left: 0;
+	    right: 0;
+	    top: 100px;
+	    background-color: #fff;
+	    width: 700px;
+	}
+	
+	.pccPartnerCoverageContainer
+	{
+		margin: 0 auto;
+	    position: relative;
+	    height:100%;
+		box-shadow: 2px 2px 10px #d5d5d5;
+        border: 1px solid #d5d5d5;
+	}
+	
+	.pccPartnerCoverageContainer img
+	{
+	  max-width:100%; 
+	  max-height:100%;
+	  margin:0 auto;
+	  display:block;
+	}
+	
+	.pccPartnerCoverageLegend
+	{
+		padding: 0;
+	    margin: 0 auto;
+	     position: absolute;
+	    width: 300px;	
+	    bottom:0;
+	    left:0;
+	    right:0;
+	}
+	
+	.pccPartnerCoverageLegend .pccLegendItem
+	{
+		padding-left: 10px;
+    	padding-right: 10px;
+	}	
+	
+	.pccPartnerLegendItem
+	{
+		position: absolute;
+    	right: 0;
+	}
+	
+	.pccCoverageIconParent 
+	{
+	    padding-right: 5px;
+	    display: table-cell;
+	    vertical-align: middle;
+	}
+	
+	.pccCoverageIcon
+	{
+		background-image:		url("../images/coverage_icon.png") no-repeat center;
+	}
+	
+	#pccCoveragePopup .pccPillButton
+	{
+	    width: 100%;
+	    height: 30px;
+	    font-size: 12px;
+	    margin: 0;
+	    padding: 0 5px;
+	}
+
+/***********************/
+@media screen and (max-width: 723px)
+{
+	
+	/*PCC TMO Logo*/
+    .pccTMOLogo
+    {
+        background:				url("../images/sprites-tmo.18232.png") no-repeat -35px -367px;
+        width:					83px;
+        height:					13px;
+    }
+    
+    .tmoMapTop
+	{
+		top:	80px !important;
+	}
+	
+	/**** SingleSearch metro_sprites ****/
+	.pccNavSearchButton
+	{
+		background: 			url("../images/sprites-tmo.18232.png") no-repeat -20px -21px;
+	}
+	
+	#pccSearchButton
+        {
+		background:				url("../images/search_white.18232.png") no-repeat center, linear-gradient(to bottom, #e83390, #e20075);
+	}
+	
+	/**** Device Select Mobile ****/
+	#pccDeviceSelectOverlay h5{
+	    font-size: 18px;
+	}
+	#pccDeviceSelectOverlay .pcc_select
+	{
+	    margin: 0;
+	    width: 100%;
+	}
+	#pccDeviceSelectOverlay .pccPillButton
+	{
+	    margin: 0;
+	    width: 100%;
+	}
+	#pccDeviceSelectOverlay .pccBottomSection
+	{
+	    border-top: 1px dotted #9b9b9b;
+	    padding-top: 20px;
+	}
+	.pccDeviceDropDownLabel
+	{
+	    font-size: 15px;
+	}
+	
+	 /* TMO Header */
+    #pccTmoHeader .pccLabelTable .pccCloseLabel
+   	{
+        display: none;
+    }
+    
+	 /* Search Device CTA */
+    #pccSearchDevice
+    {
+        padding: 0;
+        -webkit-box-flex: 1.0;
+        -webkit-flex: auto;
+        flex: auto;
+        width: 0px;
+        -ms-flex: 1 0 0px;
+        width: 10000px\9;
+    }
+    .pccChangeDeviceIconSprite
+    { 
+        margin: 0 auto;
+    }
+    
+    /* Legend Overlay */
+    .pccOverlay#pccLegendOverlay
+	{
+		position: absolute;
+		width:100%;
+	}
+    .pccLegendItems 
+	{
+		padding: 10px;
+	}
+    .pccLegendItem
+	{
+        display: table;
+        margin-right: 0px;
+        vertical-align: top;
+       /*  white-space: nowrap; */
+    }
+    .pccLegendsGroup
+	{
+        display: table-cell;
+        padding-bottom: 10px;
+		padding-top: 10px;
+    }
+    .pccLegendItemsDivider
+	{
+        border: none;
+        /* margin: 0 10px; */
+    }
+	#legendCompareLinkSection
+	{
+        text-align:	center;
+    }
+	#legendCompareLinkSection.pccLegendItemsDivider
+	{
+        border-top: 1px dotted #cccccc;
+		padding: 10px 0;
+		margin: 0 0 0 15px;
+    }
+    .pccLegendItems.pccLegendItemsDivider
+	{
+        padding: 0px;
+        margin: 0 0 0 15px;
+    }
+    .pccLegendItems.pccLegendItemsDivider:first-of-type
+	{
+        /* padding: 8px 0 8px 0; */
+    }
+      
+    .pccLegendsGroup .pccLegendItem .pccLegendSwatch
+	{
+	    display: table;
+	}
+	
+	.pccPartnerCoverageDialog
+	{	
+		z-index:10000;
+		position:absolute;
+		width:100%;
+		height:100%;
+		top:0px;		
+	}
+	
+	.pccPartnerCoverageContainer img
+	{
+		position: absolute;	 
+		left: 0;
+		right: 0;
+		top: 50%;    
+		margin-top: -180px;
+	}
+
+}
+
+/* portrait display for tablets and landscape display for iPhone 6/6s plus */
+@media (max-width: 939px) and (min-width: 724px)
+{
+	#pccSearchButton
+	{
+        text-indent:	-9999px;
+        width:			42px;
+        background:		#e83390 url("../images/search_white.18232.png") no-repeat center;
+	}
+	
+	.pccDeviceSelectorPopupDialog
+	{
+		top: 10px;
+	}
+	
+	.pccDevicePopupDialog
+	{
+		top: 10px;
+	}	
+	
+	.pccComparePopupDialog
+    {        
+    	width: 95%;       
+    }    
+    
+    .pccPartnerCoverageDialog
+	{	
+		top: 10px;
+	    background-color: #fff;
+	    height: 420px;
+	}
+}
