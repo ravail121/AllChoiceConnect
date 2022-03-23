@@ -522,6 +522,7 @@
 
             $('#modalDevice .modal-body').find('#form-plans').find('a.add-to-cart').on('click', function(r){
                 r.preventDefault();
+                $('#modalDevice').modal('hide');
 
                 var deviceId = $('#form-plans').find('input[name="device_id"]').val();
 
