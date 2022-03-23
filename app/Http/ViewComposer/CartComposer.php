@@ -17,13 +17,13 @@ class CartComposer
     public function compose(View $view)
     {
         $view->with([
-            'totalPrice'    => $this->cart->totalPrice(),
-            'subtotalPrice' => $this->cart->subTotalPrice(),
-            'activeGroupId' => $this->cart->getActiveGroupId(),
-            'monthlyCharge' => $this->cart->calMonthlyCharge(),
-            'taxes'         => $this->cart->calTaxes(),
-            'regulatory'    => $this->cart->calRegulatory(),
-            'shippingFee'   => $this->cart->getShippingFee(),
+            'totalPrice'    => session('cart')['totalPrice'],
+            'subtotalPrice' => session('cart')['subtotalPrice'],
+            'activeGroupId' => session('cart')['activeGroupId'],
+            'monthlyCharge' => session('cart')['monthlyCharge'],
+            'taxes'         => session('cart')['taxes'],
+            'regulatory'    => session('cart')['regulatory'],
+            'shippingFee'   => session('cart')['shippingFee'],
             'coupons'       => isset($this->cart->coupon()['total']) ? $this->cart->coupon()['total'] : 0,
         ]);
 
