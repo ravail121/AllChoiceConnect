@@ -110,7 +110,7 @@
             if (couponCode) {
                 var totalTax = parseFloat($('.tax-cart').html().allReplace(replaceFromHtml));
             } else {
-                var totalTax = getRawTax() * taxRate / 100;
+                var totalTax = @json((session('cart')['subtotalPrice']+session('cart')['coupons'])*(session('taxrate')/100));
                 $('.tax-cart').html(parseFloat(totalTax).toFixed(2));
             }
             var couponAmount = response['total'];

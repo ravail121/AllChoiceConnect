@@ -16,6 +16,7 @@ class CartResponse extends CustomerController
      * @var array
      */
     protected $cartItems;
+    static $customerData;
 
     /**
      * $prices
@@ -367,7 +368,15 @@ class CartResponse extends CustomerController
      */
     public function taxrate($stateId)
     {
-        return $this->requestConnection('customer', 'get', $stateId);
+//        return $this->requestConnection('customer', 'get', $stateId);
+
+        if(static::$customerData)
+        {
+            return static::$customerData;
+        }
+        static::$customerData = $this->requestConnection('customer', 'get', $stateId);
+
+        return static::$customerData;
     }
 
     /**
@@ -433,7 +442,7 @@ class CartResponse extends CustomerController
             $amount = $cart['plan'] != null ? $item['amount_w_plan'] : $item['amount_alone'];
             if (session('couponAmount')) {
                 $discounted = $this->getCouponPrice(session('couponAmount'), $item, 3);
-                $amount = $discounted > 0 && $amount > $discounted ? $amount - $discounted : 0;
+                $amount = $amount > $discounted ? $amount - $discounted : 0;
             }
             $itemTax[] = $taxPercentage * $amount;
         }
@@ -454,7 +463,7 @@ class CartResponse extends CustomerController
             $amount = $cart['plan'] != null ? $item['amount_w_plan'] : $item['amount'];
             if (session('couponAmount')) {
                 $discounted = $this->getCouponPrice(session('couponAmount'), $item, 2);
-                $amount = $discounted > 0 && $amount > $discounted ? $amount - $discounted : 0;
+                $amount = $amount > $discounted ? $amount - $discounted : 0;
             }
             $itemTax[] = $taxPercentage * $amount;
         }
@@ -476,7 +485,7 @@ class CartResponse extends CustomerController
             $amount = $item['amount_onetime'] != null ? $amount + $item['amount_onetime'] : $amount;
             if (session('couponAmount')) {
                 $discounted = $this->getCouponPrice(session('couponAmount'), $item, 1);
-                $amount = $discounted > 0 && $amount > $discounted ? $amount - $discounted : 0;
+                $amount = $amount > $discounted ? $amount - $discounted : 0;
             }
             $planTax[] = $taxPercentage * $amount;
         }
@@ -498,7 +507,7 @@ class CartResponse extends CustomerController
                     $amount = $addon['prorated_amt'] != null ? $addon['prorated_amt'] : $addon['amount_recurring'];
                     if (session('couponAmount')) {
                         $discounted = $this->getCouponPrice(session('couponAmount'), $addon, 4);
-                        $amount = $discounted > 0 && $amount > $discounted ? $amount - $discounted : 0;
+                        $amount = $amount > $discounted ? $amount - $discounted : 0;
                     }
                     $addonTax[] = $taxPercentage * $amount;
                 }
