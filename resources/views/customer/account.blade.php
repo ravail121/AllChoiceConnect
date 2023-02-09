@@ -328,9 +328,13 @@
                                 {!! Form::select('billing_state_id',$states, null ,  ['placeholder' => 'State']) !!}
                             </li>
 
-                            <li class="zip">
+                            <li class="pad-right-15 zip" style="width: 50%">
                                 {!! Form::label('billing_zip', 'Zip ') !!}
                                 {!! Form::text('billing_zip',null,['placeholder' => 'Zip', 'maxlength' =>'5']) !!}
+                            </li>
+                            <li class="pad-right-15">
+                                <label class="form-check-label" for="check2">Make Primary</label>
+                                <input style = "width:15px; height:15px; position: relative; top:11px;"type="checkbox" class="form-check-input" id="check2" name="make_primary" value="true">
                             </li>
                         </ul>
 

@@ -48,6 +48,7 @@ class CustomerCardController extends Controller
             'billing_city'           => 'required',
             'billing_state_id'       => 'required',
             'billing_zip'            => 'required',
+            'make_primary'            => 'nullable',
         ]);
 
         return $data;
@@ -61,6 +62,7 @@ class CustomerCardController extends Controller
         $data['expires_mmyy']  =  implode("/",$data['expires_mmyy']);
         $data['billing_fname'] =  "Test fname";
         $data['billing_lname'] =  "Test lname";
+        $data['new_card']=1;
 
         return $data;
     }
